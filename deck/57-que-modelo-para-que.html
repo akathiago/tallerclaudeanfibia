@@ -1,0 +1,199 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE TABLA — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  Una tabla chica para comparar tres o cuatro cosas por dos o tres
+  criterios. Sirve para modelos y precios, planes, herramientas
+  enfrentadas: cualquier cosa donde la gracia esté en leer la fila
+  entera de un vistazo.
+
+  CUÁNDO NO USARLA
+  Si son dos cosas y nada más, andá a slide-comparacion, que les da
+  mucho más aire. Esta es para tres o cuatro.
+  Si es una sola cifra que importa, andá a slide-datos.
+
+  CÓMO USARLO
+  1. Doble click para verlo en el navegador.
+  2. Para editar, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Cambiá solo lo que dice "EDITÁ ACÁ".
+
+  CUÁNTO ENTRA
+  Hasta 4 filas más la cabecera. Hasta 3 columnas.
+  La primera celda de cada fila es el nombre: hasta 3 palabras.
+  Las otras celdas: una línea corta, hasta 6 palabras.
+  Si no entra, el problema es el texto. Acortalo.
+
+  UNA FILA SE PUEDE RESALTAR
+  Agregale class="fila destacada" a la que quieras marcar (la
+  recomendada, la que estás usando). Se pinta con el acento. Una
+  sola por tabla: si resaltás tres, no resaltaste ninguna.
+
+  SI SON DOS COLUMNAS EN VEZ DE TRES
+  Cambiá --columnas a "1.2fr 1fr" y sacá la tercera celda de cada
+  fila. Es la única medida que hay que tocar.
+
+  NO TOQUES el resto del bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Slide de tabla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+  }
+
+  /* ——— Lo único ajustable de esta pieza ——— */
+  :root {
+    /* EDITÁ ACÁ: el acento. var(--lime), var(--electric) o var(--pink) */
+    --acento: var(--lime);
+    /* EDITÁ ACÁ: anchos de columna. Tres columnas por defecto. */
+    --columnas: 1fr 1.65fr;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .barra {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 60px;
+    background: var(--acento); border-bottom: 2px solid var(--black);
+    flex-shrink: 0;
+  }
+  .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
+  .barra .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; }
+
+  .cuerpo { flex: 1; padding: 60px 90px 70px; display: flex; flex-direction: column; }
+
+  .kicker { font-family: var(--fuente-pixel); font-size: 22px; color: var(--electric); margin-bottom: 24px; }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 92px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1400px;
+    text-wrap: balance;
+    margin-bottom: 46px;
+  }
+
+  /* La grilla. El gap de 3px sobre fondo negro ES la línea de la tabla. */
+  .tabla {
+    flex: 1;
+    display: grid;
+    grid-template-columns: var(--columnas);
+    gap: 3px;
+    background: var(--black);
+    border: 3px solid var(--black);
+    align-content: stretch;
+  }
+
+  .celda {
+    background: var(--paper);
+    padding: 26px 30px;
+    display: flex;
+    align-items: center;
+    font-family: var(--fuente-mono);
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  /* Cabecera: Silkscreen sólo acá, que es una etiqueta y no un párrafo. */
+  .celda.cabecera {
+    background: var(--acento);
+    font-family: var(--fuente-pixel);
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    align-items: center;
+  }
+
+  /* Primera celda de cada fila: el nombre, con más peso. */
+  .celda.nombre {
+    background: var(--cream);
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  /* Fila resaltada. Una sola por tabla. */
+  .celda.destacada { background: var(--acento); }
+  .celda.destacada.nombre { background: var(--acento); }
+
+  .pie { display: flex; justify-content: space-between; align-items: center; margin-top: 34px; }
+  .pie .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--black); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="lienzo">
+  <div class="barra"><div class="logo">ANFIBIA</div><div class="num">21 / 52</div></div>
+  <div class="cuerpo">
+    <p class="kicker">CONTEXTO Y TOKENS</p><h2 class="titulo">Elegir profundidad según la tarea</h2>
+    <div class="tabla"><div class="celda cabecera">Tarea</div><div class="celda cabecera">Perfil útil</div><div class="celda nombre">Clasificar, extraer, reformatear</div><div class="celda">Rápido y económico</div><div class="celda nombre">Redactar, comparar, programar</div><div class="celda">Equilibrado</div><div class="celda nombre">Diseñar estrategia, resolver ambigüedad</div><div class="celda">Más profundo y costoso</div></div>
+    <div class="pie"><div class="meta"></div><div class="firma"><i></i><i></i><i></i></div></div>
+  </div>
+</div>
+<div class="ayuda">SLIDE DE TABLA · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+</body>
+</html>

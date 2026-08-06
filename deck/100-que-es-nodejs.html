@@ -1,0 +1,185 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE DIAGRAMA — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  El bloque de flujo de las lecciones, a pantalla completa. Cajas
+  encadenadas con flechas sobre fondo negro. Para explicar un
+  recorrido: qué pasa primero, qué pasa después.
+
+  CÓMO USARLO
+  1. Doble click para verlo en el navegador.
+  2. Para editar, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Cambiá solo lo que dice "EDITÁ ACÁ".
+
+  PARA AGREGAR O SACAR PASOS: cada paso es un bloque <div class="paso">
+  y entre paso y paso va una flecha <b>→</b>. Si sacás un paso, sacá
+  también una flecha. Andan bien entre 3 y 6 pasos; con más de 6 las
+  cajas quedan ilegibles: partí el diagrama en dos slides.
+
+  Los números 01, 02, 03… se escriben a mano. Revisalos si reordenás.
+
+  NO TOQUES el bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Slide de diagrama</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+
+    /* Color de números y flechas: var(--lime) var(--electric) var(--pink) */
+    --acento: var(--lime);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+    color: var(--cream);
+    padding: 80px 90px 70px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .arriba { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-bottom: 54px; }
+  .logo { font-family: var(--fuente-pixel); font-size: 28px; color: var(--cream); }
+  .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; color: var(--gray); }
+
+  .kicker { font-family: var(--fuente-pixel); font-size: 22px; color: var(--acento); margin-bottom: 24px; }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1500px;
+    text-wrap: balance;
+    margin-bottom: 66px;
+  }
+
+  /* El flujo: cajas con borde fino crema, flechas en el color de acento.
+     flex: 1 hace que las cajas ocupen todo el alto que sobra. */
+  .flujo { flex: 1; display: flex; align-items: stretch; gap: 18px; }
+
+  .paso {
+    flex: 1;
+    min-width: 0;
+    padding: 34px 30px 38px;
+    border: 2px solid var(--cream);
+    display: flex;
+    flex-direction: column;
+  }
+  .paso span {
+    display: block;
+    font-family: var(--fuente-pixel);
+    font-size: 20px;
+    color: var(--acento);
+    margin-bottom: 40px;
+  }
+  .paso strong {
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.02;
+    text-transform: uppercase;
+  }
+  .paso em {
+    font-family: var(--fuente-mono);
+    font-size: 19px;
+    font-style: normal;
+    line-height: 1.55;
+    color: var(--cream-mute);
+    margin-top: 16px;
+  }
+
+  /* Paso resaltado: usalo para señalar dónde está el foco de la explicación */
+  .paso.foco { background: var(--acento); border-color: var(--acento); color: var(--black); }
+  .paso.foco span { color: var(--black); }
+  .paso.foco em { color: var(--black); }
+
+  .flecha { align-self: center; font-family: var(--fuente-terminal); font-size: 60px; color: var(--acento); line-height: 1; }
+
+  .pie-diagrama {
+    font-family: var(--fuente-mono);
+    font-size: 21px;
+    line-height: 1.6;
+    color: var(--cream-mute);
+    margin-top: 40px;
+    max-width: 100ch;
+  }
+
+  .abajo { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; }
+  .abajo .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--gray); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="lienzo">
+  <div class="arriba"><div class="logo">ANFIBIA</div><div class="num">48 / 52</div></div>
+  <p class="kicker">INSTALACIÓN</p>
+  <h2 class="titulo">Qué es Node.js</h2>
+  <div class="flujo">
+    <div class="paso"><span>01</span><strong>JavaScript</strong><em>El lenguaje.</em></div>
+    <b class="flecha">→</b>
+    <div class="paso foco"><span>02</span><strong>Node.js</strong><em>Lo ejecuta fuera del navegador.</em></div>
+    <b class="flecha">→</b>
+    <div class="paso"><span>03</span><strong>Tu sistema</strong><em>Archivos, red, procesos y terminal.</em></div>
+  </div>
+  <p class="pie-diagrama">No es otro lenguaje: es otro entorno para ejecutar JavaScript.</p>
+  <div class="abajo"><div class="meta"></div><div class="firma"><i></i><i></i><i></i></div></div>
+</div>
+<div class="ayuda">SLIDE DE DIAGRAMA · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+</body>
+</html>

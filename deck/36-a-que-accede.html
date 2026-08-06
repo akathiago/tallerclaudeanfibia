@@ -1,0 +1,230 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE ÍNDICE — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  La agenda de la charla, numerada, con el ítem actual resaltado. Es
+  el mapa lateral de las lecciones puesto en horizontal.
+
+  Se usa dos veces: al principio, para mostrar el recorrido completo,
+  y repetida entre bloques moviendo el resaltado, para que se vea
+  dónde estamos parados.
+
+  CÓMO USARLO
+  1. Doble click para verlo en el navegador.
+  2. Para editar, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Cambiá solo lo que dice "EDITÁ ACÁ".
+
+  PARA MOVER EL RESALTADO: sacá class="actual" del ítem donde está y
+  ponéselo al que corresponda. Solo uno a la vez.
+
+  PARA MARCAR LO YA VISTO: agregale class="hecho" a los ítems que
+  quedaron atrás (se ven apagados, con un ✓).
+
+  Entran hasta 10 ítems en dos columnas. Con más, partí la agenda.
+
+  NO TOQUES el bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Slide de índice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+
+    /* Color del ítem resaltado: var(--lime) var(--electric) var(--pink) */
+    --acento: var(--lime);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .barra {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 60px;
+    background: var(--lime); border-bottom: 2px solid var(--black);
+    flex-shrink: 0;
+  }
+  .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
+  .barra .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; }
+
+  .cuerpo { flex: 1; padding: 58px 90px 66px; display: flex; flex-direction: column; }
+
+  .cabecera { display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; margin-bottom: 44px; }
+
+  .kicker { font-family: var(--fuente-pixel); font-size: 22px; color: var(--electric); margin-bottom: 22px; }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  .contador {
+    font-family: var(--fuente-pixel);
+    font-size: 20px;
+    padding: 14px 20px;
+    border: 3px solid var(--black);
+    background: var(--paper);
+    white-space: nowrap;
+  }
+
+  /* La agenda: dos columnas de filas con borde, como el mapa del sitio.
+     flex: 1 reparte el alto que sobra entre las filas que haya. */
+  .agenda { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: var(--black); border: 3px solid var(--black); }
+
+  .item {
+    display: grid;
+    grid-template-columns: 74px 1fr 44px;
+    gap: 22px;
+    align-items: center;
+    padding: 24px 28px;
+    background: var(--paper);
+  }
+  .item span {
+    font-family: var(--fuente-pixel);
+    font-size: 22px;
+    width: 60px; height: 60px;
+    display: grid; place-items: center;
+    border: 2px solid var(--black);
+    background: var(--cream);
+  }
+  .item strong {
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 0.98;
+    text-transform: uppercase;
+  }
+  .item em {
+    display: block;
+    font-family: var(--fuente-mono);
+    font-size: 19px;
+    font-style: normal;
+    line-height: 1.5;
+    color: var(--gray);
+    margin-top: 8px;
+  }
+  .item b { font-family: var(--fuente-terminal); font-size: 40px; font-weight: 400; color: var(--gray); text-align: right; }
+
+  /* Dónde estamos */
+  .item.actual { background: var(--acento); }
+  .item.actual span { background: var(--black); color: var(--acento); }
+  .item.actual em { color: var(--black); }
+  .item.actual b { color: var(--black); }
+
+  /* Lo que ya pasó */
+  .item.hecho strong, .item.hecho em, .item.hecho span { opacity: 0.45; }
+
+  .pie { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; }
+  .pie .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--black); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lienzo">
+
+  <div class="barra">
+    <!-- EDITÁ ACÁ: nombre de la marca -->
+    <div class="logo">ANFIBIA</div>
+    <!-- EDITÁ ACÁ: número de slide -->
+    <div class="num">34 / 52</div>
+  </div>
+
+  <div class="cuerpo">
+    <div class="cabecera">
+      <div>
+        <!-- EDITÁ ACÁ: el kicker -->
+        <p class="kicker">31 / ACCESO</p>
+        <!-- EDITÁ ACÁ: el título -->
+        <h2 class="titulo">A qué puede acceder</h2>
+      </div>
+      <!-- EDITÁ ACÁ: el contador de la derecha. Si no lo querés, borrá esta línea. -->
+      <div class="contador">3 CAPAS</div>
+    </div>
+
+    <div class="agenda">
+
+      <!-- EDITÁ ACÁ: cada ítem. class="hecho" = ya lo vimos. class="actual" = acá estamos. -->
+      <div class="item" class="actual"><span>01</span><div><strong>Tu proyecto</strong><em>Carpetas, archivos y subcarpetas.</em></div><b>←</b></div>
+
+      <div class="item"><span>02</span><div><strong>Tu terminal</strong><em>Los comandos que vos también podrías correr.</em></div><b></b></div>
+
+      <div class="item"><span>03</span><div><strong>Tu Git</strong><em>El estado y las versiones del trabajo.</em></div><b></b></div>
+
+    </div>
+
+    <div class="pie">
+      <!-- EDITÁ ACÁ: dato de pie -->
+      <div class="meta"></div>
+      <div class="firma"><i></i><i></i><i></i></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="ayuda">SLIDE DE ÍNDICE · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+
+</body>
+</html>
+

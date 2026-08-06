@@ -1,0 +1,219 @@
+/*
+  PARANOIA — design tokens
+  ------------------------------------------------------------------
+  Extraídos del código del sitio (repo `paranoia`, Astro 7).
+  Fuente original de la identidad: ONCHIVE.
+
+  Estos valores son la identidad visual del proyecto. Si cambiás uno,
+  cambia la marca. No los "modernices": no hay radios, no hay sombras
+  suaves, no hay degradés. Es a propósito.
+  ------------------------------------------------------------------
+*/
+
+:root {
+  /* ═══════════════════ COLOR ═══════════════════ */
+
+  /* Superficies */
+  --cream: #f0e9d8;        /* fondo base de todo el sitio */
+  --paper: #e8e0cc;        /* superficie elevada: heroes, tarjetas, cajas */
+  --black: #0d0d0d;        /* texto, bordes y superficie invertida */
+
+  /* Acentos (los tres son pares, no hay uno "principal" absoluto) */
+  --lime: #c6f526;         /* señal / OK / texto sobre negro / header */
+  --electric: #1e1eff;     /* links, hover, datos, progreso */
+  --pink: #ff2a6d;         /* etiquetas, error, marcas de puntuación */
+
+  /* Texto secundario */
+  --gray: #6b6b5a;         /* metadatos, pies, texto apagado sobre claro */
+  --cream-mute: #bbb5a7;   /* pies de foto sobre fondo negro */
+
+  /* Utilitario — NO es superficie de página */
+  --white: #ffffff;        /* solo foco de inputs y chips de tabla */
+
+  /* Acento parametrizable.
+     Las páginas del sitio lo pisan inline: style="--acento: var(--pink)".
+     Los templates de este repo hacen lo mismo. */
+  --acento: var(--lime);
+
+  /* ═══════════════════ TIPOGRAFÍA ═══════════════════ */
+
+  /* Cinco fuentes, cinco trabajos distintos. Ver brief.md. */
+  --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+  --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+  --fuente-mono: 'Space Mono', 'Courier New', monospace;
+  --fuente-terminal: 'VT323', 'Courier New', monospace;
+  --fuente-lectura: 'Newsreader', Georgia, 'Times New Roman', serif;
+
+  /* Pesos realmente usados */
+  --peso-titulo: 900;      /* títulos grandes */
+  --peso-subtitulo: 800;   /* títulos de tarjeta */
+  --peso-medio: 700;       /* h2/h3 chicos */
+  --peso-normal: 400;
+
+  /* Escala de títulos (Darker Grotesque, siempre MAYÚSCULAS) */
+  --titulo-xs: 1.35rem;
+  --titulo-sm: 1.5rem;
+  --titulo-md: 2rem;
+  --titulo-lg: 2.8rem;
+  --titulo-xl: 4rem;
+  --titulo-2xl: 5rem;
+  --titulo-3xl: 7.1rem;    /* máximo del capítulo */
+
+  /* Escala pixel (Silkscreen). Nunca crece: es UI, no titular. */
+  --pixel-xs: 0.55rem;
+  --pixel-sm: 0.62rem;
+  --pixel-md: 0.7rem;
+  --pixel-lg: 0.8rem;
+  --pixel-xl: 1.2rem;      /* logo */
+
+  /* Escala de cuerpo (Space Mono / Newsreader) */
+  --cuerpo-xs: 0.72rem;
+  --cuerpo-sm: 0.85rem;
+  --cuerpo-md: 1rem;
+  --cuerpo-lg: 1.08rem;
+  --cuerpo-xl: 1.2rem;
+  --cuerpo-lead: 1.5rem;   /* bajada en cursiva del ensayo */
+
+  /* Escala terminal (VT323): meta, nav, pies, flechas */
+  --terminal-sm: 1rem;
+  --terminal-md: 1.1rem;
+  --terminal-lg: 2rem;
+
+  /* Interlineados */
+  --interlineado-titulo-apretado: 0.82;  /* titulares gigantes */
+  --interlineado-titulo: 0.95;           /* titulares medios */
+  --interlineado-titulo-suelto: 1.1;     /* títulos de tarjeta */
+  --interlineado-cuerpo: 1.7;            /* Space Mono */
+  --interlineado-lectura: 1.9;           /* Newsreader, texto largo */
+
+  /* Letter-spacing: solo negativo, solo en títulos */
+  --tracking-titulo: -0.03em;
+  --tracking-titulo-gigante: -0.035em;
+
+  /* ═══════════════════ ESPACIADO ═══════════════════ */
+  /* Escala consolidada. Ver brief.md → "Decisiones de consolidación". */
+  --esp-1: 8px;
+  --esp-2: 12px;
+  --esp-3: 20px;
+  --esp-4: 30px;
+  --esp-5: 40px;
+  --esp-6: 60px;
+  --esp-7: 80px;
+  --esp-8: 110px;
+  --esp-9: 140px;
+
+  /* Márgenes de página */
+  --margen-pagina: 40px;
+  --margen-pagina-movil: 25px;
+
+  /* Anchos */
+  --ancho-lectura: 680px;   /* cuerpo del ensayo */
+  --ancho-capitulo: 860px;  /* cuerpo de la lección */
+  --ancho-columna: 900px;   /* heroes e índices */
+  --ancho-max: 1420px;      /* grilla completa con mapa lateral */
+  --medida-texto: 66ch;     /* medida máxima de un párrafo */
+
+  /* ═══════════════════ BORDES ═══════════════════ */
+  --borde-fino: 1px;
+  --borde: 2px;             /* el borde por defecto de TODO */
+  --borde-grueso: 3px;      /* imágenes, videos, cajas de práctica */
+  --borde-corte: 8px;       /* corte estructural entre secciones */
+  --radio: 0;               /* nunca hay esquinas redondeadas */
+
+  --linea: 2px solid var(--black);
+  --linea-gruesa: 3px solid var(--black);
+
+  /* ═══════════════════ SOMBRAS ═══════════════════ */
+  /* Duras, sin blur, sin transparencia. Son un objeto desplazado. */
+  --sombra-sm: 4px 4px 0 var(--black);
+  --sombra-md: 6px 6px 0 var(--black);
+  --sombra-lg: 12px 12px 0 var(--black);
+  --sombra-acento: 8px 8px 0 var(--acento);
+
+  /* ═══════════════════ MOVIMIENTO ═══════════════════ */
+  --transicion: all 0.3s ease;
+  --transicion-rapida: all 0.15s ease;
+  --curva-slide: cubic-bezier(0.23, 1, 0.32, 1);
+  --desplazamiento-hover: translate(-4px, -4px);  /* card se despega */
+
+  /* ═══════════════════ TEXTURA ═══════════════════ */
+  /* Ruido fractal. Va encima de superficies de color pleno al 14–15%
+     de opacidad: baja la saturación del lime sin tocar el token. */
+  --textura-ruido: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  --opacidad-ruido: 0.14;
+
+  /* ═══════════════════ CURSOR ═══════════════════ */
+  /* Flecha de píxeles negra+lime y "target" negro+pink para lo clickeable.
+     Solo aplica en pantalla; no afecta a exportar imágenes. */
+  --cursor-pixel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%230d0d0d' d='M4 4h4v4H4zM8 8h4v4H8zM12 12h4v4h-4zM16 16h4v4h-4zM8 16h4v4H8zM4 20h4v4H4zM20 20h4v4h-4zM16 24h4v4h-4z'/%3E%3Cpath fill='%23c6f526' d='M8 4h4v4H8zM4 8h4v4H4zM12 8h4v4h-4zM8 12h4v4H8zM16 12h4v4h-4zM12 16h4v4h-4zM4 16h4v4H4zM8 20h4v4H8zM16 20h4v4h-4zM12 24h4v4h-4z'/%3E%3C/svg%3E") 0 0, auto;
+  --cursor-pixel-link: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%230d0d0d' d='M12 4h8v4h-8zM8 8h4v4H8zM20 8h4v4h-4zM4 12h4v16H4zM24 12h4v16h-4zM8 28h4v4H8zM20 28h4v4h-4zM12 32h8v-4h-8z'/%3E%3Cpath fill='%23ff2a6d' d='M12 8h8v4h-8zM8 12h4v16H8zM20 12h4v16h-4zM12 28h8v4h-8z'/%3E%3C/svg%3E") 16 16, pointer;
+}
+
+/*
+  ══════════════════════════════════════════════════════════════════
+  UTILIDADES OPCIONALES
+  Nada de esto es obligatorio: los templates ya traen su propio CSS.
+  Están acá para quien quiera armar una página nueva desde cero.
+  ══════════════════════════════════════════════════════════════════
+*/
+
+.paranoia-reset * { margin: 0; padding: 0; box-sizing: border-box; }
+
+.paranoia-base {
+  background: var(--cream);
+  color: var(--black);
+  font-family: var(--fuente-mono);
+}
+
+.paranoia-cursor,
+.paranoia-cursor * { cursor: var(--cursor-pixel); }
+.paranoia-cursor a,
+.paranoia-cursor button { cursor: var(--cursor-pixel-link); }
+
+::selection { background: var(--lime); color: var(--black); }
+
+/* Superficie de color pleno con ruido encima ("cinta") */
+.paranoia-cinta { background: var(--lime); position: relative; }
+.paranoia-cinta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--textura-ruido);
+  opacity: var(--opacidad-ruido);
+  pointer-events: none;
+}
+.paranoia-cinta > * { position: relative; z-index: 1; }
+
+/* Pill / etiqueta */
+.paranoia-tag {
+  display: inline-block;
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-md);
+  padding: 8px 16px;
+  background: var(--pink);
+  border: var(--borde) solid var(--black);
+  color: var(--black);
+}
+
+/* Titular */
+.paranoia-titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-titulo);
+  line-height: var(--interlineado-titulo);
+  letter-spacing: var(--tracking-titulo);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+/* Botón */
+.paranoia-boton {
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-md);
+  text-transform: uppercase;
+  padding: 14px 20px;
+  background: var(--black);
+  color: var(--lime);
+  border: var(--borde) solid var(--black);
+  transition: var(--transicion);
+}
+.paranoia-boton:hover { background: var(--electric); }

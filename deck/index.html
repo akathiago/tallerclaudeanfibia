@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo entrenar a tu IA — Reproductor</title>
+
+<!--
+  REPRODUCTOR DEL DECK · esta es la ventana que se proyecta.
+
+  CÓMO SE USA
+  Doble click en este archivo. Flechas o espacio para avanzar y F para pantalla
+  completa.
+
+  QUÉ TOCAR
+  Las slides se agregan en deck.js, no acá. Este archivo es el motor.
+
+  CÓMO ANDA POR ABAJO
+  Hay dos iframes, no uno. Mientras ves una slide, la que sigue ya se cargó en
+  el iframe de atrás; avanzar es cambiar cuál de los dos está visible. Por eso
+  no parpadea en negro ni vuelve a bajar las tipografías en cada slide, que era
+  lo que pasaba cuando se reasignaba el src de un iframe único.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;900&family=Silkscreen:wght@400;700&display=swap">
+<style>
+  :root {
+    --cream: #f0e9d8;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --scale: 1;
+
+    /* Las slides traen el padding del body del template y una barra de ayuda
+       al pie. El iframe se agranda y se corre para que ese margen quede fuera
+       de cuadro y se vea solo el lienzo. Si algún día cambia el padding de los
+       templates, se corrige acá y en ningún otro lado. */
+    --sangrado-x: 20px;
+    --sangrado-y: 40px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: var(--black);
+  }
+
+  body {
+    color: var(--cream);
+    font-family: "Darker Grotesque", "Arial Narrow", Impact, sans-serif;
+    user-select: none;
+  }
+
+  button {
+    color: inherit;
+    font: inherit;
+  }
+
+  .app {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background:
+      linear-gradient(90deg, rgba(240, 233, 216, 0.04) 1px, transparent 1px),
+      linear-gradient(rgba(240, 233, 216, 0.04) 1px, transparent 1px),
+      var(--black);
+    background-size: 32px 32px;
+  }
+
+  .viewport {
+    width: min(100vw, calc(100vh * 16 / 9));
+    height: min(100vh, calc(100vw * 9 / 16));
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+    box-shadow: 0 0 0 1px rgba(240, 233, 216, 0.12);
+  }
+
+  .slide-shell {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    transform: translate(-50%, -50%) scale(var(--scale));
+    transform-origin: center center;
+    background: var(--black);
+  }
+
+  .slide-frame {
+    position: absolute;
+    left: calc(var(--sangrado-x) * -1);
+    top: calc(var(--sangrado-y) * -1);
+    width: calc(1920px + var(--sangrado-x) * 2);
+    height: calc(1080px + var(--sangrado-y) * 2);
+    border: 0;
+    background: var(--black);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  /* El buffer visible. El otro se queda cargando la slide que sigue. */
+  .slide-frame.activo { opacity: 1; }
+
+  .hit-area {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    width: 34%;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .hit-area.prev { left: 0; cursor: w-resize; }
+  .hit-area.next { right: 0; cursor: e-resize; }
+
+  .chrome {
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 160ms linear;
+  }
+
+  body.controls-visible .chrome,
+  body:focus-within .chrome {
+    opacity: 1;
+  }
+
+  .topbar {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    right: 18px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .deck-label {
+    padding: 9px 12px;
+    background: var(--black);
+    border: 1px solid var(--cream);
+    box-shadow: 4px 4px 0 var(--lime);
+    font-family: "Silkscreen", "Courier New", monospace;
+    font-size: clamp(8px, 0.68vw, 13px);
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .toolbar {
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: stretch;
+    pointer-events: auto;
+    background: var(--black);
+    border: 1px solid var(--cream);
+    box-shadow: 6px 6px 0 var(--lime);
+  }
+
+  .control {
+    min-width: 56px;
+    height: 48px;
+    border: 0;
+    border-right: 1px solid var(--cream);
+    background: var(--black);
+    cursor: pointer;
+    font-family: "Silkscreen", "Courier New", monospace;
+    font-size: 14px;
+  }
+
+  .control:last-child { border-right: 0; }
+
+  .control:hover,
+  .control:focus-visible {
+    color: var(--black);
+    background: var(--lime);
+    outline: 0;
+  }
+
+  .counter {
+    min-width: 118px;
+    padding: 0 16px;
+    display: grid;
+    place-items: center;
+    border-right: 1px solid var(--cream);
+    font-family: "Silkscreen", "Courier New", monospace;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .progress {
+    position: absolute;
+    z-index: 6;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(240, 233, 216, 0.18);
+  }
+
+  .progress-value {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--lime);
+    transition: width 180ms ease-out;
+  }
+
+  @media (max-width: 700px) {
+    .deck-label { font-size: 8px; }
+    .toolbar { bottom: 14px; }
+    .control { min-width: 46px; height: 42px; }
+    .counter { min-width: 92px; padding: 0 10px; font-size: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .chrome,
+    .progress-value { transition: none; }
+  }
+</style>
+</head>
+<body class="controls-visible">
+<main class="app" aria-label="Reproductor de presentación">
+  <section class="viewport" id="viewport" aria-live="polite">
+    <div class="slide-shell">
+      <iframe class="slide-frame activo" data-buffer="a" title="Slide actual"></iframe>
+      <iframe class="slide-frame" data-buffer="b" title="Slide siguiente" aria-hidden="true"></iframe>
+    </div>
+
+    <button class="hit-area prev" id="hitPrev" aria-label="Slide anterior"></button>
+    <button class="hit-area next" id="hitNext" aria-label="Slide siguiente"></button>
+
+    <div class="chrome">
+      <div class="topbar">
+        <div class="deck-label" id="deckLabel">ANFIBIA</div>
+      </div>
+
+      <nav class="toolbar" aria-label="Controles de presentación">
+        <button class="control" id="prev" aria-label="Slide anterior">←</button>
+        <div class="counter"><span id="current">01</span>&nbsp;/&nbsp;<span id="total">00</span></div>
+        <button class="control" id="next" aria-label="Slide siguiente">→</button>
+        <button class="control" id="fullscreen" aria-label="Pantalla completa">⛶</button>
+      </nav>
+    </div>
+
+    <div class="progress" aria-hidden="true">
+      <span class="progress-value" id="progress"></span>
+    </div>
+  </section>
+</main>
+
+<script src="deck.js"></script>
+<script src="sync.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var slides = (window.DECK && window.DECK.slides) || [];
+  var viewport = document.querySelector("#viewport");
+  var buffers = [
+    document.querySelector('[data-buffer="a"]'),
+    document.querySelector('[data-buffer="b"]')
+  ];
+  var currentLabel = document.querySelector("#current");
+  var totalLabel = document.querySelector("#total");
+  var progress = document.querySelector("#progress");
+
+  var actual = 0;
+  var visible = 0;          /* cuál de los dos buffers se está viendo */
+  var relojControles;
+
+  if (!slides.length) {
+    document.querySelector("#deckLabel").textContent = "DECK VACÍO · REVISÁ DECK.JS";
+    return;
+  }
+
+  document.querySelector("#deckLabel").textContent =
+    window.DECK.etiqueta || window.DECK.titulo || "ANFIBIA";
+
+  /* -- utilidades -------------------------------------------------------- */
+
+  function dosDigitos(valor) {
+    return String(valor).padStart(2, "0");
+  }
+
+  function acotar(indice) {
+    return Math.max(0, Math.min(slides.length - 1, indice));
+  }
+
+  function indiceDelHash() {
+    var numero = Number(location.hash.replace("#", ""));
+    return Number.isInteger(numero) && numero >= 1 && numero <= slides.length
+      ? numero - 1
+      : 0;
+  }
+
+  /* -- el doble buffer ---------------------------------------------------
+     `mostrar` no toca el src si el buffer de atrás ya tiene la slide pedida:
+     en ese caso solo cambia cuál está visible, que es instantáneo. Recién
+     después manda a cargar la siguiente en el buffer que quedó libre. */
+
+  function archivoDe(indice) {
+    return slides[indice].archivo;
+  }
+
+  function cargarEn(buffer, indice) {
+    if (buffer.dataset.archivo === archivoDe(indice)) return;
+    buffer.dataset.archivo = archivoDe(indice);
+    buffer.src = archivoDe(indice);
+  }
+
+  function precargarSiguiente() {
+    var siguiente = actual + 1;
+    if (siguiente >= slides.length) return;
+    cargarEn(buffers[1 - visible], siguiente);
+  }
+
+  function mostrar(indice) {
+    var otro = 1 - visible;
+
+    if (buffers[otro].dataset.archivo === archivoDe(indice)) {
+      buffers[otro].classList.add("activo");
+      buffers[visible].classList.remove("activo");
+      visible = otro;
+    } else {
+      cargarEn(buffers[visible], indice);
+    }
+
+    buffers[visible].title = "Slide " + (indice + 1) + " de " + slides.length;
+  }
+
+  /* -- render ------------------------------------------------------------ */
+
+  function render(indice, opciones) {
+    var config = opciones || {};
+    actual = acotar(indice);
+
+    mostrar(actual);
+
+    currentLabel.textContent = dosDigitos(actual + 1);
+    totalLabel.textContent = dosDigitos(slides.length);
+    progress.style.width = ((actual + 1) / slides.length) * 100 + "%";
+    history.replaceState(null, "", "#" + (actual + 1));
+
+    /* Cuando el cambio vino de la otra ventana no se reenvía, o rebota. */
+    if (config.avisar !== false) window.DeckSync.publicar(actual);
+
+    /* La siguiente se carga después de pintar la actual, para no competir. */
+    requestAnimationFrame(precargarSiguiente);
+  }
+
+  function siguiente() { if (actual < slides.length - 1) render(actual + 1); }
+  function anterior() { if (actual > 0) render(actual - 1); }
+
+  /* -- pantalla completa y escala ---------------------------------------- */
+
+  function alternarPantallaCompleta() {
+    if (!document.fullscreenElement) {
+      if (viewport.requestFullscreen) viewport.requestFullscreen();
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+
+  function encajar() {
+    var caja = viewport.getBoundingClientRect();
+    var escala = Math.min(caja.width / 1920, caja.height / 1080);
+    document.documentElement.style.setProperty("--scale", escala);
+  }
+
+  /* -- controles --------------------------------------------------------- */
+
+  function mostrarControles() {
+    document.body.classList.add("controls-visible");
+    clearTimeout(relojControles);
+    relojControles = setTimeout(function () {
+      document.body.classList.remove("controls-visible");
+    }, 2200);
+  }
+
+  document.querySelector("#prev").addEventListener("click", anterior);
+  document.querySelector("#next").addEventListener("click", siguiente);
+  document.querySelector("#hitPrev").addEventListener("click", anterior);
+  document.querySelector("#hitNext").addEventListener("click", siguiente);
+  document.querySelector("#fullscreen").addEventListener("click", alternarPantallaCompleta);
+
+  document.addEventListener("keydown", function (evento) {
+    var tecla = evento.key;
+
+    if (["ArrowRight", "ArrowDown", "PageDown", " "].indexOf(tecla) !== -1) {
+      evento.preventDefault();
+      siguiente();
+    } else if (["ArrowLeft", "ArrowUp", "PageUp"].indexOf(tecla) !== -1) {
+      evento.preventDefault();
+      anterior();
+    } else if (tecla === "Home") {
+      evento.preventDefault();
+      render(0);
+    } else if (tecla === "End") {
+      evento.preventDefault();
+      render(slides.length - 1);
+    } else if (tecla.toLowerCase() === "f") {
+      evento.preventDefault();
+      alternarPantallaCompleta();
+    }
+
+    mostrarControles();
+  });
+
+  window.addEventListener("hashchange", function () {
+    render(indiceDelHash());
+  });
+  window.addEventListener("resize", encajar);
+  document.addEventListener("mousemove", mostrarControles);
+  document.addEventListener("click", mostrarControles);
+  new ResizeObserver(encajar).observe(viewport);
+
+  /* -- arranque ---------------------------------------------------------- */
+
+  window.DeckSync.iniciar({
+    slug: window.DECK.slug,
+    al: function (indice) { render(indice, { avisar: false }); }
+  });
+
+  encajar();
+  render(indiceDelHash(), { avisar: false });
+  mostrarControles();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE COMPARACIÓN — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  Dos columnas enfrentadas con un borde negro en el medio. Es la
+  estructura de los ejercicios de "cazá el mito": lo que la gente
+  cree a la izquierda, lo que pasa de verdad a la derecha.
+
+  Sirve igual para antes/después, o para dos opciones enfrentadas.
+
+  CÓMO USARLO
+  1. Doble click para verlo en el navegador.
+  2. Para editar, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Cambiá solo lo que dice "EDITÁ ACÁ".
+
+  LA COLUMNA IZQUIERDA ES ROSA (lo falso, lo viejo) Y LA DERECHA LIME
+  (lo correcto, lo nuevo). Es el mismo código de color que usa el
+  sitio para corregir un ejercicio: no lo inviertas.
+
+  NO TOQUES el bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Slide de comparación</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .barra {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 60px;
+    background: var(--lime); border-bottom: 2px solid var(--black);
+    flex-shrink: 0;
+  }
+  .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
+  .barra .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; }
+
+  .cuerpo { flex: 1; padding: 60px 90px 70px; display: flex; flex-direction: column; }
+
+  .kicker { font-family: var(--fuente-pixel); font-size: 22px; color: var(--electric); margin-bottom: 24px; }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 92px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1400px;
+    text-wrap: balance;
+    margin-bottom: 46px;
+  }
+
+  /* Las dos columnas. El gap de 3px sobre fondo negro ES el borde del medio. */
+  .duelo {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    background: var(--black);
+    border: 3px solid var(--black);
+  }
+
+  .lado { background: var(--paper); display: flex; flex-direction: column; }
+
+  .lado-cabecera {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 16px 30px;
+    border-bottom: 3px solid var(--black);
+    font-family: var(--fuente-pixel);
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .lado.falso .lado-cabecera { background: var(--pink); }
+  .lado.cierto .lado-cabecera { background: var(--lime); }
+  .lado-cabecera b { font-family: var(--fuente-terminal); font-size: 34px; font-weight: 400; line-height: 0.8; }
+
+  .lado-cuerpo { padding: 40px 40px 44px; display: flex; flex-direction: column; }
+
+  .lado h3 {
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin-bottom: 24px;
+  }
+  .lado p {
+    font-family: var(--fuente-mono);
+    font-size: 23px;
+    line-height: 1.65;
+    max-width: 46ch;
+  }
+
+  .lado ul { list-style: none; margin-top: auto; padding-top: 30px; display: grid; gap: 10px; }
+  .lado li {
+    font-family: var(--fuente-mono);
+    font-size: 20px;
+    line-height: 1.45;
+    padding: 14px 18px;
+    border: 2px solid var(--black);
+    background: var(--cream);
+  }
+
+  .pie { display: flex; justify-content: space-between; align-items: center; margin-top: 34px; }
+  .pie .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--black); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lienzo">
+
+  <div class="barra">
+    <!-- EDITÁ ACÁ: nombre de la marca -->
+    <div class="logo">ANFIBIA</div>
+    <!-- EDITÁ ACÁ: número de slide -->
+    <div class="num">06 / 52</div>
+  </div>
+
+  <div class="cuerpo">
+    <!-- EDITÁ ACÁ: el kicker -->
+    <p class="kicker">C1 / ECOSISTEMA</p>
+
+    <!-- EDITÁ ACÁ: el título -->
+    <h2 class="titulo">Chat, Cowork y Code</h2>
+
+    <div class="duelo">
+      <div class="lado falso">
+        <div class="lado-cabecera"><span>CHAT</span><b>✕</b></div>
+        <div class="lado-cuerpo">
+          <h3>Conversar</h3>
+          <p>Escribís y recibís una respuesta dentro de la web.</p>
+          <ul>
+            <li>Familiar</li><li>No toca tu entorno</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lado cierto">
+        <div class="lado-cabecera"><span>COWORK → CODE</span><b>✓</b></div>
+        <div class="lado-cuerpo">
+          <h3>Hacer</h3>
+          <p>Cowork trabaja con tareas de oficina. Code puede operar sobre proyectos y archivos.</p>
+          <ul>
+            <li>Más autonomía</li><li>No exige saber programar</li><li>Cowork fue hecho con Code</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pie">
+      <!-- EDITÁ ACÁ: dato de pie -->
+      <div class="meta"></div>
+      <div class="firma"><i></i><i></i><i></i></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="ayuda">SLIDE DE COMPARACIÓN · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+
+</body>
+</html>

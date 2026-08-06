@@ -1,0 +1,157 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE TÍTULO — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  CÓMO USARLO
+  1. Abrí este archivo con doble click (se abre en tu navegador).
+  2. Para editarlo, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Buscá los comentarios que dicen "EDITÁ ACÁ" y cambiá SOLO ese texto.
+  4. Guardá y refrescá el navegador (F5).
+  5. Para exportar la imagen, mirá el README.md de este repo.
+
+  NO TOQUES el bloque <style>: ahí vive la identidad visual.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Slide de título</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+
+    /* Acento de esta pieza. Valores posibles: var(--lime) var(--electric) var(--pink) */
+    --acento: var(--lime);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  /* ——— El lienzo: 1920×1080 exactos ——— */
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+    color: var(--cream);
+    padding: 90px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Letra gigante de fondo */
+  .marca-agua {
+    position: absolute;
+    top: 50%;
+    right: -60px;
+    transform: translateY(-50%);
+    font-family: var(--fuente-pixel);
+    font-size: 720px;
+    line-height: 1;
+    color: var(--electric);
+    opacity: 0.12;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .fila { display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; z-index: 1; }
+
+  .logo { font-family: var(--fuente-pixel); font-size: 38px; color: var(--cream); }
+
+  .pill {
+    font-family: var(--fuente-pixel);
+    font-size: 22px;
+    padding: 14px 26px;
+    background: var(--pink);
+    border: 3px solid var(--acento);
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  .centro { position: relative; z-index: 1; }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 168px;
+    line-height: 0.85;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    color: var(--acento);
+    max-width: 1560px;
+    text-wrap: balance;
+  }
+  .titulo span { color: var(--cream); }   /* palabra resaltada */
+
+  .bajada {
+    font-family: var(--fuente-mono);
+    font-size: 27px;
+    line-height: 1.7;
+    color: var(--cream-mute);
+    max-width: 1080px;
+    margin-top: 46px;
+  }
+
+  .meta { font-family: var(--fuente-terminal); font-size: 34px; text-transform: uppercase; color: var(--gray); }
+
+  .firma { display: flex; gap: 12px; }
+  .firma i { width: 20px; height: 20px; border: 2px solid var(--gray); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  /* Barra de ayuda: no se exporta ni se imprime */
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="lienzo">
+  <div class="marca-agua">A</div>
+  <div class="fila"><div class="logo">ANFIBIA</div><div class="pill">TALLER</div></div>
+  <div class="centro">
+    <h1 class="titulo">Cómo entrenar <span>a tu IA</span></h1>
+    <p class="bajada">Un recorrido para quienes trabajan con la palabra, la imagen o la idea: entender, probar y conservar criterio.</p>
+  </div>
+  <div class="fila"><div class="meta"></div><div class="firma"><i></i><i></i><i></i></div></div>
+</div>
+<div class="ayuda">SLIDE DE TÍTULO · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+</body>
+</html>

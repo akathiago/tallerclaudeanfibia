@@ -1,0 +1,259 @@
+/*
+  ══════════════════════════════════════════════════════════════════
+  TALLER IA ANFIBIA · site.css
+  Layout compartido: navbar + estructura de página. Los tokens de
+  color/tipografía viven en tokens.css (copiado de paranoia-design,
+  NO TOCAR). Este archivo es lo único que se edita para el layout.
+  ══════════════════════════════════════════════════════════════════
+*/
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--black);
+  font-family: var(--fuente-mono);
+  display: flex;
+  flex-direction: column;
+}
+
+::selection { background: var(--lime); color: var(--black); }
+
+/* ═══════════════════ NAVBAR ═══════════════════ */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 22px 60px;
+  background: var(--lime);
+  border-bottom: var(--borde) solid var(--black);
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-xl);
+}
+
+.navbar nav {
+  display: flex;
+  gap: 36px;
+}
+
+.navbar nav a {
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-lg);
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 2px;
+}
+
+.navbar nav a:hover { border-bottom-color: var(--black); }
+
+.navbar nav a[aria-current="page"] {
+  border-bottom-color: var(--electric);
+  color: var(--electric);
+}
+
+/* ═══════════════════ CONTENEDOR GENERAL ═══════════════════ */
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: var(--esp-6) var(--margen-pagina);
+}
+
+.pagina-titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-titulo);
+  font-size: var(--titulo-2xl);
+  line-height: var(--interlineado-titulo-apretado);
+  letter-spacing: var(--tracking-titulo);
+  text-transform: uppercase;
+  text-wrap: balance;
+  margin-bottom: var(--esp-3);
+}
+
+.pagina-bajada {
+  font-family: var(--fuente-lectura);
+  font-size: var(--cuerpo-lead);
+  line-height: var(--interlineado-lectura);
+  max-width: var(--ancho-lectura);
+  color: var(--black);
+  margin-bottom: var(--esp-7);
+}
+
+/* ═══════════════════ PÁGINA SLIDES ═══════════════════ */
+
+.visor {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: var(--borde-grueso) solid var(--black);
+  box-shadow: var(--sombra-lg);
+  background: #2a2a28;
+}
+
+.visor iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.visor-ayuda {
+  margin-top: var(--esp-3);
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-md);
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+/* ═══════════════════ PÁGINA INSTALACIÓN ═══════════════════ */
+
+.paso-instalacion {
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  box-shadow: var(--sombra-md);
+  padding: var(--esp-5);
+  margin-bottom: var(--esp-6);
+}
+
+.paso-instalacion .etiqueta {
+  display: inline-block;
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-md);
+  padding: 6px 14px;
+  background: var(--electric);
+  color: var(--cream);
+  border: var(--borde) solid var(--black);
+  margin-bottom: var(--esp-3);
+}
+
+.paso-instalacion .etiqueta.opcional { background: var(--pink); }
+.paso-instalacion .etiqueta.solo-mac { background: var(--black); color: var(--lime); }
+
+.paso-instalacion h2 {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-medio);
+  font-size: var(--titulo-lg);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-titulo);
+  margin-bottom: var(--esp-2);
+}
+
+.paso-instalacion p {
+  font-family: var(--fuente-lectura);
+  font-size: var(--cuerpo-xl);
+  line-height: var(--interlineado-lectura);
+  max-width: var(--medida-texto);
+  margin-bottom: var(--esp-3);
+}
+
+.paso-instalacion .sistemas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--esp-4);
+  margin-top: var(--esp-4);
+}
+
+.paso-instalacion .sistema h3 {
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-lg);
+  margin-bottom: var(--esp-2);
+}
+
+.paso-instalacion ol,
+.paso-instalacion ul {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-md);
+  line-height: var(--interlineado-cuerpo);
+  padding-left: 1.4em;
+}
+
+.paso-instalacion li + li { margin-top: 6px; }
+
+.paso-instalacion code {
+  font-family: var(--fuente-mono);
+  background: var(--black);
+  color: var(--lime);
+  padding: 2px 8px;
+  font-size: 0.92em;
+  word-break: break-word;
+}
+
+.paso-instalacion a.link-codigo {
+  font-family: var(--fuente-mono);
+  background: var(--black);
+  color: var(--lime);
+  padding: 2px 8px;
+  font-size: 0.92em;
+  word-break: break-word;
+  text-decoration: underline;
+  text-decoration-color: var(--lime);
+}
+.paso-instalacion a.link-codigo:hover { color: var(--cream); }
+
+.paso-instalacion .verificar {
+  margin-top: var(--esp-3);
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-md);
+  color: var(--gray);
+}
+
+/* ═══════════════════ PÁGINA RECURSOS ═══════════════════ */
+
+.lista-recursos {
+  list-style: none;
+  display: grid;
+  gap: var(--esp-3);
+}
+
+.lista-recursos li {
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  padding: var(--esp-4);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-lg);
+  line-height: var(--interlineado-cuerpo);
+}
+
+.lista-recursos a {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-subtitulo);
+  font-size: var(--titulo-sm);
+  text-transform: uppercase;
+  color: var(--electric);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.lista-recursos a:hover { text-decoration: underline; }
+
+/* ═══════════════════ PIE ═══════════════════ */
+
+footer {
+  border-top: var(--borde) solid var(--black);
+  padding: var(--esp-4) var(--margen-pagina);
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-sm);
+  text-transform: uppercase;
+  color: var(--gray);
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .navbar { padding: 18px 24px; }
+  main { padding: var(--esp-5) var(--margen-pagina-movil); }
+  .pagina-titulo { font-size: var(--titulo-xl); }
+}

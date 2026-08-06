@@ -1,0 +1,173 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE CIERRE — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  El slide final: fondo lime con textura de ruido, caja de papel con
+  sombra dura, y un "botón" con la acción que querés que la gente haga.
+
+  CÓMO USARLO
+  1. Doble click para verlo en el navegador.
+  2. Para editar, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Cambiá solo lo que dice "EDITÁ ACÁ".
+
+  NO TOQUES el bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Slide de cierre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+
+    --textura-ruido: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+
+    /* Color del fondo de la pieza: var(--lime) var(--pink) var(--electric) */
+    --fondo-cinta: var(--lime);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--fondo-cinta);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Textura de ruido sobre el color pleno */
+  .lienzo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--textura-ruido);
+    opacity: 0.14;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .cuerpo {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    padding: 90px 120px;
+  }
+
+  .caja {
+    background: var(--paper);
+    border: 4px solid var(--black);
+    box-shadow: 24px 24px 0 var(--black);
+    padding: 70px 80px 76px;
+    max-width: 1440px;
+    width: 100%;
+  }
+
+  .kicker { font-family: var(--fuente-pixel); font-size: 22px; margin-bottom: 30px; }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 124px;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin-bottom: 34px;
+  }
+
+  .texto {
+    font-family: var(--fuente-mono);
+    font-size: 27px;
+    line-height: 1.7;
+    max-width: 62ch;
+    margin-bottom: 46px;
+  }
+
+  /* El "botón": no es clickeable, es la acción que querés comunicar */
+  .accion {
+    display: inline-block;
+    font-family: var(--fuente-pixel);
+    font-size: 26px;
+    text-transform: uppercase;
+    background: var(--black);
+    color: var(--lime);
+    border: 3px solid var(--black);
+    padding: 24px 34px;
+  }
+
+  .barra-pie {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 60px;
+    background: var(--black);
+    color: var(--lime);
+    font-family: var(--fuente-terminal);
+    font-size: 30px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .firma { display: flex; gap: 12px; }
+  .firma i { width: 20px; height: 20px; border: 2px solid var(--gray); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="lienzo">
+  <div class="cuerpo"><div class="caja"><p class="kicker">APERTURA</p><h2 class="titulo">Terminar con algo que funcione</h2><p class="texto">La meta es construir. Construir como una actividad didáctica.</p><span class="accion">Salís con una URL propia</span></div></div>
+  <div class="barra-pie"><span>ANFIBIA</span><span></span><div class="firma"><i></i><i></i><i></i></div></div>
+</div>
+<div class="ayuda">SLIDE DE CIERRE · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+</body>
+</html>

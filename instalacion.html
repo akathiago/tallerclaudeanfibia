@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instalación — Cómo entrenar a tu IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ANFIBIA</div>
+    <nav>
+      <a href="index.html">Slides</a>
+      <a href="instalacion.html" aria-current="page">Instalación</a>
+      <a href="recursos.html">Recursos</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="pagina-titulo">Instalación</h1>
+    <p class="pagina-bajada">Todo lo que hace falta instalar antes del taller, en orden.</p>
+
+    <!-- EDITÁ ACÁ: cada .paso-instalacion es una herramienta. Para agregar
+         o sacar una, copiá/borrá el bloque completo. -->
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Imprescindible</span>
+      <h2>Claude Desktop + plan Pro</h2>
+      <p>La app de escritorio donde vive Claude Code. El plan Pro cuesta USD 20 por mes y cubre Chat, Cowork y Code.</p>
+      <ol>
+        <li>Entrá a <a class="link-codigo" href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a> y descargá la app para tu sistema (Mac o Windows).</li>
+        <li>Instalala y abrila. Iniciá sesión con tu cuenta, o creá una si no tenés.</li>
+        <li>Andá a <strong>Configuración → Suscripción</strong> y activá el plan <strong>Pro</strong>.</li>
+      </ol>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta solo-mac">Solo Mac</span>
+      <h2>Homebrew</h2>
+      <p>El instalador de línea de comandos de Mac. Resuelve versiones y dependencias por vos: con Homebrew instalado, todo lo que sigue se instala con una sola línea. En Windows no hace falta, se saltea este paso.</p>
+      <ol>
+        <li>Entrá a <a class="link-codigo" href="https://brew.sh" target="_blank" rel="noopener">brew.sh</a> (ahí está el mismo comando, por si cambia).</li>
+        <li>Abrí la Terminal (<code>Cmd + Espacio</code>, escribí "terminal").</li>
+        <li>Pegá esta línea y apretá Enter:<br><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></li>
+        <li>Seguí las instrucciones en pantalla. Puede pedir la contraseña de tu Mac.</li>
+      </ol>
+      <p class="verificar">Verificar: <code>brew --version</code></p>
+    </section>
+
+    <section class="paso-instalacion">
+      <h2>Git</h2>
+      <p>El sistema de control de versiones. Hace falta para que Claude Code pueda guardar el historial de cambios de tu proyecto.</p>
+      <div class="sistemas">
+        <div class="sistema">
+          <h3>Mac</h3>
+          <ol>
+            <li>Con Homebrew instalado: <code>brew install git</code></li>
+          </ol>
+        </div>
+        <div class="sistema">
+          <h3>Windows</h3>
+          <ol>
+            <li>Descargalo de <a class="link-codigo" href="https://git-scm.com/download/win" target="_blank" rel="noopener">git-scm.com/download/win</a></li>
+            <li>Instalalo dejando todas las opciones por defecto.</li>
+          </ol>
+        </div>
+      </div>
+      <p class="verificar">Verificar: <code>git --version</code></p>
+    </section>
+
+    <section class="paso-instalacion">
+      <h2>GitHub</h2>
+      <p>No es un programa que se instale: es la cuenta donde tu código queda guardado y compartible.</p>
+      <ol>
+        <li>Creá una cuenta gratis en <a class="link-codigo" href="https://github.com" target="_blank" rel="noopener">github.com</a>.</li>
+        <li>(Opcional pero recomendado) Configurá Git con tu identidad:<br>
+          <code>git config --global user.name "Tu nombre"</code><br>
+          <code>git config --global user.email "tu@mail.com"</code>
+        </li>
+      </ol>
+    </section>
+
+    <section class="paso-instalacion">
+      <h2>Node.js</h2>
+      <p>El entorno que le permite a Claude Code correr scripts y levantar servidores locales fuera del navegador.</p>
+      <div class="sistemas">
+        <div class="sistema">
+          <h3>Mac</h3>
+          <ol>
+            <li><code>brew install node</code></li>
+          </ol>
+        </div>
+        <div class="sistema">
+          <h3>Windows</h3>
+          <ol>
+            <li>Descargá el instalador LTS de <a class="link-codigo" href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a></li>
+            <li>Instalalo con las opciones por defecto.</li>
+          </ol>
+        </div>
+      </div>
+      <p class="verificar">Verificar: <code>node --version</code></p>
+    </section>
+
+    <section class="paso-instalacion">
+      <h2>VS Code</h2>
+      <p>El editor donde vas a ver tus archivos, tu código y la terminal en un mismo lugar.</p>
+      <ol>
+        <li>Descargalo de <a class="link-codigo" href="https://code.visualstudio.com" target="_blank" rel="noopener">code.visualstudio.com</a></li>
+      </ol>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta opcional">Opcional</span>
+      <h2>Python</h2>
+      <p>Solo si tu trabajo implica manejar datos — planillas, bases, análisis, gráficos. No es requisito para el resto del taller.</p>
+      <div class="sistemas">
+        <div class="sistema">
+          <h3>Mac</h3>
+          <ol>
+            <li><code>brew install python</code></li>
+          </ol>
+        </div>
+        <div class="sistema">
+          <h3>Windows</h3>
+          <ol>
+            <li>Descargalo de <a class="link-codigo" href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a></li>
+            <li>Durante la instalación, marcá la casilla <strong>"Add Python to PATH"</strong>.</li>
+          </ol>
+        </div>
+      </div>
+      <p class="verificar">Verificar: <code>python3 --version</code> (Mac) / <code>python --version</code> (Windows)</p>
+    </section>
+  </main>
+
+  <footer>Anfibia · Taller Cómo entrenar a tu IA</footer>
+</body>
+</html>

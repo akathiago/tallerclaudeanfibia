@@ -1,0 +1,230 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE DATOS — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  Para cuando el argumento es una cifra. Dos o tres números grandes,
+  separados por bordes duros.
+
+  CÓMO USARLO
+  1. Doble click para verlo en el navegador.
+  2. Para editar, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Cambiá solo lo que dice "EDITÁ ACÁ".
+
+  SI QUERÉS DOS DATOS EN VEZ DE TRES: borrá uno de los bloques
+  <div class="dato"> … </div> entero. Los que queden se reparten el
+  ancho solos, no hay que tocar nada más.
+
+  OJO CON LOS NÚMEROS: si son largos (más de 5 caracteres) achicá
+  .dato strong de 128px a 96px en el <style>.
+
+  NO TOQUES el resto del <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Slide de datos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+
+    /* Color de los números: var(--electric) var(--pink) var(--black) */
+    --acento: var(--electric);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .barra {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 60px;
+    background: var(--lime); border-bottom: 2px solid var(--black);
+    flex-shrink: 0;
+  }
+  .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
+  .barra .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; }
+
+  .cuerpo { flex: 1; padding: 66px 90px 76px; display: flex; flex-direction: column; }
+
+  .kicker { font-family: var(--fuente-pixel); font-size: 22px; color: var(--electric); margin-bottom: 26px; }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 104px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1400px;
+    text-wrap: balance;
+    margin-bottom: 56px;
+  }
+
+  /* La caja de datos: los bordes negros son los separadores.
+     flex: 1 hace que ocupe todo el alto que sobra, con dos datos o con tres. */
+  .datos {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 3px;
+    background: var(--black);
+    border: 3px solid var(--black);
+  }
+
+  .dato {
+    background: var(--paper);
+    padding: 54px 40px 48px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dato strong {
+    display: block;
+    font-family: var(--fuente-pixel);
+    font-size: 128px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--acento);
+    margin-bottom: 26px;
+  }
+  .dato span {
+    display: block;
+    font-family: var(--fuente-terminal);
+    font-size: 34px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .dato em {
+    display: block;
+    font-family: var(--fuente-mono);
+    font-size: 20px;
+    font-style: normal;
+    line-height: 1.5;
+    color: var(--black);
+    margin-top: 20px;
+  }
+
+  .fuente {
+    font-family: var(--fuente-mono);
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--gray);
+    margin-top: 34px;
+    max-width: 66ch;
+  }
+
+  .pie { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; }
+  .pie .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--black); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lienzo">
+
+  <div class="barra">
+    <!-- EDITÁ ACÁ: nombre de la marca -->
+    <div class="logo">ANFIBIA</div>
+    <!-- EDITÁ ACÁ: número de slide -->
+    <div class="num">20 / 52</div>
+  </div>
+
+  <div class="cuerpo">
+    <!-- EDITÁ ACÁ: el kicker -->
+    <p class="kicker">CONTEXTO Y TOKENS</p>
+
+    <!-- EDITÁ ACÁ: el título -->
+    <h2 class="titulo">Qué significa el 13:1</h2>
+
+    <div class="datos">
+      <div class="dato">
+        <strong>13:1</strong>
+        <span>subsidio de tokens</span>
+        <em>Usamos esta tecnología muy por debajo de su costo real.</em>
+      </div>
+
+      <div class="dato">
+        <strong>HOY</strong>
+        <span>pagás una fracción</span>
+        <em>Los precios actuales son artificiales y pueden cambiar.</em>
+      </div>
+
+      <div class="dato">
+        <strong>LUEGO</strong>
+        <span>cada token cuenta</span>
+        <em>La eficiencia también mejora la calidad del resultado.</em>
+      </div>
+
+    </div>
+
+    <!-- EDITÁ ACÁ: de dónde salen los números. Si no hace falta, borrá esta línea. -->
+    <p class="fuente">El precio cambia; la lógica económica, no.</p>
+
+    <div class="pie">
+      <!-- EDITÁ ACÁ: dato de pie -->
+      <div class="meta"></div>
+      <div class="firma"><i></i><i></i><i></i></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="ayuda">SLIDE DE DATOS · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+
+</body>
+</html>
