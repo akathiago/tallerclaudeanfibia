@@ -1,0 +1,9 @@
+# Fin de línea: el repo guarda siempre LF, sin importar la máquina. Sin esto,
+# alguien clonando en Windows genera diffs de CRLF en archivos que no tocó.
+* text=auto eol=lf
+
+# Binarios: que Git no intente normalizarlos.
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.ico binary
