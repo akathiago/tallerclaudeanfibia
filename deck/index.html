@@ -197,11 +197,14 @@
     outline: 0;
   }
 
+  /* flex y no grid: con grid, el número, la barra y el total son tres
+     grid items y se apilan en tres filas. Tiene que quedar en una línea. */
   .counter {
     min-width: 118px;
     padding: 0 16px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-right: 1px solid var(--cream);
     font-family: "Silkscreen", "Courier New", monospace;
     font-size: 12px;

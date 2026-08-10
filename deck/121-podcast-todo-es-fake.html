@@ -1,0 +1,229 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE VIDEO — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  Para recomendar un video. Una imagen del video a la izquierda con
+  el botón de play encima, y a la derecha de qué se trata y dónde
+  encontrarlo.
+
+  OJO: una slide es una imagen quieta. Acá NO se reproduce nada. Esto
+  sirve para decir "miren esto después", con la dirección bien grande
+  o un QR. Si querés reproducirlo en vivo, abrí el video aparte.
+
+  CÓMO PONER LA MINIATURA
+  1. Bajate la miniatura del video (en YouTube: botón derecho sobre
+     el video → "Copiar URL de la imagen", o una captura del momento
+     que quieras).
+  2. Guardala en la MISMA carpeta que este archivo.
+  3. Buscá donde dice src="…" y poné el nombre de tu archivo.
+
+  EL DOMINIO DEL EJEMPLO ES UN PLACEHOLDER: cambialo por el tuyo.
+
+  CÓMO PONER UN QR (opcional)
+  Generá el QR en cualquier página gratis, guardá el PNG en esta
+  carpeta y reemplazá el src del bloque que dice QR. Si no querés QR,
+  borrá ese bloque entero: queda la dirección sola, más grande.
+
+  Que quede lindo no alcanza: ANTES DE PROYECTARLO, escaneá el QR con
+  tu propio teléfono. Un QR que no abre nada es peor que no ponerlo.
+  Si lo generás con colores, dejá el fondo claro y los cuadraditos
+  oscuros; al revés muchos teléfonos no lo leen.
+
+  SOBRE EL CÍRCULO DEL PLAY: es la única forma redondeada de todo el
+  sistema, y es a propósito — está copiada del ícono de play del
+  sitio. No la conviertas en un cuadrado ni la saques.
+
+  NO TOQUES el bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Slide de video</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+
+    --acento: var(--lime);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .barra {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 60px;
+    background: var(--lime); border-bottom: 2px solid var(--black);
+    flex-shrink: 0;
+  }
+  .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
+  .barra .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; }
+
+  .cuerpo { flex: 1; padding: 56px 80px 60px; display: grid; grid-template-columns: 1fr 660px; gap: 60px; align-items: start; }
+
+  /* El marco del video */
+  .marco { position: relative; aspect-ratio: 16 / 9; border: 4px solid var(--black); background: var(--black); overflow: hidden; }
+  .marco img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* El botón de play: el único círculo del sistema. Va así a propósito. */
+  .play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px; height: 150px;
+    background: var(--acento);
+    border: 4px solid var(--black);
+    border-radius: 50%;
+  }
+  .play::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 56%;
+    transform: translate(-50%, -50%);
+    border-left: 44px solid var(--black);
+    border-top: 28px solid transparent;
+    border-bottom: 28px solid transparent;
+  }
+
+  .duracion {
+    position: absolute;
+    right: 22px; bottom: 22px;
+    padding: 10px 16px;
+    background: var(--black);
+    color: var(--cream);
+    font-family: var(--fuente-pixel);
+    font-size: 20px;
+  }
+
+  .ficha { display: flex; flex-direction: column; height: 100%; }
+
+  .kicker { font-family: var(--fuente-pixel); font-size: 20px; color: var(--electric); margin-bottom: 20px; }
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 76px;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin-bottom: 22px;
+  }
+  .canal { font-family: var(--fuente-terminal); font-size: 32px; text-transform: uppercase; color: var(--gray); margin-bottom: 26px; }
+  .descripcion { font-family: var(--fuente-mono); font-size: 23px; line-height: 1.6; max-width: 46ch; }
+
+  /* Dónde encontrarlo */
+  .donde {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 26px;
+    align-items: center;
+    padding: 26px 30px;
+    border: 3px solid var(--black);
+    background: var(--paper);
+  }
+  .donde span { display: block; font-family: var(--fuente-pixel); font-size: 18px; margin-bottom: 12px; }
+  .donde strong { font-family: var(--fuente-terminal); font-size: 42px; font-weight: 400; text-transform: uppercase; line-height: 1; word-break: break-all; }
+  .qr { width: 150px; height: 150px; border: 3px solid var(--black); background: var(--cream); display: block; }
+
+  .pie { position: absolute; left: 80px; right: 80px; bottom: 22px; display: flex; justify-content: space-between; align-items: center; }
+  .pie .meta { font-family: var(--fuente-terminal); font-size: 26px; text-transform: uppercase; color: var(--gray); }
+
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--black); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lienzo">
+
+  <div class="barra"><div class="logo">ANFIBIA</div><div class="num">11 / 58</div></div>
+
+  <div class="cuerpo">
+
+    <div class="marco">
+      <img
+        src="video-todo-es-fake.jpg"
+        alt="Los dos conductores de Todo es Fake delante de un póster en blanco y negro con los rostros de los fundadores de OpenAI y la palabra OpenAI en grande.">
+      <div class="play"></div>
+    </div>
+
+    <div class="ficha">
+      <p class="kicker">FRENTE AL RUIDO</p>
+
+      <h2 class="titulo">La historia real de los fundadores de la IA</h2>
+
+      <p class="canal">Todo es Fake</p>
+
+      <p class="descripcion">En mayo de 2015, Sam Altman le mandó un mail a Elon Musk. Ese mail fue el principio de todo.<br><br>Los Fabricantes: 5 episodios sobre los hombres que prometieron construir IA para el bien de la humanidad y terminaron compitiendo en vivo por el control del futuro.</p>
+
+      <div class="donde">
+        <div>
+          <span>MIRALO DESPUÉS</span>
+          <strong>youtu.be/Ye6yMpbtEGg</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pie"><div class="meta"></div><div class="firma"><i></i><i></i><i></i></div></div>
+
+</div>
+
+<div class="ayuda">SLIDE DE VIDEO · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+
+</body>
+</html>

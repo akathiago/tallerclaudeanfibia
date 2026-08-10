@@ -1,0 +1,228 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE RECURSOS — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  Tres o cuatro links con etiqueta, título y la flecha ↗. Es la
+  tarjeta de recurso del sitio. Para cerrar una clase con adónde
+  seguir.
+
+  CÓMO USARLO
+  1. Doble click para verlo en el navegador.
+  2. Para editar, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Cambiá solo lo que dice "EDITÁ ACÁ".
+
+  EL DOMINIO DE LOS EJEMPLOS ES UN PLACEHOLDER: el de PARANOIA todavía
+  no está definido. Cambialo por el que uses.
+
+  ESCRIBÍ LA URL COMPLETA Y CORTA. Nadie tipea una dirección de
+  ochenta caracteres desde una pantalla: si el link es largo, usá
+  un acortador o dejá solo el dominio y el camino.
+
+  ENTRAN 4 RECURSOS. Con 3 se ven más grandes, también funciona.
+
+  NO ES UNA PUBLICIDAD: los recursos gratuitos del sitio no se
+  presentan como llamados de venta. Si estás poniendo cuatro links
+  a cosas que vendés, esta no es la slide.
+
+  NO TOQUES el bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Slide de recursos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+
+    /* Color de la sombra de las tarjetas: var(--electric) var(--lime) var(--pink) */
+    --acento: var(--electric);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .barra {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 60px;
+    background: var(--lime); border-bottom: 2px solid var(--black);
+    flex-shrink: 0;
+  }
+  .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
+  .barra .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; }
+
+  .cuerpo { flex: 1; padding: 52px 90px 58px; display: flex; flex-direction: column; }
+
+  .kicker { font-family: var(--fuente-pixel); font-size: 22px; color: var(--electric); margin-bottom: 22px; }
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 88px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1400px;
+    text-wrap: balance;
+    margin-bottom: 44px;
+  }
+
+  .lista { flex: 1; display: grid; gap: 26px; align-content: start; }
+
+  /* La tarjeta de recurso, con la sombra dura que en el sitio aparece al pasar el mouse */
+  .recurso {
+    display: grid;
+    grid-template-columns: 190px 1fr 70px;
+    gap: 30px;
+    align-items: center;
+    padding: 28px 32px;
+    border: 3px solid var(--black);
+    background: var(--paper);
+    box-shadow: 10px 10px 0 var(--acento);
+  }
+  .recurso .etiqueta {
+    font-family: var(--fuente-pixel);
+    font-size: 19px;
+    color: var(--electric);
+    line-height: 1.4;
+  }
+  .recurso strong {
+    display: block;
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: 46px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .recurso p {
+    font-family: var(--fuente-mono);
+    font-size: 22px;
+    line-height: 1.55;
+    margin-top: 10px;
+    max-width: 90ch;
+  }
+  .recurso .url {
+    display: block;
+    font-family: var(--fuente-terminal);
+    font-size: 26px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 12px;
+  }
+  .recurso b { font-family: var(--fuente-terminal); font-size: 56px; font-weight: 400; text-align: right; line-height: 1; }
+
+  .pie { display: flex; justify-content: space-between; align-items: center; padding-top: 34px; }
+  .pie .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--black); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lienzo">
+
+  <div class="barra"><div class="logo">ANFIBIA</div><div class="num">45 / 58</div></div>
+
+  <div class="cuerpo">
+    <p class="kicker">SKILLS</p>
+
+    <h2 class="titulo">Skills que vale la pena tener</h2>
+
+    <div class="lista">
+
+      <div class="recurso">
+        <span class="etiqueta">NAVEGADOR</span>
+        <div>
+          <strong>agent-browser</strong>
+          <p>Maneja Chrome solo: entra a sitios, completa formularios y prueba lo que hiciste.</p>
+          <span class="url">agent-browser.dev</span>
+        </div>
+        <b>↗</b>
+      </div>
+
+      <div class="recurso">
+        <span class="etiqueta">DISEÑO</span>
+        <div>
+          <strong>frontend-design</strong>
+          <p>Interfaces con criterio visual, sin la cara genérica de lo hecho por máquina.</p>
+          <span class="url">~/.claude/skills/</span>
+        </div>
+        <b>↗</b>
+      </div>
+
+      <div class="recurso">
+        <span class="etiqueta">HACER LAS TUYAS</span>
+        <div>
+          <strong>skill-creator</strong>
+          <p>Una skill para escribir skills: te entrevista, arma la estructura y la prueba.</p>
+          <span class="url">~/.claude/skills/</span>
+        </div>
+        <b>↗</b>
+      </div>
+
+    </div>
+
+    <div class="pie">
+      <div class="meta"></div>
+      <div class="firma"><i></i><i></i><i></i></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="ayuda">SLIDE DE RECURSOS · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+
+</body>
+</html>
