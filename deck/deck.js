@@ -321,93 +321,86 @@ window.DECK = {
       "notas": "Tres skills concretas para llevarse instaladas. agent-browser es la más vistosa: mostrar en vivo que Claude abre Chrome y prueba lo que acaban de construir. frontend-design es la respuesta al miedo de que todo quede con cara de plantilla. skill-creator cierra el arco del bloque: primero usás skills ajenas, después escribís las tuyas."
     },
     {
-      "archivo": "123-skills-del-taller.html",
-      "titulo": "Las skills de este taller",
-      "kicker": "46 / SKILLS",
-      "parte": "CONVERTIR EXPERIENCIA EN PROCEDIMIENTOS",
-      "notas": "El catálogo propio: trece skills de proyecto agrupadas en cuatro familias. No leerlas todas en voz alta. La idea es que cada uno reconozca su caso en una de las cuatro cajas y sepa que hay una skill esperándolo. La asignación individual sale de la entrevista de la clase anterior."
-    },
-    {
       "archivo": "78-que-es-un-sub-agente.html",
       "titulo": "Subagentes",
-      "kicker": "47 / PROCEDIMIENTOS",
+      "kicker": "46 / PROCEDIMIENTOS",
       "parte": "CONVERTIR EXPERIENCIA EN PROCEDIMIENTOS",
       "notas": "Un subagente trabaja con un contexto separado y una misión acotada. Sirve cuando hay tareas independientes o cuando queremos una segunda mirada sin contaminar el hilo principal."
     },
     {
       "archivo": "124-que-es-un-mcp.html",
       "titulo": "Qué es un MCP",
-      "kicker": "48 / MCP",
+      "kicker": "47 / MCP",
       "parte": "CONECTAR CON OTRAS HERRAMIENTAS",
       "notas": "La distinción que importa: una skill es un procedimiento (qué hacer), un MCP es una conexión (con qué). Conviene decir que no hay un ranking oficial de los más usados: la lista de la caja son ejemplos frecuentes, no una estadística. Si hay tiempo, mostrar en vivo uno andando."
     },
     {
       "archivo": "118-que-instalar.html",
       "titulo": "Qué hay que instalar",
-      "kicker": "49 / INSTALACIÓN",
+      "kicker": "48 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
       "notas": "Lo único imprescindible es Claude Desktop con el plan Pro (USD 20/mes). Ahí vive Claude Code. Todo lo que sigue en este bloque se instala una vez y queda funcionando."
     },
     {
       "archivo": "113-que-es-la-terminal.html",
       "titulo": "Qué es la terminal",
-      "kicker": "50 / INSTALACIÓN",
+      "kicker": "49 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
       "notas": "El paso antes de Git: no hace falta memorizar comandos, se le pide en lenguaje normal y Claude Code los traduce. Ahí vive Claude Code mientras trabaja, por eso conviene perderle el miedo antes de seguir con Git, GitHub, Node y VS Code."
     },
     {
       "archivo": "120-que-es-homebrew.html",
       "titulo": "Qué es Homebrew",
-      "kicker": "51 / INSTALACIÓN",
+      "kicker": "50 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
       "notas": "Solo para Mac: el paso previo a instalar Git, Node y el resto con una línea en la terminal. En Windows no hace falta, los instaladores ya resuelven todo."
     },
     {
       "archivo": "98-que-es-git.html",
       "titulo": "Qué es Git",
-      "kicker": "52 / INSTALACIÓN",
+      "kicker": "51 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
       "notas": "Git es un sistema de control de versiones. Funciona en tu computadora y registra cómo cambia un conjunto de archivos. No es una nube ni hace una copia remota por sí solo: permite comparar, separar experimentos y volver atrás sin reconstruir todo a mano."
     },
     {
       "archivo": "99-que-es-github.html",
       "titulo": "Qué es GitHub",
-      "kicker": "53 / INSTALACIÓN",
+      "kicker": "52 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
       "notas": "Git y GitHub no son sinónimos. Git registra la historia; GitHub ofrece un lugar para compartirla y trabajar con otras personas. Podés usar Git sin GitHub, y hay otros servicios que alojan repositorios Git."
     },
     {
       "archivo": "100-que-es-nodejs.html",
       "titulo": "Qué es Node.js",
-      "kicker": "54 / INSTALACIÓN",
+      "kicker": "53 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
       "notas": "JavaScript nació asociado al navegador. Node.js es un entorno que permite ejecutarlo fuera del navegador, desde la computadora o un servidor. Por eso puede leer archivos, iniciar herramientas, levantar un servidor local o correr scripts. No es un lenguaje nuevo ni un framework: ejecuta JavaScript en otro entorno."
     },
     {
       "archivo": "101-que-es-vscode.html",
       "titulo": "Qué es VS Code",
-      "kicker": "55 / INSTALACIÓN",
+      "kicker": "54 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
       "notas": "Visual Studio Code es un editor. Reúne archivos, texto y terminal en una interfaz gráfica, y se puede ampliar con extensiones. No compila ni publica por sí solo: organiza herramientas que hacen esas tareas. Para este taller sirve como puente visible entre la carpeta y la terminal."
     },
     {
       "archivo": "119-opcional-python.html",
       "titulo": "Opcional: Python",
-      "kicker": "56 / INSTALACIÓN",
+      "kicker": "55 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
       "notas": "Solo si el trabajo implica manejar datos —planillas, bases, análisis—. No es requisito para el resto del taller."
     },
     {
       "archivo": "87-del-localhost-a-internet.html",
       "titulo": "Objetivo final",
-      "kicker": "57 / CONSTRUIR",
+      "kicker": "56 / CONSTRUIR",
       "parte": "CONSTRUIR ALGO PEQUEÑO",
       "notas": "Publicar no es lo mismo que terminar el archivo. El último control ocurre en el entorno donde otras personas lo van a usar."
     },
     {
       "archivo": "110-contacto.html",
       "titulo": "Cualquier consulta, escribime",
-      "kicker": "58 / CONTACTO",
+      "kicker": "57 / CONTACTO",
       "parte": "CONSTRUIR ALGO PEQUEÑO",
       "notas": "Cierre del recorrido. Queda la puerta abierta para dudas, inquietudes o preguntas técnicas de cualquier tipo, durante el taller o después."
     }
