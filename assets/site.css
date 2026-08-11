@@ -245,6 +245,504 @@ main {
   color: var(--gray);
 }
 
+/* ═══════════════════ PÁGINA SKILLS ═══════════════════ */
+
+/* La descarga es la única acción de la página, así que va en negro con el
+   botón lime: el mismo peso visual que el contacto. Sangra de borde a borde
+   dentro de main, no es un paso más de la lista. */
+.descarga {
+  background: var(--black);
+  color: var(--cream);
+  border: var(--borde-grueso) solid var(--black);
+  box-shadow: var(--sombra-lg);
+  padding: var(--esp-5);
+  margin-bottom: var(--esp-7);
+}
+
+.descarga .etiqueta {
+  display: block;
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-md);
+  color: var(--lime);
+  margin-bottom: var(--esp-3);
+}
+
+.descarga h2 {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-titulo);
+  font-size: var(--titulo-xl);
+  line-height: var(--interlineado-titulo-apretado);
+  letter-spacing: var(--tracking-titulo);
+  text-transform: uppercase;
+  text-wrap: balance;
+  margin-bottom: var(--esp-3);
+}
+
+.descarga p {
+  font-family: var(--fuente-lectura);
+  font-size: var(--cuerpo-lead);
+  line-height: var(--interlineado-lectura);
+  max-width: var(--ancho-lectura);
+  margin-bottom: var(--esp-4);
+}
+
+.descarga a.boton {
+  display: inline-block;
+  font-family: var(--fuente-mono);
+  font-weight: 700;
+  font-size: var(--cuerpo-xl);
+  color: var(--black);
+  background: var(--lime);
+  border: var(--borde) solid var(--lime);
+  padding: 14px 26px;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.descarga a.boton:hover { background: var(--cream); border-color: var(--cream); }
+
+.descarga .aclaracion {
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-md);
+  text-transform: uppercase;
+  color: var(--cream-mute);
+  margin: var(--esp-3) 0 0;
+}
+
+/* Corte entre bloques de una misma página: más chico que el título de página
+   y con aire arriba, para que se lea como "acá empieza otra cosa". */
+.seccion-titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-titulo);
+  font-size: var(--titulo-xl);
+  line-height: var(--interlineado-titulo-apretado);
+  letter-spacing: var(--tracking-titulo);
+  text-transform: uppercase;
+  text-wrap: balance;
+  border-top: var(--borde-corte) solid var(--black);
+  padding-top: var(--esp-5);
+  margin: var(--esp-8) 0 var(--esp-5);
+}
+
+/* Pantallazo escrito: lo que tiene que aparecerles en Claude Code. No es
+   código para copiar, es una captura hecha con texto — por eso no lleva el
+   fondo negro de <code> sino su propia caja. */
+.pantalla {
+  background: var(--black);
+  border: var(--borde) solid var(--black);
+  padding: var(--esp-4);
+  margin: var(--esp-3) 0;
+  overflow-x: auto;
+}
+
+.pantalla pre {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-md);
+  line-height: 1.8;
+  color: var(--lime);
+  white-space: pre;
+}
+
+.pantalla .apagado { color: var(--cream-mute); }
+
+/* Árbol de carpetas. Igual que .pantalla pero se lee como diagrama, no como
+   pantalla: va sobre papel para no competir con las cajas negras. */
+.arbol {
+  background: var(--paper);
+  border: var(--borde) solid var(--black);
+  padding: var(--esp-4);
+  margin: var(--esp-3) 0;
+  overflow-x: auto;
+}
+
+.arbol pre {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-md);
+  line-height: 1.7;
+  white-space: pre;
+}
+
+/* ═══════════════════ PÁGINA REFERENCIAS ═══════════════════ */
+
+/* Glosario visual: cada ficha muestra el elemento de verdad, dice cómo se
+   llama y da la frase para pedirlo. La muestra es un elemento real hecho con
+   los tokens del sitio, no una captura: si cambia la marca, cambia sola. */
+.glosario {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--esp-4);
+  margin-bottom: var(--esp-7);
+}
+
+.termino {
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  box-shadow: var(--sombra-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Zona de la muestra: fondo crema y borde punteado abajo para que se lea
+   "esto es el ejemplo", no parte del texto. */
+.termino .muestra {
+  background: var(--cream);
+  border-bottom: var(--borde) dashed var(--black);
+  padding: var(--esp-4);
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.termino .ficha { padding: var(--esp-3) var(--esp-4) var(--esp-4); }
+
+.termino h3 {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-subtitulo);
+  font-size: var(--titulo-md);
+  line-height: var(--interlineado-titulo-suelto);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-titulo);
+}
+
+.termino .alias {
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-md);
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: var(--esp-2);
+}
+
+.termino p {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+}
+
+.termino .pedilo {
+  margin-top: var(--esp-2);
+  padding-top: var(--esp-2);
+  border-top: var(--borde-fino) solid var(--gray);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+  color: var(--electric);
+}
+
+/* ——— Piezas de las muestras ———
+   Todas arrancan con .m- y viven solo acá adentro. Son maquetas: no hacen
+   nada al clickearlas, están para que se vea de qué se habla. */
+
+.m-barra {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--lime);
+  border: var(--borde) solid var(--black);
+  padding: 8px 10px;
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-sm);
+}
+.m-barra span { white-space: nowrap; }
+
+.m-caja {
+  background: var(--paper);
+  border: var(--borde) solid var(--black);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+  min-height: 34px;
+}
+.m-caja.alta { min-height: 74px; }
+.m-caja.negra { background: var(--black); color: var(--lime); }
+.m-caja.lime { background: var(--lime); }
+
+.m-boton {
+  font-family: var(--fuente-mono);
+  font-weight: 700;
+  font-size: var(--cuerpo-sm);
+  background: var(--black);
+  color: var(--lime);
+  border: var(--borde) solid var(--black);
+  padding: 10px 18px;
+}
+.m-boton.secundario { background: transparent; color: var(--black); }
+.m-boton.hover { background: var(--electric); color: var(--cream); }
+
+.m-etiqueta {
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-sm);
+  background: var(--pink);
+  border: var(--borde) solid var(--black);
+  padding: 5px 10px;
+}
+.m-etiqueta.b { background: var(--lime); }
+.m-etiqueta.c { background: var(--electric); color: var(--cream); }
+
+.m-avatar {
+  width: 46px;
+  height: 46px;
+  border: var(--borde) solid var(--black);
+  background: var(--electric);
+  color: var(--cream);
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-pila { width: 100%; display: grid; gap: 6px; }
+.m-fila { width: 100%; display: flex; gap: 6px; align-items: stretch; }
+.m-fila > * { flex: 1; }
+.m-grilla { width: 100%; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+
+.m-progreso {
+  width: 100%;
+  height: 22px;
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+}
+.m-progreso i { display: block; height: 100%; width: 62%; background: var(--lime); }
+
+.m-campo {
+  width: 100%;
+  border: var(--borde) solid var(--black);
+  background: var(--white);
+  padding: 8px 10px;
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-xs);
+  color: var(--gray);
+  text-align: left;
+}
+.m-campo.foco { border-color: var(--electric); box-shadow: 3px 3px 0 var(--electric); }
+
+.m-label {
+  width: 100%;
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-sm);
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.m-tilde {
+  width: 22px;
+  height: 22px;
+  border: var(--borde) solid var(--black);
+  background: var(--cream);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  flex: 0 0 auto;
+}
+.m-tilde.marcado { background: var(--lime); }
+.m-tilde.redondo { border-radius: 50%; }
+
+.m-switch {
+  width: 52px;
+  height: 26px;
+  border: var(--borde) solid var(--black);
+  background: var(--lime);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2px;
+  flex: 0 0 auto;
+}
+.m-switch i { display: block; width: 20px; height: 100%; background: var(--black); }
+
+.m-globito {
+  position: relative;
+  background: var(--black);
+  color: var(--lime);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-xs);
+  padding: 6px 10px;
+}
+.m-globito::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 16px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid var(--black);
+}
+
+.m-migas {
+  width: 100%;
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-xs);
+  color: var(--gray);
+  text-align: left;
+}
+.m-migas b { color: var(--black); }
+
+.m-paginas { display: flex; gap: 5px; }
+.m-paginas span {
+  width: 30px;
+  height: 30px;
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.m-paginas span.activa { background: var(--electric); color: var(--cream); }
+
+/* El espacio adentro y el espacio afuera son lo mismo dibujado distinto:
+   rosa punteado el margin, lime el padding. */
+.m-espacio {
+  border: var(--borde) dashed var(--pink);
+  padding: 14px;
+}
+.m-espacio > div {
+  border: var(--borde) solid var(--black);
+  background: var(--lime);
+  padding: 14px;
+}
+.m-espacio > div > span {
+  display: block;
+  background: var(--cream);
+  border: var(--borde) solid var(--black);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-xs);
+  padding: 6px;
+  text-align: center;
+}
+
+.m-nota {
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-sm);
+  text-transform: uppercase;
+  color: var(--gray);
+  width: 100%;
+  text-align: center;
+}
+
+/* ═══════════════════ PÁGINA CÓDIGO ═══════════════════ */
+
+/* Bloque de código de verdad, con su etiqueta de lenguaje arriba. Distinto de
+   .pantalla: aquello simula una terminal, esto muestra un archivo. */
+.codigo {
+  border: var(--borde) solid var(--black);
+  background: var(--black);
+  margin: var(--esp-3) 0 var(--esp-4);
+  box-shadow: var(--sombra-sm);
+}
+
+.codigo .archivo {
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-md);
+  background: var(--lime);
+  color: var(--black);
+  border-bottom: var(--borde) solid var(--black);
+  padding: 8px 14px;
+}
+
+.codigo pre {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: 1.75;
+  color: var(--cream);
+  padding: var(--esp-4);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.codigo .c { color: var(--gray); }        /* comentario */
+.codigo .t { color: var(--lime); }        /* etiqueta / selector */
+.codigo .v { color: var(--pink); }        /* valor / string */
+
+/* Las tres capas, una al lado de la otra. */
+.capas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--esp-4);
+  margin-bottom: var(--esp-7);
+}
+
+.capa {
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  box-shadow: var(--sombra-md);
+  padding: var(--esp-4);
+}
+
+.capa .sigla {
+  display: inline-block;
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-lg);
+  padding: 8px 14px;
+  border: var(--borde) solid var(--black);
+  margin-bottom: var(--esp-3);
+}
+.capa.html .sigla { background: var(--lime); }
+.capa.css .sigla { background: var(--pink); }
+.capa.js .sigla { background: var(--electric); color: var(--cream); }
+
+.capa h3 {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-subtitulo);
+  font-size: var(--titulo-md);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-titulo);
+  margin-bottom: var(--esp-2);
+}
+
+.capa p {
+  font-family: var(--fuente-lectura);
+  font-size: var(--cuerpo-lg);
+  line-height: var(--interlineado-lectura);
+}
+
+/* Anatomía: una línea de código despiezada con sus nombres debajo. */
+.anatomia {
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  padding: var(--esp-4);
+  margin: var(--esp-3) 0 var(--esp-4);
+  overflow-x: auto;
+}
+
+.anatomia .linea {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-lg);
+  white-space: nowrap;
+  margin-bottom: var(--esp-2);
+}
+
+.anatomia .parte {
+  border-bottom: 3px solid var(--electric);
+  padding-bottom: 2px;
+}
+.anatomia .parte.b { border-bottom-color: var(--pink); }
+.anatomia .parte.c { border-bottom-color: var(--gray); }
+
+.anatomia dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px var(--esp-3);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+}
+.anatomia dt { font-weight: 700; white-space: nowrap; }
+.anatomia dd { color: var(--gray); }
+
 /* ═══════════════════ PÁGINA RECURSOS ═══════════════════ */
 
 .lista-recursos {
@@ -344,7 +842,7 @@ footer {
 
 @media (max-width: 720px) {
   .navbar { padding: 18px 24px; gap: 18px; }
-  /* Con cinco ítems, el nav a --terminal-lg (2rem) y gap 36 no entra en un
+  /* Con seis ítems, el nav a --terminal-lg (2rem) y gap 36 no entra en un
      teléfono: desbordaba a lo ancho y arrastraba toda la página con él.
      Acá baja a 1.5rem con gaps más chicos y envuelve en dos renglones. */
   .navbar nav { gap: 20px; row-gap: 8px; }
@@ -353,4 +851,6 @@ footer {
   .pagina-titulo { font-size: var(--titulo-xl); }
   .contacto { padding: var(--esp-5) var(--margen-pagina-movil); }
   .contacto h2 { font-size: var(--titulo-lg); }
+  .descarga { padding: var(--esp-4); }
+  .descarga h2 { font-size: var(--titulo-lg); }
 }

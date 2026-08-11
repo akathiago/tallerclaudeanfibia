@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Código — Cómo entrenar a tu IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ANFIBIA</div>
+    <nav>
+      <a href="index.html">Slides</a>
+      <a href="instalacion.html">Instalación</a>
+      <a href="skills.html">Skills</a>
+      <a href="codigo.html" aria-current="page">Código</a>
+      <a href="referencias.html">Referencias</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="lecturas.html">Lecturas</a>
+      <a href="videos.html">Videos</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="pagina-titulo">Código</h1>
+    <p class="pagina-bajada">HTML, CSS y JavaScript explicados desde cero. No para que los escribas: para que puedas leer lo que hizo el agente y pedirle el cambio exacto.</p>
+
+    <section class="nota-por-que">
+      <h2>¿Para qué mirar esto si el agente lo escribe?</h2>
+      <p>Porque en algún momento vas a querer mover una cosa dos centímetros y no vas a saber si eso se pide "en el HTML" o "en el CSS". Saber cuál de los tres archivos manda sobre qué te ahorra la mitad de las vueltas.</p>
+      <p>Y porque cuando algo se rompe, poder abrir el archivo y reconocer qué estás mirando es la diferencia entre arreglarlo y volver a empezar de cero.</p>
+      <p>Con entender esta página alcanza. No hay que memorizar nada.</p>
+    </section>
+
+    <h2 class="seccion-titulo">Los tres, en una línea cada uno</h2>
+
+    <div class="capas">
+      <article class="capa html">
+        <span class="sigla">HTML</span>
+        <h3>Qué hay</h3>
+        <p>El contenido y su orden: los títulos, los párrafos, las fotos, los links. Si borrás el resto, esto sigue siendo una página legible.</p>
+      </article>
+      <article class="capa css">
+        <span class="sigla">CSS</span>
+        <h3>Cómo se ve</h3>
+        <p>Los colores, las tipografías, los tamaños y —sobre todo— dónde se ubica cada cosa. No es solo pintura: el acomodo también es CSS.</p>
+      </article>
+      <article class="capa js">
+        <span class="sigla">JS</span>
+        <h3>Qué pasa</h3>
+        <p>Lo que ocurre cuando alguien toca algo: se abre un menú, se filtra una lista, aparece un aviso. Sin JS la página se ve y se lee, pero no reacciona.</p>
+      </article>
+    </div>
+
+    <section class="paso-instalacion">
+      <h2>La analogía de siempre, y su límite</h2>
+      <p>Vas a escuchar mil veces que el HTML es el esqueleto, el CSS la ropa y el JS los músculos. Sirve para arrancar, pero tiene una trampa: te hace pensar que el CSS es decoración. No lo es. <strong>Que algo esté a la izquierda o abajo, que se acomode en el celular, que haya tres columnas o una: todo eso es CSS.</strong></p>
+      <p>Si pedís "mové esto al costado" y pensás que es HTML, vas a buscar en el archivo equivocado.</p>
+    </section>
+
+    <h2 class="seccion-titulo">HTML · qué hay</h2>
+
+    <section class="paso-instalacion">
+      <h2>Todo son etiquetas</h2>
+      <p>El HTML es texto común envuelto en <strong>etiquetas</strong>, que le dicen al navegador qué es cada pedazo. Una etiqueta abre, envuelve el contenido, y cierra.</p>
+
+      <div class="anatomia">
+        <p class="linea">&lt;<span class="parte">a</span> <span class="parte b">href="notas/butaca.html"</span>&gt;<span class="parte c">Leer la nota</span>&lt;/a&gt;</p>
+        <dl>
+          <dt>a</dt><dd>el nombre de la etiqueta — en este caso, un link</dd>
+          <dt>href="..."</dt><dd>un atributo: información extra que necesita la etiqueta. Acá, a dónde lleva el link.</dd>
+          <dt>Leer la nota</dt><dd>el contenido: lo único que se ve en pantalla</dd>
+          <dt>&lt;/a&gt;</dt><dd>el cierre. La barra es lo que lo distingue de la apertura.</dd>
+        </dl>
+      </div>
+
+      <p>El 90% de una página son seis o siete etiquetas repetidas:</p>
+      <ul>
+        <li><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> — títulos, del más importante al menos</li>
+        <li><code>&lt;p&gt;</code> — un párrafo</li>
+        <li><code>&lt;a&gt;</code> — un link</li>
+        <li><code>&lt;img&gt;</code> — una imagen</li>
+        <li><code>&lt;ul&gt;</code> con <code>&lt;li&gt;</code> adentro — una lista</li>
+        <li><code>&lt;div&gt;</code> — una caja sin significado, solo para agrupar</li>
+        <li><code>&lt;button&gt;</code> — un botón</li>
+      </ul>
+
+      <div class="codigo">
+        <div class="archivo">index.html</div>
+        <pre><span class="c">&lt;!-- Esto es un comentario: el navegador lo ignora --&gt;</span>
+&lt;<span class="t">h1</span>&gt;Butaca&lt;/<span class="t">h1</span>&gt;
+
+&lt;<span class="t">p</span>&gt;La sección de cine de Cimarrón.&lt;/<span class="t">p</span>&gt;
+
+&lt;<span class="t">ul</span>&gt;
+  &lt;<span class="t">li</span>&gt;Estrenos&lt;/<span class="t">li</span>&gt;
+  &lt;<span class="t">li</span>&gt;Entrevistas&lt;/<span class="t">li</span>&gt;
+&lt;/<span class="t">ul</span>&gt;
+
+&lt;<span class="t">a</span> href=<span class="v">"quiz.html"</span>&gt;Hacé el quiz&lt;/<span class="t">a</span>&gt;</pre>
+      </div>
+      <p class="verificar">Fijate que las etiquetas se anidan como cajas adentro de cajas: los <code>&lt;li&gt;</code> viven adentro del <code>&lt;ul&gt;</code>. Lo que abre primero, cierra último.</p>
+    </section>
+
+    <section class="paso-instalacion">
+      <h2>La clase: el gancho entre el HTML y el CSS</h2>
+      <p>Hay un atributo que aparece por todos lados y conviene reconocer: <code>class</code>. No hace nada por sí solo. Es una etiqueta pegada al elemento para poder decirle al CSS "a todos los que tengan este nombre, pintalos así".</p>
+      <div class="anatomia">
+        <p class="linea">&lt;div <span class="parte">class="tarjeta-nota"</span>&gt; ... &lt;/div&gt;</p>
+        <dl>
+          <dt>class</dt><dd>el nombre que le ponés vos. Puede ser cualquiera, pero se usa en minúsculas y con guiones.</dd>
+        </dl>
+      </div>
+      <p>Cuando le pidas un cambio al agente y quieras ser preciso, este es el dato: <em>"cambiá el color de fondo de <code>.tarjeta-nota</code>"</em> no tiene ninguna ambigüedad.</p>
+    </section>
+
+    <h2 class="seccion-titulo">CSS · cómo se ve</h2>
+
+    <section class="paso-instalacion">
+      <h2>Todo son reglas</h2>
+      <p>El CSS es una lista de reglas. Cada regla dice <strong>a quién</strong> le aplica y <strong>qué</strong> le hace.</p>
+
+      <div class="anatomia">
+        <p class="linea"><span class="parte">.tarjeta-nota</span> { <span class="parte b">background</span>: <span class="parte c">#c6f526</span>; }</p>
+        <dl>
+          <dt>.tarjeta-nota</dt><dd>el selector: a quién le aplica. El punto adelante significa "todos los que tengan esta clase".</dd>
+          <dt>background</dt><dd>la propiedad: qué le vas a cambiar</dd>
+          <dt>#c6f526</dt><dd>el valor: a qué. Eso es un color escrito en hexadecimal.</dd>
+          <dt>; y { }</dt><dd>el punto y coma cierra cada declaración; las llaves agrupan todas las de esa regla</dd>
+        </dl>
+      </div>
+
+      <p>Las propiedades que vas a ver el 90% del tiempo:</p>
+      <ul>
+        <li><code>color</code> — el color del texto · <code>background</code> — el del fondo</li>
+        <li><code>font-family</code>, <code>font-size</code> — qué tipografía y de qué tamaño</li>
+        <li><code>padding</code> — el aire adentro · <code>margin</code> — el aire afuera</li>
+        <li><code>border</code> — el contorno</li>
+        <li><code>display: flex</code> / <code>display: grid</code> — cómo se acomodan los hijos: en fila o en grilla</li>
+      </ul>
+
+      <div class="codigo">
+        <div class="archivo">estilos.css</div>
+        <pre><span class="c">/* Esto es un comentario en CSS */</span>
+
+<span class="t">h1</span> {
+  <span class="t">font-size</span>: <span class="v">48px</span>;
+  <span class="t">color</span>: <span class="v">#0d0d0d</span>;
+}
+
+<span class="t">.tarjeta-nota</span> {
+  <span class="t">background</span>: <span class="v">#e8e0cc</span>;
+  <span class="t">border</span>: <span class="v">2px solid #0d0d0d</span>;
+  <span class="t">padding</span>: <span class="v">20px</span>;
+}
+
+<span class="c">/* Solo cuando el mouse está encima */</span>
+<span class="t">.tarjeta-nota:hover</span> {
+  <span class="t">background</span>: <span class="v">#c6f526</span>;
+}</pre>
+      </div>
+      <p class="verificar">Tres tipos de selector y alcanza: <code>h1</code> apunta a la etiqueta, <code>.clase</code> con punto a una clase, <code>#id</code> con numeral a un elemento único.</p>
+    </section>
+
+    <h2 class="seccion-titulo">JavaScript · qué pasa</h2>
+
+    <section class="paso-instalacion">
+      <h2>Agarrar algo y hacerle algo</h2>
+      <p>Casi todo el JavaScript de una página chica hace lo mismo: <strong>agarra</strong> un elemento del HTML, <strong>espera</strong> a que pase algo, y <strong>cambia</strong> otra cosa.</p>
+
+      <div class="codigo">
+        <div class="archivo">script.js</div>
+        <pre><span class="c">// 1 · agarrar los elementos y guardarlos con un nombre</span>
+<span class="t">const</span> boton = document.querySelector(<span class="v">'#suscribirme'</span>);
+<span class="t">const</span> mensaje = document.querySelector(<span class="v">'#aviso'</span>);
+
+<span class="c">// 2 · esperar a que alguien haga click en el botón</span>
+boton.addEventListener(<span class="v">'click'</span>, <span class="t">function</span> () {
+
+  <span class="c">// 3 · cambiar el texto del otro elemento</span>
+  mensaje.textContent = <span class="v">'Listo, ya estás suscripta.'</span>;
+
+});</pre>
+      </div>
+
+      <p>Las cuatro palabras que aparecen ahí y conviene reconocer:</p>
+      <ul>
+        <li><code>const</code> — guardar algo con un nombre para no repetirlo. Es una <strong>variable</strong>.</li>
+        <li><code>querySelector('#aviso')</code> — buscar en el HTML. Se busca igual que en CSS: <code>#</code> para un id, <code>.</code> para una clase.</li>
+        <li><code>addEventListener('click', ...)</code> — quedarse esperando un <strong>evento</strong>. El más común es el click.</li>
+        <li><code>function () { ... }</code> — un bloque de instrucciones con nombre, que se ejecuta cuando lo llaman. Es una <strong>función</strong>.</li>
+      </ul>
+      <p class="verificar">Si algo de la página "no anda" (un botón que no hace nada, un menú que no abre), casi siempre es JS. Si algo "se ve mal", casi siempre es CSS.</p>
+    </section>
+
+    <h2 class="seccion-titulo">Cómo se conectan los tres</h2>
+
+    <section class="paso-instalacion">
+      <h2>El HTML manda a buscar a los otros dos</h2>
+      <p>Son tres archivos separados. El HTML es el único que el navegador abre solo: adentro tiene dos líneas que van a buscar a los otros dos.</p>
+
+      <div class="codigo">
+        <div class="archivo">index.html · completo</div>
+        <pre>&lt;!doctype html&gt;
+&lt;<span class="t">html</span> lang=<span class="v">"es"</span>&gt;
+&lt;<span class="t">head</span>&gt;
+  &lt;<span class="t">meta</span> charset=<span class="v">"utf-8"</span>&gt;
+  &lt;<span class="t">title</span>&gt;Butaca&lt;/<span class="t">title</span>&gt;
+
+  <span class="c">&lt;!-- ACÁ va a buscar el CSS --&gt;</span>
+  &lt;<span class="t">link</span> rel=<span class="v">"stylesheet"</span> href=<span class="v">"estilos.css"</span>&gt;
+&lt;/<span class="t">head</span>&gt;
+
+&lt;<span class="t">body</span>&gt;
+  &lt;<span class="t">h1</span>&gt;Butaca&lt;/<span class="t">h1</span>&gt;
+  &lt;<span class="t">p</span> id=<span class="v">"aviso"</span>&gt;Suscribite a la newsletter.&lt;/<span class="t">p</span>&gt;
+  &lt;<span class="t">button</span> id=<span class="v">"suscribirme"</span>&gt;Suscribirme&lt;/<span class="t">button</span>&gt;
+
+  <span class="c">&lt;!-- ACÁ va a buscar el JS, al final del body --&gt;</span>
+  &lt;<span class="t">script</span> src=<span class="v">"script.js"</span>&gt;&lt;/<span class="t">script</span>&gt;
+&lt;/<span class="t">body</span>&gt;
+&lt;/<span class="t">html</span>&gt;</pre>
+      </div>
+
+      <p>Dos cosas de este archivo que valen la pena:</p>
+      <ul>
+        <li>El <code>&lt;head&gt;</code> es la parte que <strong>no se ve</strong>: el título de la pestaña, el idioma, los links a los otros archivos. El <code>&lt;body&gt;</code> es todo lo que sí se ve.</li>
+        <li>El <code>&lt;script&gt;</code> va <strong>al final</strong> del body, no arriba. Si va arriba, el JS busca elementos que todavía no existen y no encuentra nada.</li>
+      </ul>
+      <p class="verificar">Con esos tres archivos en una carpeta ya tenés un sitio. Nada más que instalar: doble click en el HTML y se abre.</p>
+    </section>
+
+    <h2 class="seccion-titulo">Lo mínimo que hay que retener</h2>
+
+    <section class="paso-instalacion">
+      <h2>Cuatro reflejos</h2>
+      <ul>
+        <li><strong>"Falta / sobra un texto o una sección"</strong> &rarr; es HTML.</li>
+        <li><strong>"Está en el lugar equivocado, o se ve feo"</strong> &rarr; es CSS. Incluye posición, tamaño y cómo se acomoda en el celular.</li>
+        <li><strong>"Lo aprieto y no pasa nada"</strong> &rarr; es JS.</li>
+        <li><strong>Si no sabés cuál es</strong> &rarr; describí el síntoma, no el archivo. "El botón de suscribirme no hace nada" alcanza y sobra.</li>
+      </ul>
+      <p class="verificar">¿Querés saber cómo se llama el elemento que estás mirando? Está en <a class="link-codigo" href="referencias.html">Referencias</a>.</p>
+    </section>
+  </main>
+
+  <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS
+       lugares: el href="mailto:..." y el texto del link. -->
+  <section class="contacto">
+    <span class="etiqueta">CONTACTO</span>
+    <h2>Cualquier consulta, escribime</h2>
+    <p>Dudas, inquietudes, preguntas técnicas: lo que sea, durante el taller o después. No hay pregunta demasiado básica.</p>
+    <a href="mailto:thiagovdonato@gmail.com">thiagovdonato@gmail.com</a>
+  </section>
+
+  <footer>Anfibia · Taller Cómo entrenar a tu IA</footer>
+</body>
+</html>

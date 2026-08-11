@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Referencias visuales — Cómo entrenar a tu IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ANFIBIA</div>
+    <nav>
+      <a href="index.html">Slides</a>
+      <a href="instalacion.html">Instalación</a>
+      <a href="skills.html">Skills</a>
+      <a href="codigo.html">Código</a>
+      <a href="referencias.html" aria-current="page">Referencias</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="lecturas.html">Lecturas</a>
+      <a href="videos.html">Videos</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="pagina-titulo">Referencias visuales y nombres de los elementos</h1>
+    <p class="pagina-bajada">Mirás el elemento, ves cómo se llama, y se lo pedís por su nombre. Todo lo que está acá abajo es de verdad: son los elementos armados con el CSS del sitio, no capturas de pantalla.</p>
+
+    <section class="nota-por-que">
+      <h2>¿Por qué importa el nombre?</h2>
+      <p>La diferencia entre "poneme el cuadradito ese arriba a la derecha" y "agregá un badge en la esquina superior derecha de la tarjeta" no es sonar más técnico. Es que la segunda tiene una sola interpretación posible y la primera tiene doce.</p>
+      <p>El agente entiende las dos. Pero con la primera adivina, y cuando adivina mal perdés una vuelta entera. Nombrar bien es la manera más barata de acortar la conversación.</p>
+      <p>No hace falta aprenderse esto de memoria: dejá la página abierta en una pestaña y buscá el dibujo que se parece a lo que tenés en la cabeza.</p>
+    </section>
+
+    <!-- EDITÁ ACÁ: cada .termino es una ficha. Para agregar una, copiá el
+         bloque entero: adentro va la muestra (el ejemplo real) y la ficha
+         (nombre, alias, qué es, cómo pedirlo). -->
+
+    <h2 class="seccion-titulo">Las partes de una página</h2>
+
+    <div class="glosario">
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-barra"><span>LOGO</span><span>INICIO · OBRA · CONTACTO</span></div>
+        </div>
+        <div class="ficha">
+          <h3>Barra de navegación</h3>
+          <p class="alias">navbar · header · nav</p>
+          <p>La franja de arriba con el logo y los links a las otras páginas. Está en todas las páginas y siempre igual.</p>
+          <p class="pedilo">"Agregá un link a Contacto en la navbar."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <div class="m-caja alta lime">TÍTULO GRANDE + BAJADA</div>
+            <div class="m-caja">contenido</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Portada</h3>
+          <p class="alias">hero</p>
+          <p>El bloque grande de arriba de todo, el primero que se ve. Suele tener el título, una bajada y a veces un botón.</p>
+          <p class="pedilo">"Hacé el hero más bajo, ocupa toda la pantalla."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-grilla">
+            <div class="m-caja">1</div><div class="m-caja">2</div><div class="m-caja">3</div>
+            <div class="m-caja">4</div><div class="m-caja">5</div><div class="m-caja">6</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Grilla</h3>
+          <p class="alias">grid</p>
+          <p>Varios elementos iguales acomodados en filas y columnas. Es lo que usás para una lista de tarjetas o de fotos.</p>
+          <p class="pedilo">"Poné la grilla en 3 columnas en vez de 2."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-fila">
+            <div class="m-caja alta" style="flex: 0 0 32%;">menú</div>
+            <div class="m-caja alta" style="flex: 1;">contenido</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Barra lateral</h3>
+          <p class="alias">sidebar · aside</p>
+          <p>Una columna angosta al costado del contenido principal. Se usa para índices, filtros o navegación secundaria.</p>
+          <p class="pedilo">"Movete el sidebar a la derecha y hacelo más angosto."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <div class="m-caja">contenido</div>
+            <div class="m-caja negra">© 2026 · contacto · redes</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Pie de página</h3>
+          <p class="alias">footer</p>
+          <p>La franja del final, con los créditos, el contacto y los links secundarios. El espejo de la navbar.</p>
+          <p class="pedilo">"Sumá el mail en el footer, al lado del año."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-caja alta" style="width: 100%;">
+            <span style="border: 2px dashed var(--pink); padding: 10px 20px;">ancho máximo</span>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Contenedor</h3>
+          <p class="alias">container · wrapper</p>
+          <p>La caja invisible que limita hasta dónde se estira el contenido. Es lo que evita que en una pantalla ancha el texto cruce de punta a punta.</p>
+          <p class="pedilo">"El contenedor es muy angosto, dale más ancho máximo."</p>
+        </div>
+      </article>
+
+    </div>
+
+    <h2 class="seccion-titulo">Piezas que se repiten</h2>
+
+    <div class="glosario">
+
+      <article class="termino">
+        <div class="muestra">
+          <div style="width: 190px; border: 2px solid var(--black); background: var(--paper); box-shadow: 4px 4px 0 var(--black);">
+            <div style="height: 46px; background: var(--electric);"></div>
+            <div style="padding: 10px; font-family: var(--fuente-mono); font-size: var(--cuerpo-xs); text-align: left;">
+              <strong>Título</strong><br>Un renglón de texto.
+            </div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Tarjeta</h3>
+          <p class="alias">card</p>
+          <p>Una cajita con borde que agrupa una unidad de contenido: una foto, un título, un texto corto. Casi siempre viene en grilla, repetida.</p>
+          <p class="pedilo">"Sacale la sombra a las cards y dejalas solo con borde."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <span class="m-boton">Enviar</span>
+          <span class="m-boton secundario">Cancelar</span>
+        </div>
+        <div class="ficha">
+          <h3>Botón primario y secundario</h3>
+          <p class="alias">button</p>
+          <p>Cuando hay dos botones juntos, el <strong>primario</strong> es la acción que querés que hagan (relleno) y el <strong>secundario</strong> la alternativa (solo borde).</p>
+          <p class="pedilo">"Cancelar tiene que ser el botón secundario, no el primario."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <span class="m-etiqueta">NUEVO</span>
+          <span class="m-etiqueta b">2026</span>
+          <span class="m-etiqueta c">CINE</span>
+        </div>
+        <div class="ficha">
+          <h3>Etiqueta</h3>
+          <p class="alias">badge · chip · pill · tag</p>
+          <p>El cartelito chiquito que marca un estado o una categoría. No se clickea (o si se clickea, filtra).</p>
+          <p class="pedilo">"Poné un badge rosa que diga ESTRENO arriba de la card."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <span class="m-avatar">M</span>
+          <span style="font-family: var(--fuente-mono); font-size: var(--cuerpo-xs);">Malena R.</span>
+        </div>
+        <div class="ficha">
+          <h3>Avatar</h3>
+          <p class="alias">avatar</p>
+          <p>La foto o inicial redonda (o cuadrada) que representa a una persona. Suele ir al lado del nombre.</p>
+          <p class="pedilo">"Hacé el avatar redondo y un poco más grande."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <div style="display: flex; gap: 0;">
+              <span class="m-caja lime" style="flex: 1; border-bottom: 0;">Todo</span>
+              <span class="m-caja" style="flex: 1;">Cine</span>
+              <span class="m-caja" style="flex: 1;">Series</span>
+            </div>
+            <div class="m-caja">contenido de "Todo"</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Pestañas</h3>
+          <p class="alias">tabs</p>
+          <p>Varias solapas donde solo se ve una por vez. Sirven para partir contenido sin cambiar de página.</p>
+          <p class="pedilo">"Convertí esas tres secciones en tabs."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <div class="m-caja lime" style="justify-content: space-between; padding: 8px 12px;"><span>¿Cómo me inscribo?</span><span>−</span></div>
+            <div class="m-caja" style="justify-content: flex-start; text-align: left;">Se abre y muestra la respuesta.</div>
+            <div class="m-caja" style="justify-content: space-between; padding: 8px 12px;"><span>¿Cuánto sale?</span><span>+</span></div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Acordeón</h3>
+          <p class="alias">accordion · desplegable</p>
+          <p>Una lista de títulos que se abren al clickearlos. Es lo que se usa para las preguntas frecuentes.</p>
+          <p class="pedilo">"Poné las preguntas frecuentes en un acordeón, cerradas por defecto."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div style="position: relative; width: 100%; min-height: 96px; background: var(--gray);">
+            <div style="position: absolute; inset: 14px 18px; background: var(--cream); border: 2px solid var(--black); box-shadow: 4px 4px 0 var(--black); display: flex; align-items: center; justify-content: center; font-family: var(--fuente-mono); font-size: var(--cuerpo-xs);">¿Confirmás?</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Ventana modal</h3>
+          <p class="alias">modal · dialog · popup</p>
+          <p>La ventanita que aparece encima de todo y oscurece el fondo. Bloquea la página hasta que la cerrás.</p>
+          <p class="pedilo">"Que se abra un modal de confirmación antes de borrar."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila" style="max-width: 190px;">
+            <div class="m-caja" style="justify-content: space-between; padding: 8px 12px;"><span>Ordenar por</span><span>▾</span></div>
+            <div class="m-caja lime" style="justify-content: flex-start;">Más reciente</div>
+            <div class="m-caja" style="justify-content: flex-start;">Más leído</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Menú desplegable</h3>
+          <p class="alias">dropdown</p>
+          <p>Un botón que al tocarlo despliega una lista de opciones. Si es parte de un formulario se llama <em>select</em>.</p>
+          <p class="pedilo">"Metelo en un dropdown, son demasiadas opciones sueltas."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div style="display: grid; gap: 12px; justify-items: center;">
+            <span class="m-globito">Se publica el jueves</span>
+            <span class="m-boton secundario" style="font-size: var(--cuerpo-xs); padding: 6px 12px;">?</span>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Globito de ayuda</h3>
+          <p class="alias">tooltip</p>
+          <p>El cartelito que aparece al pasar el mouse por encima de algo. Es una aclaración, nunca información imprescindible.</p>
+          <p class="pedilo">"Agregá un tooltip que explique qué significa ese ícono."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div style="width: 100%; display: flex; justify-content: flex-end;">
+            <div class="m-caja negra" style="width: auto; padding: 10px 14px;">✓ Guardado</div>
+          </div>
+          <p class="m-nota">aparece solo y se va</p>
+        </div>
+        <div class="ficha">
+          <h3>Aviso flotante</h3>
+          <p class="alias">toast · notification · snackbar</p>
+          <p>El mensajito que salta en una esquina para confirmar que algo pasó, y desaparece solo a los pocos segundos.</p>
+          <p class="pedilo">"Mostrá un toast verde cuando se guarda, arriba a la derecha."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <p class="m-migas">Inicio › Cine › <b>Estrenos de agosto</b></p>
+        </div>
+        <div class="ficha">
+          <h3>Migas de pan</h3>
+          <p class="alias">breadcrumb</p>
+          <p>El rastro de dónde estás parado dentro del sitio. Cada paso es un link menos el último, que es la página actual.</p>
+          <p class="pedilo">"Sumá un breadcrumb arriba del título de cada nota."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-paginas">
+            <span>‹</span><span class="activa">1</span><span>2</span><span>3</span><span>›</span>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Paginación</h3>
+          <p class="alias">pagination</p>
+          <p>Los numeritos para pasar de página cuando la lista es larga. La alternativa se llama <em>scroll infinito</em>.</p>
+          <p class="pedilo">"Mostrá 10 por página con paginación abajo."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <div class="m-progreso"><i></i></div>
+            <p class="m-nota">62%</p>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Barra de progreso</h3>
+          <p class="alias">progress bar</p>
+          <p>La barra que se va llenando. Si no sabés cuánto falta y solo querés indicar que está cargando, eso es un <em>spinner</em>.</p>
+          <p class="pedilo">"Poné una barra de progreso arriba que muestre cuánto leíste."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-fila" style="align-items: center;">
+            <span style="flex: 0 0 auto;">‹</span>
+            <div class="m-caja alta lime">2</div>
+            <span style="flex: 0 0 auto;">›</span>
+          </div>
+          <p class="m-nota">● ○ ○</p>
+        </div>
+        <div class="ficha">
+          <h3>Carrusel</h3>
+          <p class="alias">carousel · slider</p>
+          <p>Varias piezas que se ven de a una y se pasan con flechas o deslizando. Los puntitos de abajo dicen cuántas hay.</p>
+          <p class="pedilo">"Las fotos en un carrusel, con flechas y puntitos."</p>
+        </div>
+      </article>
+
+    </div>
+
+    <h2 class="seccion-titulo">Formularios</h2>
+
+    <div class="glosario">
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <span class="m-label">TU MAIL</span>
+            <div class="m-campo">nombre@correo.com</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Campo, label y placeholder</h3>
+          <p class="alias">input · label · placeholder</p>
+          <p>El <strong>campo</strong> es la cajita donde se escribe. El <strong>label</strong> es el título de arriba. El <strong>placeholder</strong> es el texto gris de adentro, que se borra al escribir — no reemplaza al label.</p>
+          <p class="pedilo">"El label arriba del input, y de placeholder poné un ejemplo."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <span class="m-label">TU MAIL</span>
+            <div class="m-campo foco">malena|</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Estado de foco</h3>
+          <p class="alias">focus</p>
+          <p>Cómo se ve el campo cuando estás escribiendo adentro. Marcarlo no es decorativo: es lo que le permite a alguien navegar el formulario con el teclado.</p>
+          <p class="pedilo">"El foco de los inputs no se ve, marcalo con borde azul."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <span style="display: flex; gap: 8px; align-items: center; font-family: var(--fuente-mono); font-size: var(--cuerpo-xs);"><i class="m-tilde marcado">✓</i> Newsletter</span>
+            <span style="display: flex; gap: 8px; align-items: center; font-family: var(--fuente-mono); font-size: var(--cuerpo-xs);"><i class="m-tilde"></i> Avisos</span>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Casilla</h3>
+          <p class="alias">checkbox</p>
+          <p>Cuadradito que se tilda. Se usa cuando podés elegir <strong>varias</strong> opciones a la vez, o ninguna.</p>
+          <p class="pedilo">"Que los intereses sean checkboxes, se puede elegir más de uno."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <span style="display: flex; gap: 8px; align-items: center; font-family: var(--fuente-mono); font-size: var(--cuerpo-xs);"><i class="m-tilde redondo marcado">•</i> Semanal</span>
+            <span style="display: flex; gap: 8px; align-items: center; font-family: var(--fuente-mono); font-size: var(--cuerpo-xs);"><i class="m-tilde redondo"></i> Mensual</span>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Opción única</h3>
+          <p class="alias">radio button</p>
+          <p>Redondelito que se marca. Igual que la casilla pero <strong>solo una</strong>: al elegir una, se desmarca la otra.</p>
+          <p class="pedilo">"Eso tienen que ser radio buttons, no checkboxes: es una sola."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <span style="display: flex; gap: 10px; align-items: center; font-family: var(--fuente-mono); font-size: var(--cuerpo-xs);"><i class="m-switch"><i></i></i> Modo oscuro</span>
+        </div>
+        <div class="ficha">
+          <h3>Interruptor</h3>
+          <p class="alias">toggle · switch</p>
+          <p>Prende y apaga algo, y el efecto es inmediato. Si hay que apretar "Guardar" después, entonces era una casilla, no un switch.</p>
+          <p class="pedilo">"Poné un toggle para el modo oscuro en la navbar."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <div class="m-campo" style="color: var(--black); display: flex; justify-content: space-between;"><span>Elegí una sección</span><span>▾</span></div>
+            <span class="m-boton" style="width: 100%; text-align: center;">Suscribirme</span>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Desplegable de formulario</h3>
+          <p class="alias">select</p>
+          <p>La lista cerrada de opciones adentro de un formulario. Si son dos o tres, casi siempre conviene mostrarlas sueltas.</p>
+          <p class="pedilo">"Cambiá el select por radio buttons, son solo tres opciones."</p>
+        </div>
+      </article>
+
+    </div>
+
+    <h2 class="seccion-titulo">Espacio, bordes y estados</h2>
+
+    <div class="glosario">
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-espacio" style="width: 100%;">
+            <div><span>contenido</span></div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Espacio adentro y afuera</h3>
+          <p class="alias">padding · margin</p>
+          <p>El <strong>lime</strong> es el <em>padding</em>: el aire entre el borde de la caja y lo que tiene adentro. El <strong>punteado rosa</strong> es el <em>margin</em>: el aire entre esa caja y las de al lado.</p>
+          <p class="pedilo">"Más padding adentro de las cards y menos margin entre ellas."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <span class="m-caja" style="border-width: 5px; width: 84px;">grueso</span>
+          <span class="m-caja" style="border-style: dashed; width: 84px;">punteado</span>
+        </div>
+        <div class="ficha">
+          <h3>Borde</h3>
+          <p class="alias">border</p>
+          <p>La línea del contorno. Se pide con tres cosas: grosor, estilo (lleno o punteado) y color.</p>
+          <p class="pedilo">"Borde negro de 2px, sin esquinas redondeadas."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <span class="m-caja" style="width: 96px; box-shadow: 6px 6px 0 var(--black);">dura</span>
+          <span class="m-caja" style="width: 96px; box-shadow: 0 6px 14px rgba(0,0,0,.35);">suave</span>
+        </div>
+        <div class="ficha">
+          <h3>Sombra</h3>
+          <p class="alias">box-shadow</p>
+          <p>Hay dos familias y conviene aclarar cuál: la <strong>dura</strong> (desplazada, sin difuminar) y la <strong>suave</strong> (difuminada). Este sitio usa dura en todo.</p>
+          <p class="pedilo">"Sombra dura negra, corrida 6px abajo y a la derecha."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <span class="m-boton">normal</span>
+          <span class="m-boton hover">con el mouse encima</span>
+        </div>
+        <div class="ficha">
+          <h3>Estados</h3>
+          <p class="alias">hover · active · disabled</p>
+          <p>Cómo cambia algo según lo que estés haciendo: <em>hover</em> es con el mouse encima, <em>active</em> es mientras lo apretás, <em>disabled</em> es cuando no se puede usar.</p>
+          <p class="pedilo">"En hover, que el botón se ponga azul."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-pila">
+            <div class="m-barra"><span>NAVBAR</span><span>FIJA</span></div>
+            <div class="m-caja" style="opacity: .45;">el contenido pasa por abajo</div>
+            <div class="m-caja" style="opacity: .25;">y sigue pasando</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Fijo al scrollear</h3>
+          <p class="alias">sticky · fixed</p>
+          <p>Que un elemento se quede pegado en pantalla mientras el resto se desplaza. Es lo que hace que una navbar te siga.</p>
+          <p class="pedilo">"Que la navbar quede sticky arriba al scrollear."</p>
+        </div>
+      </article>
+
+      <article class="termino">
+        <div class="muestra">
+          <div class="m-fila">
+            <div class="m-caja alta">escritorio</div>
+            <div class="m-caja alta" style="flex: 0 0 34%;">celu</div>
+          </div>
+        </div>
+        <div class="ficha">
+          <h3>Adaptable</h3>
+          <p class="alias">responsive · breakpoint</p>
+          <p>Que la página se reacomode según el ancho de la pantalla. El <em>breakpoint</em> es el ancho exacto donde cambia el diseño.</p>
+          <p class="pedilo">"En celular esto se rompe: pasalo a una sola columna."</p>
+        </div>
+      </article>
+
+    </div>
+
+    <h2 class="seccion-titulo">Cómo se nota la diferencia</h2>
+
+    <section class="paso-instalacion">
+      <h2>Las mismas tres cosas, pedidas de dos maneras</h2>
+      <p>No es cuestión de sonar técnico. Es que del lado izquierdo hay una sola manera de entenderlo mal y del derecho no hay ninguna.</p>
+      <div class="sistemas">
+        <div class="sistema">
+          <h3>Vago</h3>
+          <ul>
+            <li>"Poné el cuadradito ese arriba"</li>
+            <li>"Que tenga más aire"</li>
+            <li>"Se ve mal en el celular"</li>
+          </ul>
+        </div>
+        <div class="sistema">
+          <h3>Preciso</h3>
+          <ul>
+            <li>"Un badge rosa arriba a la derecha de cada card"</li>
+            <li>"Más padding adentro de las cards, dejá el margin igual"</li>
+            <li>"Abajo de 720px la grilla tiene que pasar a una columna"</li>
+          </ul>
+        </div>
+      </div>
+      <p class="verificar">Y si no sabés el nombre: sacá una captura, pegásela y preguntale cómo se llama eso. Es una buena manera de aprender el vocabulario sobre la marcha.</p>
+    </section>
+  </main>
+
+  <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS
+       lugares: el href="mailto:..." y el texto del link. -->
+  <section class="contacto">
+    <span class="etiqueta">CONTACTO</span>
+    <h2>Cualquier consulta, escribime</h2>
+    <p>Dudas, inquietudes, preguntas técnicas: lo que sea, durante el taller o después. No hay pregunta demasiado básica.</p>
+    <a href="mailto:thiagovdonato@gmail.com">thiagovdonato@gmail.com</a>
+  </section>
+
+  <footer>Anfibia · Taller Cómo entrenar a tu IA</footer>
+</body>
+</html>
