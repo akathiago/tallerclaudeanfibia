@@ -283,7 +283,7 @@ window.DECK = {
       "titulo": "Proyecto vs global",
       "kicker": "40 / CONFIGURACIÓN",
       "parte": "INSTRUCCIONES QUE SOBREVIVEN A LA CONVERSACIÓN",
-      "notas": "El global vive en tu carpeta de usuario y define tu manera de trabajar en cualquier proyecto. El del proyecto vive en la raíz y acompaña al código."
+      "notas": "El global vive en tu carpeta de usuario y define tu manera de trabajar en cualquier proyecto. El del proyecto vive en la raíz y acompaña al código. Ninguno de los dos se escribe a mano: el del proyecto lo genera `/init`, un comando que ya viene con Claude Code y que lee el repo para armarlo solo. El global lo arma `/claude-md-global`, una skill que hice para ustedes: te hace preguntas y escribe el archivo con lo que respondas."
     },
     {
       "archivo": "111-como-se-combinan.html",
