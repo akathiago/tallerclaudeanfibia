@@ -403,6 +403,69 @@ window.DECK = {
       "kicker": "57 / CONTACTO",
       "parte": "CONSTRUIR ALGO PEQUEÑO",
       "notas": "Cierre del recorrido. Queda la puerta abierta para dudas, inquietudes o preguntas técnicas de cualquier tipo, durante el taller o después."
+    },
+    {
+      "archivo": "128-despejar-dudas-tecnicas.html",
+      "titulo": "Despejá dudas técnicas con la IA",
+      "kicker": "58 / CLASE 2",
+      "parte": "CLASE 2",
+      "notas": "Apertura. Marca el tono. Cada vez que algo no entendés, no te trabes: preguntale a la IA. \"¿Qué es esto?\", \"¿por qué falla?\", \"explicámelo como si no supiera nada\"."
+    },
+    {
+      "archivo": "129-que-es-un-agente-repaso.html",
+      "titulo": "Qué es un agente (repaso)",
+      "kicker": "59 / CLASE 2",
+      "parte": "CLASE 2",
+      "notas": "Si la IA puede hacer cambios en tu compu, navegar internet, o hacer cosas que frente a un chatbot tendrías que hacer vos, tiene agencia. Es un agente."
+    },
+    {
+      "archivo": "131-chat-vs-code.html",
+      "titulo": "Chat vs Code",
+      "kicker": "60 / CLASE 2",
+      "parte": "CLASE 2",
+      "notas": "Chat: sos intermediario. Claude te dice qué hacer, vos lo hacés. No toca tus archivos. Code: dejás de ser intermediario. Das la intención, Claude construye. Toca tus archivos (con permiso)."
+    },
+    {
+      "archivo": "132-claude-md-a-agents-md.html",
+      "titulo": "CLAUDE.md → AGENTS.md",
+      "kicker": "61 / CLASE 2",
+      "parte": "CLASE 2",
+      "notas": "CLAUDE.md es el archivo de contexto de Claude. Se está volviendo estándar universal: AGENTS.md. La convención que todos los agentes empiezan a compartir para leer el contexto de un proyecto. Aprendés el concepto una vez y sirve para cualquier herramienta. Tu contexto viaja con vos."
+    },
+    {
+      "archivo": "133-momento-en-vivo-talleranfibia.html",
+      "titulo": "Momento en vivo · /talleranfibia",
+      "kicker": "62 / CLASE 2",
+      "parte": "CLASE 2",
+      "notas": "Slide de apoyo para el momento en vivo. La skill del taller. Mostrar: cómo se escribe /, cómo aparece, qué hace. \"Esto es lo que armé para ustedes. Con un comando, Claude ya sabe en qué contexto estamos.\""
+    },
+    {
+      "archivo": "134-chatear-pedir-prompt.html",
+      "titulo": "Momento en vivo · Chatear con la IA y pedirle un prompt",
+      "kicker": "63 / CLASE 2",
+      "parte": "CLASE 2",
+      "notas": "La técnica clave del día. En vez de escribir el prompt perfecto de una, le pedís a la IA que te ayude a armarlo. Chateás tu idea, le pedís que te devuelva un prompt estructurado, y ese prompt lo usás en Claude Code. \"Usás la IA para hablarle mejor a la IA.\""
+    },
+    {
+      "archivo": "135-formato-latex.html",
+      "titulo": "Ejemplo de skill · /formato-latex",
+      "kicker": "64 / CLASE 2",
+      "parte": "CLASE 2",
+      "notas": "Ejemplo concreto de una skill que resuelve algo específico: convierte un .docx, .md, .txt o .pdf en un .tex que compila limpio, con foco en escritura académica en español (planes tipo CONICET, papers, tesis, informes). Conecta con el público investigador."
+    },
+    {
+      "archivo": "136-que-es-localhost.html",
+      "titulo": "Qué es localhost",
+      "kicker": "65 / CLASE 2",
+      "parte": "CLASE 2",
+      "notas": "Localhost: tu propia computadora funcionando como servidor web. La dirección 127.0.0.1 apunta a \"acá adentro\". Node.js: el motor que permite levantar ese servidor local. Localhost es como cocinar un plato en tu casa antes de abrir el restaurante. Existe, funciona, pero solo lo probás vos."
+    },
+    {
+      "archivo": "137-tarea-para-la-semana.html",
+      "titulo": "Tarea para la semana",
+      "kicker": "66 / CLASE 2",
+      "parte": "CLASE 2",
+      "notas": "Chateá tu proyecto con el chat. Pedile que te devuelva un prompt. Tiralo en Claude Code. Andá iterando. No busques que salga perfecto de una: la gracia está en ir ajustando. La tarea es soltar el miedo. Jugar, romper, iterar."
     }
   ]
 };
