@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git(hub) — Cómo entrenar a tu IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ANFIBIA</div>
+    <nav>
+      <a href="index.html">Slides</a>
+      <a href="instalacion.html">Instalación</a>
+      <a href="skills.html">Skills</a>
+      <a href="comandos.html">Comandos</a>
+      <a href="codigo.html">Código</a>
+      <a href="git.html" aria-current="page">Git(hub)</a>
+      <a href="referencias.html">Referencias</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="lecturas.html">Lecturas</a>
+      <a href="videos.html">Videos</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="pagina-titulo">Git(hub)</h1>
+    <p class="pagina-bajada">Dos cosas distintas con el nombre parecido. Una vive en tu computadora, la otra en internet, y saber cuál es cuál te ahorra la mitad de los problemas.</p>
+
+    <section class="nota-por-que">
+      <h2>¿Por qué el paréntesis?</h2>
+      <p>Porque es literal: <strong>podés usar Git sin GitHub toda la vida.</strong> Git es un programa que corre en tu máquina y funciona perfecto sin cuenta y sin internet. GitHub es un sitio web donde podés dejar una copia de lo que Git guardó.</p>
+      <p>Al revés no funciona: sin Git no hay nada que subir. Si en algún momento te trabás con esto, casi siempre es porque los dos se confundieron en uno solo.</p>
+    </section>
+
+    <!-- EDITÁ ACÁ: cada .bloque-git es una sección de la página. Llevan la
+         misma estructura que los bloques de comandos.html: etiqueta, título,
+         intro y después el contenido que corresponda. -->
+
+    <section class="bloque-git">
+      <span class="etiqueta">Uno</span>
+      <h2>Qué es Git</h2>
+      <p class="intro">Git guarda la historia de una carpeta. Registra cómo cambian sus archivos a lo largo del tiempo.</p>
+
+      <p class="parrafo">Cuando guardás un archivo con <code>Ctrl+S</code>, la versión anterior desaparece. Git hace otra cosa: saca una <strong>foto de la carpeta entera</strong> —todos los archivos, como están en ese momento— y la pone en una fila. Podés sacar todas las fotos que quieras, y podés volver a cualquiera.</p>
+      <p class="parrafo">A cada foto se le dice <strong>commit</strong>, y lleva un mensaje que escribís vos: <em>«portada lista»</em>, <em>«arreglé el menú»</em>. Esa fila de mensajes es la historia del proyecto, y se lee como un diario de lo que fuiste haciendo.</p>
+
+      <ul class="lista-git">
+        <li>Registra cambios</li>
+        <li>Compara versiones</li>
+        <li>Permite trabajar en ramas</li>
+        <li>Recupera un estado anterior</li>
+      </ul>
+
+      <p class="parrafo">Por eso Git es <strong>el punto de guardado que te deja dejarlo trabajar tranquilo</strong>. Un agente es rápido justamente porque puede equivocarse: actúa, mira el resultado y vuelve a intentar. Si cada intento es reversible, dejarlo probar sale barato.</p>
+
+      <div class="dato">
+        <span class="dato-titulo">Repositorio</span>
+        <p>Es el nombre técnico de «carpeta con historial», y se abrevia <strong>repo</strong>. Cuando alguien dice «subí el repo» está diciendo «subí la carpeta con toda su historia». No hay nada más.</p>
+      </div>
+    </section>
+
+    <section class="bloque-git">
+      <span class="etiqueta">Dos</span>
+      <h2>Qué es GitHub</h2>
+      <p class="intro">Un sitio web que aloja repositorios de Git. Es lo que convierte tu historial local en algo que existe fuera de tu computadora.</p>
+
+      <div class="duo">
+        <div class="duo-lado">
+          <span class="duo-donde">En tu computadora</span>
+          <h3>Git</h3>
+          <ul>
+            <li>Guarda y compara versiones del proyecto</li>
+            <li>Funciona sin cuenta</li>
+            <li>No necesita internet</li>
+            <li>Si se te rompe el disco, se va con él</li>
+          </ul>
+        </div>
+        <div class="duo-lado remoto">
+          <span class="duo-donde">En internet</span>
+          <h3>GitHub</h3>
+          <ul>
+            <li>Aloja repositorios de Git</li>
+            <li>Conserva una copia fuera de tu máquina</li>
+            <li>Te da una dirección para compartir</li>
+            <li>Deja que otra gente lo vea o se sume</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="parrafo">GitHub no es el único —existen GitLab, Codeberg y varios más— pero es el más usado, y es al que Claude Code y Vercel se conectan sin que tengas que configurar nada. Por eso es el que usamos en el taller.</p>
+      <p class="parrafo">La cuenta y la instalación están en <a href="instalacion.html">la página de Instalación</a>.</p>
+    </section>
+
+    <section class="bloque-git">
+      <span class="etiqueta">Tres</span>
+      <h2>Un ejemplo práctico</h2>
+      <p class="intro">No vas a escribir ninguno de estos comandos: se los pedís en castellano y los corre Claude. Están acá para que sepas qué está pasando cuando los veas cruzar la pantalla, y para que puedas frenarlo si no era eso lo que querías.</p>
+
+      <!-- EDITÁ ACÁ: cada .par es una fila del ejemplo. A la izquierda lo que
+           le decís vos, a la derecha lo que corre por atrás. Para agregar o
+           sacar un paso, copiá o borrá el <div class="par"> entero. -->
+      <div class="traduccion">
+        <div class="traduccion-cabecera">
+          <span>Lo que le decís</span>
+          <span>Lo que corre por atrás</span>
+        </div>
+
+        <div class="par">
+          <div class="pedido">Empezá a llevar el registro de esta carpeta.</div>
+          <div class="corre">
+            <code>git init</code>
+            <p>Crea el historial. Se hace una sola vez por proyecto: de acá en adelante, esa carpeta es un repositorio.</p>
+          </div>
+        </div>
+
+        <div class="par">
+          <div class="pedido">Guardá esto, que ya funciona.</div>
+          <div class="corre">
+            <code>git add .</code>
+            <code>git commit -m "portada lista"</code>
+            <p>Saca la foto. <code>add</code> elige qué entra y <code>commit</code> la guarda con tu mensaje. Este es el punto al que vas a poder volver, así que guardá seguido y cada vez que algo ande.</p>
+          </div>
+        </div>
+
+        <div class="par">
+          <div class="pedido">Mostrame qué cambió desde la última vez.</div>
+          <div class="corre">
+            <code>git status</code>
+            <code>git diff</code>
+            <p>Qué archivos tocó y qué dice cada cambio. Antes de guardar, mirá: es la forma de no dar por bueno algo que no leíste.</p>
+          </div>
+        </div>
+
+        <div class="par">
+          <div class="pedido">Volvé a como estaba antes de que rompas el menú.</div>
+          <div class="corre">
+            <code>git checkout</code>
+            <p>Devuelve los archivos a una foto anterior. Lo que hiciste después no sobrevive, y eso es exactamente lo que estás pidiendo.</p>
+          </div>
+        </div>
+
+        <div class="par">
+          <div class="pedido">Subilo a mi GitHub.</div>
+          <div class="corre">
+            <code>git remote add origin …</code>
+            <code>git push</code>
+            <p>La primera vez conecta tu carpeta con un repositorio en internet. De ahí en más, <code>push</code> manda las fotos nuevas y listo.</p>
+          </div>
+        </div>
+
+        <div class="par">
+          <div class="pedido">Traé lo que haya cambiado en GitHub.</div>
+          <div class="corre">
+            <code>git pull</code>
+            <p>El camino inverso: baja lo que esté nuevo allá. Sirve cuando trabajás desde dos computadoras, o cuando alguien más tocó el proyecto.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="parrafo">El comando exacto puede variar —hoy Git también tiene <code>git switch</code> y <code>git restore</code> para lo que antes hacía <code>checkout</code>—. No importa: lo que importa es saber qué le estás pidiendo.</p>
+
+      <div class="dato">
+        <span class="dato-titulo">Ojo con la diferencia</span>
+        <p>Claude Code tiene su propio <a href="comandos.html"><code>/rewind</code></a>, que rebobina el código y la conversación juntos. Es cómodo, pero vive dentro de la sesión. Git es más lento de explicar y mucho más duradero: el historial queda en la carpeta para siempre, lo lea Claude o no.</p>
+      </div>
+    </section>
+
+    <section class="bloque-git">
+      <span class="etiqueta">Cuatro</span>
+      <h2>De tu carpeta a una dirección</h2>
+      <p class="intro">Dónde encaja GitHub en el camino que hace tu proyecto hasta ser un enlace que podés mandar por WhatsApp.</p>
+
+      <ol class="flujo">
+        <li>
+          <span class="paso-num">01</span>
+          <h3>Funciona en tu compu</h3>
+          <p>Lo abrís en tu navegador y anda, pero solo existe en tu máquina.</p>
+          <span class="paso-donde">localhost</span>
+        </li>
+        <li>
+          <span class="paso-num">02</span>
+          <h3>Queda guardado y versionado</h3>
+          <p>Subís el repositorio. Ahora existe fuera de tu computadora, con toda su historia.</p>
+          <span class="paso-donde">GitHub</span>
+        </li>
+        <li>
+          <span class="paso-num">03</span>
+          <h3>Se publica una copia</h3>
+          <p>Un servicio mira tu repositorio y arma el sitio público a partir de él.</p>
+          <span class="paso-donde">Vercel · Netlify · GitHub Pages</span>
+        </li>
+        <li>
+          <span class="paso-num">04</span>
+          <h3>Probás el enlace final</h3>
+          <p>Abrilo vos primero, en el teléfono también, antes de mandárselo a nadie.</p>
+          <span class="paso-donde">la URL que compartís</span>
+        </li>
+      </ol>
+
+      <p class="parrafo">Vercel se queda mirando tu repositorio: cada vez que subís algo, vuelve a publicar solo. Por eso el orden importa. Primero GitHub, después la dirección.</p>
+    </section>
+
+    <section class="bloque-git">
+      <span class="etiqueta alerta">Cinco</span>
+      <h2>Lo que no va a GitHub</h2>
+      <p class="intro">Un repositorio público es público de verdad: cualquiera lo lee, los buscadores lo indexan y borrarlo después no lo saca del historial. Vale la pena pensarlo dos minutos antes del primer <code>push</code>, y no dos días después.</p>
+
+      <div class="aviso">
+        <p>Antes de subir, sacá de la carpeta:</p>
+        <ul>
+          <li><strong>Claves y contraseñas.</strong> API keys, tokens, accesos. Van en un archivo <code>.env</code>, que se excluye con un <code>.gitignore</code>. Pedíselo a Claude: sabe hacerlo.</li>
+          <li><strong>Material de fuentes.</strong> Audios, transcripciones, documentos, capturas: cualquier cosa con nombres de personas o que te hayan dado en confianza.</li>
+          <li><strong>Borradores que no querés que se lean.</strong> El historial guarda todo, incluso lo que borraste después.</li>
+        </ul>
+        <p>Si dudás, hacé el repositorio <strong>privado</strong>. Es gratis, y pasarlo a público después es un click.</p>
+        <p class="aviso-final">Y si ya subiste una clave por error: no alcanza con borrarla y volver a subir. Dala por filtrada y cambiala.</p>
+      </div>
+    </section>
+
+    <section class="bloque-git">
+      <span class="etiqueta">Para llevarse</span>
+      <h2>Lo mínimo que tenés que recordar</h2>
+      <ul class="lista-git resumen">
+        <li><strong>Git</strong> saca fotos de tu carpeta. Vive en tu máquina.</li>
+        <li><strong>GitHub</strong> guarda una copia de esas fotos en internet y te da una dirección.</li>
+        <li>Se los pedís <strong>en castellano</strong> a Claude. Los comandos son de él, la decisión de cuándo guardar es tuya.</li>
+        <li>Guardá <strong>cada vez que algo funcione</strong>. Es lo que hace que romper el proyecto deje de dar miedo.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS
+       lugares: el href="mailto:..." y el texto del link. -->
+  <section class="contacto">
+    <span class="etiqueta">CONTACTO</span>
+    <h2>Cualquier consulta, escribime</h2>
+    <p>Dudas, inquietudes, preguntas técnicas: lo que sea, durante el taller o después. No hay pregunta demasiado básica.</p>
+    <a href="mailto:thiagovdonato@gmail.com">thiagovdonato@gmail.com</a>
+  </section>
+
+  <footer>Anfibia · Taller Cómo entrenar a tu IA</footer>
+</body>
+</html>

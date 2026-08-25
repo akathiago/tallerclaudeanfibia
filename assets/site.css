@@ -743,21 +743,24 @@ main {
 .anatomia dt { font-weight: 700; white-space: nowrap; }
 .anatomia dd { color: var(--gray); }
 
-/* ═══════════════════ PÁGINA COMANDOS ═══════════════════ */
+/* ═══════════ BLOQUES DE SECCIÓN · comandos.html y git.html ═══════════ */
 
-/* Cada bloque es un "momento de uso", separado por el corte estructural de
-   8px. La lista no va en grilla de tarjetas a propósito: son treinta y pico
-   de ítems y en dos columnas se lee como un catálogo, no como una lista de
-   consulta. Una sola columna angosta se escanea de arriba abajo. */
+/* Cada bloque es un paso o un momento, separado por el corte estructural de
+   8px. En comandos.html la lista no va en grilla de tarjetas a propósito:
+   son treinta y pico de ítems y en dos columnas se lee como un catálogo, no
+   como una lista de consulta. Una sola columna angosta se escanea de arriba
+   abajo. Las dos páginas comparten el encabezado del bloque. */
 
-.bloque-comandos {
+.bloque-comandos,
+.bloque-git {
   max-width: var(--ancho-columna);
   border-top: var(--borde-corte) solid var(--black);
   padding-top: var(--esp-4);
   margin-bottom: var(--esp-6);
 }
 
-.bloque-comandos .etiqueta {
+.bloque-comandos .etiqueta,
+.bloque-git .etiqueta {
   display: inline-block;
   font-family: var(--fuente-pixel);
   font-size: var(--pixel-md);
@@ -773,7 +776,15 @@ main {
    "camino corto" de skills.html. */
 .bloque-comandos .etiqueta.opcional { background: var(--lime); }
 
-.bloque-comandos h2 {
+/* La etiqueta de alerta va en negro con texto lime: es la única del sitio que
+   marca "leé esto antes de hacer algo irreversible". */
+.bloque-git .etiqueta.alerta {
+  background: var(--black);
+  color: var(--lime);
+}
+
+.bloque-comandos h2,
+.bloque-git h2 {
   font-family: var(--fuente-titulo);
   font-weight: var(--peso-titulo);
   font-size: var(--titulo-lg);
@@ -784,7 +795,8 @@ main {
   margin-bottom: var(--esp-2);
 }
 
-.bloque-comandos .intro {
+.bloque-comandos .intro,
+.bloque-git .intro {
   font-family: var(--fuente-mono);
   font-size: var(--cuerpo-md);
   line-height: var(--interlineado-cuerpo);
@@ -861,7 +873,329 @@ main {
   /* Los 230px de la columna del nombre no entran en un teléfono: el chip
      queda arriba y la explicación abajo. */
   .comando { grid-template-columns: 1fr; gap: var(--esp-2); }
-  .bloque-comandos h2 { font-size: var(--titulo-md); }
+  .bloque-comandos h2,
+  .bloque-git h2 { font-size: var(--titulo-md); }
+}
+
+/* ═══════════════════ PÁGINA GIT(HUB) ═══════════════════ */
+
+.bloque-git .parrafo {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+  max-width: var(--medida-texto);
+  margin-bottom: var(--esp-3);
+}
+
+.bloque-git .parrafo code,
+.bloque-git .intro code,
+.dato code {
+  background: var(--paper);
+  border: var(--borde-fino) solid var(--gray);
+  padding: 1px 6px;
+  font-family: var(--fuente-mono);
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+.bloque-git a { color: var(--electric); }
+.bloque-git a:hover { background: var(--electric); color: var(--cream); }
+
+/* Las cuatro cosas que hace Git, y el resumen del final. */
+.lista-git {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--esp-2);
+  margin: var(--esp-3) 0 var(--esp-4);
+}
+
+.lista-git li {
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  padding: var(--esp-2) var(--esp-3);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+}
+
+.lista-git.resumen { grid-template-columns: 1fr; }
+
+/* Aclaración al margen: un término suelto que no merece una sección. */
+.dato {
+  border-left: var(--borde-corte) solid var(--electric);
+  background: var(--paper);
+  padding: var(--esp-3) var(--esp-4);
+  margin: var(--esp-4) 0;
+  max-width: var(--medida-texto);
+}
+
+.dato-titulo {
+  display: block;
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-md);
+  text-transform: uppercase;
+  color: var(--electric);
+  margin-bottom: var(--esp-2);
+}
+
+.dato p {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+}
+
+.dato a { color: var(--electric); }
+
+/* Git contra GitHub, uno al lado del otro.
+   OJO: acá NO va el código de color rosa/lime del deck. En las slides el rosa
+   es lo falso y el lime lo correcto, y esto no es un error contra un acierto:
+   son dos cosas distintas que conviven. El eje es local (negro) contra
+   remoto (electric), que es el mismo azul que el sitio usa para lo que vive
+   afuera. */
+.duo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--esp-3);
+  margin: var(--esp-3) 0 var(--esp-4);
+}
+
+.duo-lado {
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  box-shadow: var(--sombra-sm);
+  padding: var(--esp-4);
+}
+
+.duo-lado.remoto {
+  border-color: var(--electric);
+  box-shadow: 4px 4px 0 var(--electric);
+}
+
+.duo-donde {
+  display: block;
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-sm);
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: var(--esp-1);
+}
+
+.duo-lado.remoto .duo-donde { color: var(--electric); }
+
+.duo-lado h3 {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-subtitulo);
+  font-size: var(--titulo-md);
+  line-height: var(--interlineado-titulo-suelto);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-titulo);
+  margin-bottom: var(--esp-2);
+}
+
+.duo-lado ul {
+  list-style: none;
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+}
+
+.duo-lado li { padding-left: 18px; position: relative; }
+.duo-lado li::before { content: '·'; position: absolute; left: 4px; }
+.duo-lado li + li { margin-top: var(--esp-1); }
+
+/* El ejemplo práctico: lo que pedís contra lo que corre. */
+.traduccion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  margin-bottom: var(--esp-4);
+}
+
+.traduccion-cabecera {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--esp-3);
+  padding: 0 var(--esp-3);
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-sm);
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.par {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--esp-3);
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  padding: var(--esp-3);
+}
+
+/* Lo que decís va entre comillas y en la fuente de lectura: es una persona
+   hablando, no una instrucción de máquina. Las comillas las pone el CSS
+   para que no haya que escribirlas a mano en cada fila. */
+.pedido {
+  font-family: var(--fuente-lectura);
+  font-size: var(--cuerpo-lg);
+  line-height: var(--interlineado-lectura);
+  font-style: italic;
+}
+
+.pedido::before { content: '«'; }
+.pedido::after { content: '»'; }
+
+.corre code {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  font-family: var(--fuente-mono);
+  font-weight: 700;
+  font-size: var(--cuerpo-sm);
+  background: var(--black);
+  color: var(--lime);
+  padding: 6px 12px;
+  margin-bottom: var(--esp-1);
+}
+
+.corre p {
+  margin-top: var(--esp-2);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+}
+
+/* Los code que van dentro de la explicación son texto corrido, no comandos
+   sueltos: no pueden heredar la caja negra de arriba. */
+.corre p code {
+  display: inline;
+  background: var(--cream);
+  border: var(--borde-fino) solid var(--gray);
+  color: var(--black);
+  font-weight: 400;
+  padding: 1px 6px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* El camino de localhost a una URL. Cuatro columnas fijas y no auto-fit:
+   son cuatro pasos de una secuencia, y con auto-fit el cuarto caía solo a un
+   renglón de abajo, que se lee como si sobrara. */
+.flujo {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--esp-2);
+  margin: var(--esp-3) 0 var(--esp-4);
+}
+
+.flujo li {
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  padding: var(--esp-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.paso-num {
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-lg);
+  color: var(--pink);
+  margin-bottom: var(--esp-2);
+}
+
+.flujo h3 {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-subtitulo);
+  font-size: var(--titulo-sm);
+  line-height: var(--interlineado-titulo-suelto);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-titulo);
+  margin-bottom: var(--esp-1);
+}
+
+.flujo p {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+  flex: 1;
+  margin-bottom: var(--esp-2);
+}
+
+.paso-donde {
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-sm);
+  text-transform: uppercase;
+  color: var(--electric);
+  border-top: var(--borde-fino) solid var(--gray);
+  padding-top: var(--esp-1);
+}
+
+/* Lo que no va a GitHub. Caja negra: es la única de la página que interrumpe
+   la lectura, y tiene que interrumpirla. */
+.aviso {
+  background: var(--black);
+  color: var(--cream);
+  border: var(--borde) solid var(--black);
+  padding: var(--esp-4);
+  max-width: var(--medida-texto);
+}
+
+.aviso p,
+.aviso li {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+}
+
+.aviso ul {
+  list-style: none;
+  margin: var(--esp-3) 0;
+}
+
+.aviso li {
+  padding-left: 18px;
+  position: relative;
+  border-left: var(--borde) solid var(--pink);
+  padding-bottom: var(--esp-2);
+}
+
+.aviso li + li { margin-top: var(--esp-2); }
+
+.aviso strong { color: var(--lime); }
+
+.aviso code {
+  background: var(--gray);
+  color: var(--cream);
+  padding: 1px 6px;
+  font-family: var(--fuente-mono);
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+.aviso-final {
+  margin-top: var(--esp-3);
+  padding-top: var(--esp-3);
+  border-top: var(--borde-fino) solid var(--gray);
+  color: var(--pink);
+}
+
+/* Los cuatro pasos pasan a 2x2 antes de apilarse: en el medio quedan muy
+   angostos para el texto, pero de a cuatro renglones se pierde la secuencia. */
+@media (max-width: 900px) {
+  .flujo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  /* Las dos columnas del ejemplo no entran: el pedido queda arriba y el
+     comando abajo, que es el orden en que se leen igual. */
+  .par { grid-template-columns: 1fr; gap: var(--esp-2); }
+  .traduccion-cabecera { display: none; }
+  .aviso { padding: var(--esp-3); }
+}
+
+@media (max-width: 520px) {
+  .flujo { grid-template-columns: 1fr; }
 }
 
 /* ═══════════════════ PÁGINA RECURSOS ═══════════════════ */
