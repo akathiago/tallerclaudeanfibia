@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comandos — Cómo entrenar a tu IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ANFIBIA</div>
+    <nav>
+      <a href="index.html">Slides</a>
+      <a href="instalacion.html">Instalación</a>
+      <a href="skills.html">Skills</a>
+      <a href="comandos.html" aria-current="page">Comandos</a>
+      <a href="codigo.html">Código</a>
+      <a href="referencias.html">Referencias</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="lecturas.html">Lecturas</a>
+      <a href="videos.html">Videos</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="pagina-titulo">Comandos</h1>
+    <p class="pagina-bajada">Los que vas a usar de verdad, ordenados por el momento en que los necesitás. No están todos: están los que importan.</p>
+
+    <section class="nota-por-que">
+      <h2>¿Qué es un comando?</h2>
+      <p>Una instrucción corta que empieza con una barra y <strong>no se la estás pidiendo al modelo: se la estás pidiendo al programa.</strong> Cuando escribís <code>/clear</code> no le pedís a Claude que haga el esfuerzo de olvidarse; apretás un botón. Por eso son instantáneos, no fallan y no gastan contexto.</p>
+      <p>Escribí una barra sola y se despliega la lista entera, la de Claude Code más la de tus skills. Si ya sabés cómo se llama el que buscás, seguí escribiendo y se va filtrando.</p>
+    </section>
+
+    <div class="pantalla"><pre>&gt; /</pre></div>
+
+    <!-- EDITÁ ACÁ: cada .bloque-comandos es un momento de uso. Adentro, cada
+         comando es un <div class="comando"> con el nombre en el <dt> y la
+         explicación en el <dd>. Para agregar o sacar uno, copiá o borrá el
+         <div class="comando"> entero. El <span class="alias"> es opcional:
+         va solo cuando el comando tiene otro nombre que hace lo mismo. -->
+
+    <section class="bloque-comandos">
+      <span class="etiqueta">Momento 1</span>
+      <h2>Cuando arrancás</h2>
+      <p class="intro">Lo primero al abrir una carpeta nueva. Son los cinco minutos que te ahorran la hora siguiente.</p>
+      <dl class="comandos">
+        <div class="comando">
+          <dt><code>/init</code></dt>
+          <dd>Lee el proyecto entero y te escribe un <code>CLAUDE.md</code> con lo que encontró. La forma más rápida de que Claude sepa dónde está parado. Después lo editás a mano, que para eso es tuyo.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/plan</code></dt>
+          <dd>Modo plan: piensa, te muestra qué va a hacer y <strong>espera tu OK antes de tocar un solo archivo</strong>. Para cualquier cosa que no sea trivial, empezá acá. Le podés escribir la consigna en la misma línea.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/model</code></dt>
+          <dd>Elegís qué modelo usa y queda guardado como tu default. Los grandes razonan mejor, los chicos son más rápidos y más baratos.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/memory</code></dt>
+          <dd>Abre los <code>CLAUDE.md</code> para editarlos sin salir de la terminal: el del proyecto y el tuyo global, los dos niveles de los que hablamos en el taller.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/add-dir</code></dt>
+          <dd>Le suma otra carpeta a la sesión. Sirve cuando el material está en un lado y el proyecto en otro, y no querés andar copiando archivos.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/cd</code></dt>
+          <dd>Mueve la sesión a otra carpeta sin cerrarla ni perder la conversación.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="bloque-comandos">
+      <span class="etiqueta">Momento 2</span>
+      <h2>Cuando se pone lento, caro o se empieza a olvidar</h2>
+      <p class="intro">La ventana de contexto es finita: por eso el chat largo se vuelve tonto. Estos son los que la administran, y los que más vas a usar de toda la lista.</p>
+      <dl class="comandos">
+        <div class="comando">
+          <dt><code>/context</code></dt>
+          <dd>Te dibuja en colores cuánto contexto ocupa cada cosa. Mirá esto <em>antes</em> de decidir si te conviene compactar o limpiar. Es el diagnóstico.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/compact</code></dt>
+          <dd>Resume la conversación y libera espacio, pero se queda con el hilo. Le podés decir con qué quedarse: <code class="frase">/compact quedate con las decisiones de diseño</code>.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/clear</code></dt>
+          <dd>Conversación nueva, contexto vacío. Se olvida de todo lo <em>hablado</em> — no de tus archivos, que siguen ahí. Cuando cambiás de tema, esto es más limpio y más barato que seguir arrastrando.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/autocompact</code></dt>
+          <dd>Define en qué punto compacta solo, sin preguntarte.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/usage</code> <span class="alias">= /cost</span></dt>
+          <dd>Cuánto llevás gastado en esta sesión. Los dos nombres hacen exactamente lo mismo.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="bloque-comandos">
+      <span class="etiqueta">Momento 3</span>
+      <h2>Cuando algo salió mal</h2>
+      <p class="intro">Va a pasar. La diferencia entre un susto y un desastre es saber que existe el rebobinado.</p>
+      <dl class="comandos">
+        <div class="comando">
+          <dt><code>/rewind</code></dt>
+          <dd>Rebobina hasta un punto anterior: vuelve atrás <strong>el código y la conversación juntos</strong>. Es el deshacer de verdad, y es la razón por la que podés dejarlo trabajar tranquilo.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/diff</code></dt>
+          <dd>Un visor de todo lo que cambió y todavía no guardaste en Git. Antes de dar nada por bueno, mirá acá qué tocó realmente.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/resume</code></dt>
+          <dd>Volver a una conversación anterior con todo su contexto. Cerraste la terminal, apagaste la máquina, no importa: la charla sigue estando.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/doctor</code></dt>
+          <dd>Revisa tu instalación, te dice qué está roto y en muchos casos lo arregla solo. Primer lugar adonde ir cuando algo no anda y no sabés por qué.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/bug</code></dt>
+          <dd>Reportar el problema al equipo de Claude Code, con la conversación adjunta.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="bloque-comandos">
+      <span class="etiqueta">Momento 4</span>
+      <h2>Cuando querés que revise lo que hizo</h2>
+      <p class="intro">Escribir es la parte fácil. Desconfiar del resultado es donde está el oficio — y donde estos cuatro marcan la diferencia.</p>
+      <dl class="comandos">
+        <div class="comando">
+          <dt><code>/code-review</code> <span class="alias">= /review</span></dt>
+          <dd>Revisa los cambios buscando errores de verdad. Le podés pedir cuánto esfuerzo poner (de <code>low</code> a <code>max</code>) y que además los arregle, agregando <code>--fix</code>.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/security-review</code></dt>
+          <dd>Busca agujeros de seguridad en lo que cambiaste. Corrélo antes de publicar cualquier cosa que vaya a internet.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/simplify</code></dt>
+          <dd>Sugerencias de limpieza, sin la revisión completa: qué sobra, qué se repite, qué quedó dando vueltas de un intento anterior.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/verify</code></dt>
+          <dd>Verifica los cambios antes de aplicarlos.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="bloque-comandos">
+      <span class="etiqueta">Momento 5</span>
+      <h2>Para configurar tu máquina</h2>
+      <p class="intro">Los de una sola vez. Los tocás al principio y después te olvidás de que existen.</p>
+      <dl class="comandos">
+        <div class="comando">
+          <dt><code>/help</code></dt>
+          <dd>La lista completa de comandos disponibles en tu instalación.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/config</code> <span class="alias">= /settings</span></dt>
+          <dd>Abre la configuración: tema, modo de editor, todo lo cosmético y lo no tan cosmético.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/permissions</code></dt>
+          <dd>Qué puede hacer sin preguntarte y qué no. Vale la pena mirarlo una vez con calma: es la diferencia entre que te interrumpa cada treinta segundos y que toque algo que no querías.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/skills</code></dt>
+          <dd>Ver y manejar las skills instaladas — las cinco del taller aparecen acá. Si todavía no las instalaste, están en <a href="skills.html">la página de Skills</a>.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/mcp</code></dt>
+          <dd>Manejar las conexiones a servidores MCP, que es la forma en que Claude habla con programas de afuera.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/status</code></dt>
+          <dd>Estado de la sesión: qué modelo está usando, en qué carpeta está parado, con qué cuenta.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/hooks</code></dt>
+          <dd>Acciones automáticas que se disparan antes o después de que use una herramienta. Es tema avanzado, pero se configura acá.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/export</code></dt>
+          <dd>Exporta la conversación entera como texto plano. Útil para guardar una sesión que valió la pena.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/exit</code></dt>
+          <dd>Cierra Claude Code.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="bloque-comandos">
+      <span class="etiqueta opcional">Momento 6</span>
+      <h2>Cuando ya le agarraste la mano</h2>
+      <p class="intro">Nada de esto hace falta para el taller. Está acá para el día que quieras más, y para que sepas que existe.</p>
+      <dl class="comandos">
+        <div class="comando">
+          <dt><code>/agents</code></dt>
+          <dd>Subagentes: varios Claudes trabajando en paralelo, cada uno con su propio contexto. Sirve cuando tenés tres tareas que no dependen entre sí.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/subtask</code></dt>
+          <dd>Le pasás una tarea lateral a un subagente que vuelve solo con el resultado. Toda la investigación sucia queda en el contexto de él, no en el tuyo.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/background</code></dt>
+          <dd>Manda la sesión a segundo plano para que siga sola mientras vos hacés otra cosa.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/tasks</code></dt>
+          <dd>Qué está corriendo en segundo plano en este momento.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/branch</code></dt>
+          <dd>Bifurca la conversación en este punto exacto: probás dos caminos distintos saliendo del mismo lugar, sin pisar nada.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/btw</code></dt>
+          <dd>Una pregunta al margen. Te contesta sin que la pregunta ni la respuesta queden pegadas a la conversación.</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS
+       lugares: el href="mailto:..." y el texto del link. -->
+  <section class="contacto">
+    <span class="etiqueta">CONTACTO</span>
+    <h2>Cualquier consulta, escribime</h2>
+    <p>Dudas, inquietudes, preguntas técnicas: lo que sea, durante el taller o después. No hay pregunta demasiado básica.</p>
+    <a href="mailto:thiagovdonato@gmail.com">thiagovdonato@gmail.com</a>
+  </section>
+
+  <footer>Anfibia · Taller Cómo entrenar a tu IA</footer>
+</body>
+</html>

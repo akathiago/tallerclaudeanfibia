@@ -743,6 +743,127 @@ main {
 .anatomia dt { font-weight: 700; white-space: nowrap; }
 .anatomia dd { color: var(--gray); }
 
+/* ═══════════════════ PÁGINA COMANDOS ═══════════════════ */
+
+/* Cada bloque es un "momento de uso", separado por el corte estructural de
+   8px. La lista no va en grilla de tarjetas a propósito: son treinta y pico
+   de ítems y en dos columnas se lee como un catálogo, no como una lista de
+   consulta. Una sola columna angosta se escanea de arriba abajo. */
+
+.bloque-comandos {
+  max-width: var(--ancho-columna);
+  border-top: var(--borde-corte) solid var(--black);
+  padding-top: var(--esp-4);
+  margin-bottom: var(--esp-6);
+}
+
+.bloque-comandos .etiqueta {
+  display: inline-block;
+  font-family: var(--fuente-pixel);
+  font-size: var(--pixel-md);
+  text-transform: uppercase;
+  background: var(--pink);
+  color: var(--black);
+  border: var(--borde) solid var(--black);
+  padding: 8px 16px;
+  margin-bottom: var(--esp-3);
+}
+
+/* El último bloque es opcional: etiqueta lime en vez de pink, igual que el
+   "camino corto" de skills.html. */
+.bloque-comandos .etiqueta.opcional { background: var(--lime); }
+
+.bloque-comandos h2 {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-titulo);
+  font-size: var(--titulo-lg);
+  line-height: var(--interlineado-titulo);
+  letter-spacing: var(--tracking-titulo);
+  text-transform: uppercase;
+  text-wrap: balance;
+  margin-bottom: var(--esp-2);
+}
+
+.bloque-comandos .intro {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-md);
+  line-height: var(--interlineado-cuerpo);
+  max-width: var(--medida-texto);
+  margin-bottom: var(--esp-4);
+}
+
+.comandos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+}
+
+.comando {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: var(--esp-3);
+  align-items: baseline;
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  padding: var(--esp-3);
+}
+
+/* El nombre va como chip de terminal: negro con lime, que es exactamente
+   como se ve cuando lo escribís. */
+.comando dt code {
+  display: inline-block;
+  font-family: var(--fuente-mono);
+  font-weight: 700;
+  font-size: var(--cuerpo-md);
+  background: var(--black);
+  color: var(--lime);
+  padding: 6px 12px;
+  word-break: break-word;
+}
+
+/* El alias va en mono y en minúsculas a propósito. En VT323 y en mayúsculas,
+   "O /REVIEW" se lee como "0 /REVIEW": la O de la fuente terminal es igual
+   que un cero, y acá el texto es un comando que alguien va a tipear. */
+.comando dt .alias {
+  display: block;
+  margin-top: var(--esp-1);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-xs);
+  color: var(--gray);
+}
+
+.comando dd {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+}
+
+/* nowrap porque el guion es punto de corte natural en CSS: sin esto, "--fix"
+   se parte en "- -" / "fix" al final del renglón, que es justo lo que no
+   puede pasar con algo que se copia y se pega. */
+.comando dd code {
+  background: var(--cream);
+  border: var(--borde-fino) solid var(--gray);
+  padding: 1px 6px;
+  font-family: var(--fuente-mono);
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+/* La excepción: un comando con su frase entera adentro, que sí tiene que
+   poder envolver o se va de ancho. */
+.comando dd code.frase { white-space: normal; }
+
+.comando dd a { color: var(--electric); }
+.comando dd a:hover { background: var(--electric); color: var(--cream); }
+
+@media (max-width: 720px) {
+  /* Los 230px de la columna del nombre no entran en un teléfono: el chip
+     queda arriba y la explicación abajo. */
+  .comando { grid-template-columns: 1fr; gap: var(--esp-2); }
+  .bloque-comandos h2 { font-size: var(--titulo-md); }
+}
+
 /* ═══════════════════ PÁGINA RECURSOS ═══════════════════ */
 
 .lista-recursos {
