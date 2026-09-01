@@ -466,6 +466,118 @@ window.DECK = {
       "kicker": "66 / CLASE 2",
       "parte": "CLASE 2",
       "notas": "Chateá tu proyecto con el chat. Pedile que te devuelva un prompt. Tiralo en Claude Code. Andá iterando. No busques que salga perfecto de una: la gracia está en ir ajustando. La tarea es soltar el miedo. Jugar, romper, iterar."
+    },
+    {
+      "archivo": "138-ultima-clase-apertura.html",
+      "titulo": "Última clase · apertura",
+      "kicker": "67 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "Apertura, mismo formato que la de Clase 2. Hasta acá Claude Code trabajó sobre tu carpeta y tu terminal. Hoy sale de ahí en tres direcciones: hacia copias de sí mismo (subagentes), hacia otros programas (MCP) y hacia lo que hay debajo de todo eso (API). Decirlo mirando al aula y pasar rápido."
+    },
+    {
+      "archivo": "139-mapa-de-hoy.html",
+      "titulo": "El mapa de hoy",
+      "kicker": "68 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "El orden va de lo que ven a lo que hay debajo: subagentes (una forma de trabajar del agente que ya conocen), MCP (lo que instalan) y API (lo que ni ven, pero explica los dos anteriores). Ninguna pide programar. Repetir eso: es el miedo que traen."
+    },
+    {
+      "archivo": "140-que-es-un-subagente.html",
+      "titulo": "Qué es un subagente",
+      "kicker": "69 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "La definición antes del diagrama, como con 'Qué es un agente'. Un subagente es otra instancia del mismo modelo con su propia ventana de contexto y una misión acotada. Lo que hay que subrayar es la caja: arranca de cero, no sabe nada de la conversación. Eso explica por qué a veces devuelve algo fuera de foco: el encargo era vago."
+    },
+    {
+      "archivo": "141-como-funciona-un-subagente.html",
+      "titulo": "Cómo funciona un subagente",
+      "kicker": "70 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "El paso 02 (reparte) es el foco: el principal escribe un encargo por subagente, y ese texto es todo lo que el subagente va a saber. Mostrar con el dedo el 04: lo que vuelve es un resumen, no la exploración. Conectar con la ventana de contexto de la clase 1: así el hilo principal no se llena de basura."
+    },
+    {
+      "archivo": "142-un-hilo-o-varios.html",
+      "titulo": "Un solo hilo o varios",
+      "kicker": "71 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "El porqué. Izquierda: todo en un hilo, cada archivo leído y cada intento fallido se suma al contexto hasta que se pone lento y después tonto (lo vieron en 'Más contexto no siempre es mejor'). Derecha: cada tarea en su ventana, en paralelo, y una segunda mirada que no arrastra el sesgo del hilo."
+    },
+    {
+      "archivo": "143-subagentes-en-vivo.html",
+      "titulo": "Subagentes en vivo",
+      "kicker": "72 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "Momento en vivo si hay tiempo; si no, se cuenta el ejemplo de la slide. El pedido nombra dos subagentes con dos misiones distintas (verificar cifras, revisar estilo) y pide integrar. Lo que hay que mirar: al hilo volvieron dos resúmenes cortos. Y el remate de siempre: la cifra corregida la verifica la persona antes de aceptar."
+    },
+    {
+      "archivo": "144-cuando-usar-subagentes.html",
+      "titulo": "Cuándo usar subagentes",
+      "kicker": "73 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "La regla de bolsillo está en el pie: exploración larga, devolución corta. Verificar cifras y explorar un repo grande, sí. Corregir un párrafo o seguir una conversación, no: la primera es más rápida en el hilo, la segunda necesita todo el contexto que el subagente no tiene."
+    },
+    {
+      "archivo": "145-sin-mcp-con-mcp.html",
+      "titulo": "Sin MCP, con MCP",
+      "kicker": "74 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "Abre el bloque MCP por el problema, no por la sigla. Sin MCP, la persona es el cable: copia, pega, copia, pega, y la IA solo ve lo que le pegaron. Con MCP, se instala una vez y Claude entra directo, pidiendo permiso. Recién en el pie aparece qué significa la sigla: Model Context Protocol."
+    },
+    {
+      "archivo": "146-como-funciona-un-mcp.html",
+      "titulo": "Cómo funciona un MCP",
+      "kicker": "75 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "El foco es el 02: Claude ve qué herramientas tiene enchufadas y elige. No hace falta decirle 'usá el MCP de Obsidian', alcanza con pedir. El 03 es la palabra que asusta: 'servidor' no quiere decir nube, es un programita que corre en tu compu y traduce. Protocolo = el acuerdo sobre cómo se habla; servidor = quien lo cumple para cada app."
+    },
+    {
+      "archivo": "147-mcp-en-vivo.html",
+      "titulo": "Un MCP andando",
+      "kicker": "76 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "Momento en vivo, este sí conviene hacerlo: pedirle a Claude que busque en Obsidian o en Drive algo que esté ahí de verdad. Lo que tienen que ver es que la persona no abrió la app ni copió nada, y que Claude pidió permiso antes de entrar. Lo mismo vale para Notion, GitHub o el mail."
+    },
+    {
+      "archivo": "148-como-instalar-un-mcp.html",
+      "titulo": "Cómo instalar un MCP",
+      "kicker": "77 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "Los cinco pasos para la tarea. El 01 importa: buscar el MCP oficial de la app, no cualquiera que aparezca en internet, porque le estás dando acceso a tus cosas. El 04 es la costumbre que se llevan: probar con algo chico y mirar qué permiso pide antes de dejarlo trabajar solo. Si se traba, el 05: pegarle el error a la IA."
+    },
+    {
+      "archivo": "149-que-es-una-api.html",
+      "titulo": "Qué es una API",
+      "kicker": "78 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "La pieza que está debajo de todo. Una API es la puerta por la que un programa deja que otro le pida cosas: sin pantalla, en un formato fijo. El ejemplo del clima es el que entra: la app no midió nada, se lo pidió a otro. La ventanilla del trámite es la analogía: formulario fijo, respuesta, y no entrás a la oficina."
+    },
+    {
+      "archivo": "150-una-api-por-dentro.html",
+      "titulo": "Una API por dentro",
+      "kicker": "79 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "Un pedido real a la API de Claude, recortado. No hace falta leerlo entero: mostrar tres cosas. La llave (rosa): identifica quién paga, es secreta. El modelo (azul): el mismo que usan en el chat. Y abajo, usage: los tokens de la clase 1, contados y facturados. El chat cobra suscripción; la API cobra pedido por pedido."
+    },
+    {
+      "archivo": "151-donde-te-cruzas-una-api.html",
+      "titulo": "Dónde te cruzás una API",
+      "kicker": "80 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "Cuatro lugares donde la palabra les va a aparecer. La API key en rosa a propósito: es lo único de la clase que puede salir caro si se comparte o se sube a GitHub. La tercera caja cierra el círculo con el bloque anterior: cada servidor MCP le habla a una API; el MCP traduce, la API es el idioma. La cuarta abre la puerta a los proyectos: datos vivos en tu sitio."
+    },
+    {
+      "archivo": "152-cuatro-piezas.html",
+      "titulo": "Cuatro piezas, un agente",
+      "kicker": "81 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "El cierre conceptual del taller entero. Skill: cómo se hace. Subagente: quién lo hace. MCP: con qué trabaja. API: cómo se hablan los programas. Cuatro piezas para el mismo agente que definieron en la clase 1. Ninguna exige programar; todas exigen pedir bien, que es lo que practicaron cinco clases."
+    },
+    {
+      "archivo": "153-tarea-final.html",
+      "titulo": "Tarea final",
+      "kicker": "82 / ÚLTIMA CLASE",
+      "parte": "ÚLTIMA CLASE",
+      "notas": "Tarea concreta y chica: elegir un programa donde viva su trabajo, instalar el MCP oficial y pedirle a Claude algo que hasta hoy hacían copiando y pegando. La consigna de fondo es la misma de todo el taller: si se traba, preguntarle a la IA. El sitio queda como referencia después del taller."
     }
   ]
 };

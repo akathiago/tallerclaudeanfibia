@@ -1,0 +1,196 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE CHECKLIST — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  Una lista de acciones numeradas, todas del mismo peso. Es para
+  cerrar un bloque con "esto es lo que hay que hacer": hábitos,
+  pasos de un método, cosas para llevarse anotadas.
+
+  CUÁNDO NO USARLA
+  Si es la agenda de la charla y querés marcar en qué punto estás,
+  andá a slide-indice: ahí hay un ítem resaltado y el resto en gris.
+  Acá no hay jerarquía a propósito, son todos igual de importantes.
+  Si son pasos que van uno después del otro, andá a slide-diagrama.
+
+  CÓMO USARLO
+  1. Doble click para verlo en el navegador.
+  2. Para editar, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Cambiá solo lo que dice "EDITÁ ACÁ".
+
+  CUÁNTO ENTRA
+  Hasta 7 ítems. Una línea cada uno, hasta 12 palabras.
+  Con 5 o menos queda más aire y se lee mejor de lejos.
+  Si tenés 9, son dos slides. No achiques la letra.
+
+  LOS NÚMEROS SE ESCRIBEN A MANO
+  Van en el HTML, no salen de un contador. Así se puede empezar en
+  08 cuando la lista sigue en una segunda slide.
+
+  NO TOQUES el resto del bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Cómo instalar un MCP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+  }
+
+  /* ——— Lo único ajustable de esta pieza ——— */
+  :root {
+    /* EDITÁ ACÁ: el acento. var(--lime), var(--electric) o var(--pink) */
+    --acento: var(--lime);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .barra {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 60px;
+    background: var(--acento); border-bottom: 2px solid var(--black);
+    flex-shrink: 0;
+  }
+  .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
+  .barra .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; }
+
+  .cuerpo { flex: 1; padding: 60px 90px 70px; display: flex; flex-direction: column; }
+
+  .kicker { font-family: var(--fuente-pixel); font-size: 22px; color: var(--electric); margin-bottom: 24px; }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 92px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1400px;
+    text-wrap: balance;
+    margin-bottom: 44px;
+  }
+
+  .lista { flex: 1; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+  .item {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    border: 3px solid var(--black);
+    background: var(--paper);
+    box-shadow: 6px 6px 0 var(--black);
+    min-height: 0;
+  }
+
+  /* El número. Silkscreen acá está bien: es una etiqueta, no un párrafo. */
+  .item .n {
+    flex-shrink: 0;
+    width: 96px;
+    display: grid;
+    place-items: center;
+    background: var(--acento);
+    border-right: 3px solid var(--black);
+    font-family: var(--fuente-pixel);
+    font-size: 26px;
+    color: var(--black);
+  }
+
+  /* align-self centra el texto sin volver esto un contenedor flex. Si se le
+     pone display:flex, el <b> y el texto que sigue pasan a ser dos items y el
+     espacio del medio desaparece: queda "distintas.Es". */
+  .item .txt {
+    flex: 1;
+    align-self: center;
+    padding: 0 34px;
+    font-family: var(--fuente-mono);
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  /* La primera palabra o dos, en negrita, funcionan de título del ítem. */
+  .item .txt b { font-weight: 700; }
+
+  .pie { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
+  .pie .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--black); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+<body>
+
+<div class="lienzo">
+  <div class="barra"><div class="logo">ANFIBIA</div><div class="num">77 / 82</div></div>
+  <div class="cuerpo">
+    <p class="kicker">MCP</p>
+    <h2 class="titulo">Cómo se instala uno</h2>
+    <ul class="lista">
+      <li class="item"><span class="n">01</span><span class="txt"><b>Buscá el MCP oficial de la app.</b> Notion, Drive, GitHub y Canva tienen el suyo.</span></li>
+      <li class="item"><span class="n">02</span><span class="txt"><b>En Claude Desktop:</b> Configuración → Conectores → Agregar.</span></li>
+      <li class="item"><span class="n">03</span><span class="txt"><b>Autorizá con tu cuenta</b> cuando te lo pida. Una sola vez.</span></li>
+      <li class="item"><span class="n">04</span><span class="txt"><b>Probá con un pedido chico</b> y mirá qué permiso te pide antes de actuar.</span></li>
+      <li class="item"><span class="n">05</span><span class="txt"><b>Si se traba, pegale el error a la IA</b> y preguntale qué pasó.</span></li>
+    </ul>
+    <div class="pie"><div class="meta">En Claude Code es lo mismo desde la terminal: claude mcp add</div><div class="firma"><i></i><i></i><i></i></div></div>
+  </div>
+</div>
+
+<div class="ayuda">SLIDE DE CHECKLIST · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+
+</body>
+</html>

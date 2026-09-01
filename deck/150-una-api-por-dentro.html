@@ -1,0 +1,187 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE CÓDIGO O PROMPT — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  El bloque de código del sitio a pantalla completa: fondo negro,
+  texto lime en monoespaciada. Sirve igual para un prompt que para
+  un fragmento de código.
+
+  CÓMO USARLO
+  1. Doble click para verlo en el navegador.
+  2. Para editar, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Cambiá solo lo que dice "EDITÁ ACÁ".
+
+  OJO CON LOS ESPACIOS: adentro del bloque <pre> el texto sale tal
+  cual lo escribís, con los espacios y los saltos de línea que pongas.
+  No lo indentes de más ni lo alinees "para que quede lindo" en el
+  editor: lo que ves ahí es lo que se ve en la slide.
+
+  PARA PINTAR PARTES DEL TEXTO, envolvelas así:
+    <b class="comentario">esto queda gris</b>
+    <b class="clave">esto queda rosa</b>
+    <b class="dato">esto queda azul</b>
+
+  ENTRAN ~18 RENGLONES. Si tenés más, partilo en dos slides: nadie
+  lee 40 líneas proyectadas.
+
+  NO TOQUES el bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Una API por dentro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+
+    --acento: var(--lime);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+    color: var(--cream);
+    padding: 66px 80px 60px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .arriba { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-bottom: 40px; }
+  .logo { font-family: var(--fuente-pixel); font-size: 28px; color: var(--cream); }
+  .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; color: var(--gray); }
+
+  .kicker { font-family: var(--fuente-pixel); font-size: 22px; color: var(--acento); margin-bottom: 22px; }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 84px;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1500px;
+    text-wrap: balance;
+    margin-bottom: 40px;
+  }
+
+  /* El bloque de código: borde crema porque el fondo ya es negro. */
+  .bloque {
+    flex: 1;
+    border: 3px solid var(--cream);
+    padding: 34px 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .bloque-etiqueta {
+    font-family: var(--fuente-pixel);
+    font-size: 18px;
+    color: var(--acento);
+    margin-bottom: 24px;
+  }
+  .bloque pre {
+    font-family: var(--fuente-mono);
+    font-size: 26px;
+    line-height: 1.65;
+    color: var(--lime);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .bloque b { font-weight: 400; }
+  .comentario { color: var(--gray); }
+  .clave { color: var(--pink); }
+  .dato { color: var(--electric); background: var(--cream); padding: 0 6px; }
+
+  .nota {
+    font-family: var(--fuente-mono);
+    font-size: 21px;
+    line-height: 1.6;
+    color: var(--cream-mute);
+    margin-top: 30px;
+    max-width: 100ch;
+  }
+
+  .abajo { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; }
+  .abajo .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--gray); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+</style>
+</head>
+<body>
+<body>
+
+<div class="lienzo">
+  <div class="arriba"><div class="logo">ANFIBIA</div><div class="num">79 / 82</div></div>
+  <p class="kicker">API</p>
+  <h2 class="titulo">Un pedido real, por dentro</h2>
+  <div class="bloque">
+    <p class="bloque-etiqueta">LA API DE CLAUDE · UN PEDIDO Y SU RESPUESTA</p>
+<pre><b class="comentario"># Lo que manda tu programa</b>
+POST https://api.anthropic.com/v1/messages
+x-api-key: <b class="clave">sk-ant-… tu llave secreta …</b>
+{ "model": "<b class="dato">claude-opus-5</b>", "max_tokens": 300,
+  "messages": [ { "role": "user",
+      "content": "Resumí esta nota en tres líneas: …" } ] }
+
+<b class="comentario"># Lo que vuelve</b>
+{ "content": [ { "type": "text", "text": "1. …" } ],
+  "usage": { "input_tokens": <b class="dato">812</b>, "output_tokens": <b class="dato">64</b> } }</pre>
+  </div>
+  <p class="nota">Ahí están los tokens de la clase 1: 812 de entrada y 64 de salida, y eso es lo que se factura. El chat cobra una suscripción; la API cobra pedido por pedido.</p>
+  <div class="abajo"><div class="meta">Es lo que usa por dentro cada app «con IA»</div><div class="firma"><i></i><i></i><i></i></div></div>
+</div>
+
+<div class="ayuda">SLIDE DE CÓDIGO · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+
+</body>
+</html>
