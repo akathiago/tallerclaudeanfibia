@@ -29,12 +29,12 @@
 
   <main>
     <h1 class="pagina-titulo">Skills</h1>
-    <p class="pagina-bajada">Las cinco skills del taller: qué son, cómo se instalan y cómo se usan. Diez minutos, y es copiar unas carpetas.</p>
+    <p class="pagina-bajada">Las cuatro skills del taller: qué son, cómo se instalan y cómo se usan. Diez minutos, y es copiar unas carpetas.</p>
 
     <section class="nota-por-que">
       <h2>¿Qué es una skill?</h2>
       <p>Un instructivo empaquetado: le enseña a Claude a hacer una tarea puntual de una manera puntual. No es un programa que se instala ni algo que haya que configurar. Es una carpeta con archivos de texto que Claude lee cuando hacen falta.</p>
-      <p>Son cinco, y vienen de dos lados. <strong>Dos las escribí para el taller:</strong> una te acompaña a construir tu proyecto y la otra te entrevista para armar tu archivo de preferencias. <strong>Las otras tres son ajenas</strong> — las recomiendo porque las uso todos los días, y están en el mismo Drive para que no las tengas que ir a buscar.</p>
+      <p>Son cuatro, y vienen de dos lados. <strong>Dos las escribí para el taller:</strong> una te ayuda a armar el prompt de tu proyecto y la otra te entrevista para armar tu archivo de preferencias. <strong>Las otras dos son ajenas:</strong> las recomiendo porque las uso todos los días, y están en el mismo Drive para que no las tengas que ir a buscar.</p>
     </section>
 
     <!-- EDITÁ ACÁ: el link de descarga. Si cambiás la carpeta de Drive,
@@ -42,9 +42,8 @@
     <section class="descarga">
       <span class="etiqueta">DESCARGA</span>
       <h2>Bajate las skills del Drive</h2>
-      <p>Están las cinco en esta carpeta. Bajala entera: en Drive, botón derecho sobre la carpeta &rarr; <strong>Descargar</strong>. Te llega un <code>.zip</code> que hay que descomprimir.</p>
+      <p>Están las cuatro en esta carpeta. Bajala entera: en Drive, botón derecho sobre la carpeta &rarr; <strong>Descargar</strong>. Te llega un <code>.zip</code> que hay que descomprimir.</p>
       <a class="boton" href="https://drive.google.com/drive/folders/1BrpfCG4VFTa9wP1lk8HjIvlR1k1xoMAf" target="_blank" rel="noopener">Abrir la carpeta de Drive</a>
-      <p class="aclaracion">Si te pide permiso de acceso, escribime y te lo doy.</p>
     </section>
 
     <!-- EDITÁ ACÁ: cada .paso-instalacion es un paso. Para agregar o sacar
@@ -58,32 +57,29 @@
         <li><code>.claude/skills/</code> <strong>dentro de un proyecto</strong> &rarr; funciona solo en ese proyecto.</li>
         <li><code>.claude/skills/</code> <strong>en tu carpeta de usuario</strong> &rarr; funciona en <strong>todos</strong> tus proyectos.</li>
       </ul>
-      <p>Estas cinco van en tu carpeta de usuario, porque las vas a querer usar en el proyecto que armes vos, que todavía no existe. Es la misma lógica de los dos niveles del <code>CLAUDE.md</code>: hay cosas de un proyecto y cosas tuyas para siempre.</p>
+      <p>Estas cuatro van en tu carpeta de usuario, porque las vas a querer usar en el proyecto que armes vos, que todavía no existe. Es la misma lógica de los dos niveles del <code>CLAUDE.md</code>: hay cosas de un proyecto y cosas tuyas para siempre.</p>
       <p>Tu carpeta de usuario es <code>C:\Users\TuNombre</code> en Windows y <code>/Users/TuNombre</code> en Mac. Adentro tiene que quedar así:</p>
       <div class="arbol"><pre>TuNombre/
 └── .claude/
     └── skills/
         ├── talleranfibia/
-        │   ├── SKILL.md
-        │   └── referencias/
+        │   └── SKILL.md
         ├── claude-md-global/
         │   └── SKILL.md
         ├── frontend-design/
         │   └── SKILL.md
-        ├── skill-creator/
-        │   ├── SKILL.md
-        │   ├── scripts/
-        │   └── references/
-        └── agent-browser/
-            └── SKILL.md</pre></div>
+        └── skill-creator/
+            ├── SKILL.md
+            ├── scripts/
+            └── references/</pre></div>
     </section>
 
     <section class="paso-instalacion">
       <span class="etiqueta">Paso 2</span>
       <h2>Copiá las carpetas ahí</h2>
-      <p>Descomprimí el zip y mové las cinco carpetas adentro de <code>.claude/skills/</code>. Van todas al mismo lugar, no importa quién las escribió.</p>
+      <p>Descomprimí el zip y mové las cuatro carpetas adentro de <code>.claude/skills/</code>. Van todas al mismo lugar, no importa quién las escribió.</p>
       <ul>
-        <li><strong>Si ya tenés la carpeta <code>.claude/skills</code>:</strong> pegá las cinco adentro, sin borrar lo que había.</li>
+        <li><strong>Si ya tenés la carpeta <code>.claude/skills</code>:</strong> pegá las cuatro adentro, sin borrar lo que había.</li>
         <li><strong>Si no existe:</strong> creala. Ojo con el punto del principio: es <code>.claude</code>, no <code>claude</code>.</li>
       </ul>
       <p>¿No ves la carpeta <code>.claude</code>? No se borró: empieza con punto y eso la hace invisible.</p>
@@ -106,7 +102,7 @@
     <section class="paso-instalacion">
       <span class="etiqueta opcional">El camino corto</span>
       <h2>O pedíselo a Claude</h2>
-      <p>Si lo de arriba te suena a chino, abrí Claude Code en la carpeta donde descomprimiste el zip y pegale esto:</p>
+      <p>Si lo de arriba te suena a chino, abrí la pestaña Code de la app, elegí la carpeta donde descomprimiste el zip y pegale esto:</p>
       <ul>
         <li><code>Copiá todas las carpetas de skills que están acá a mi carpeta de usuario, en .claude/skills/</code></li>
       </ul>
@@ -116,15 +112,14 @@
     <section class="paso-instalacion">
       <span class="etiqueta">Paso 3</span>
       <h2>Verificá que aparezcan</h2>
-      <p><strong>Cerrá Claude Code y abrilo de nuevo.</strong> Las skills se leen al arrancar: si no reiniciás, no aparecen.</p>
+      <p><strong>Cerrá la app de Claude y abrila de nuevo.</strong> Las skills se leen al arrancar: si no reiniciás, no aparecen.</p>
       <p>Después escribí una barra y nada más:</p>
       <div class="pantalla"><pre>&gt; /</pre></div>
       <p>Se despliega la lista de comandos disponibles. Tienen que estar estas cuatro:</p>
       <div class="pantalla"><pre>  /claude-md-global   <span class="apagado">Asistente para escribir tu CLAUDE.md global</span>
   /frontend-design    <span class="apagado">Interfaces con criterio visual</span>
   /skill-creator      <span class="apagado">Crear y mejorar skills</span>
-  /talleranfibia      <span class="apagado">Acompaña a construir tu proyecto web</span></pre></div>
-      <p class="verificar">Cuatro y no cinco: <code>agent-browser</code> no sale en esta lista a propósito. No se llama con un comando — se usa sola cuando le pedís algo del navegador. Y necesita un paso más, que está abajo.</p>
+  /talleranfibia      <span class="apagado">Te arma el prompt de tu proyecto</span></pre></div>
     </section>
 
     <!-- EDITÁ ACÁ: la ficha de cada skill. Si agregás una skill nueva al
@@ -134,17 +129,17 @@
 
     <section class="paso-instalacion">
       <h2>/talleranfibia</h2>
-      <p><strong>Cuándo:</strong> cuando arrancás tu proyecto, y cada vez que volvés a seguirlo.</p>
-      <p>Es un tutor, no un generador de plantillas: te explica cada decisión mientras la toma. Todo lo que construye es HTML, CSS y JavaScript puro — archivos que podés abrir, leer y entender.</p>
+      <p><strong>Cuándo:</strong> cuando arrancás tu proyecto, y cada vez que te trabás y no sabés cómo pedir el paso siguiente.</p>
+      <p>Es un cuestionario, no un constructor. Te pregunta qué querés lograr, con qué material contás, qué admirás y qué odiarías, y con eso te arma un prompt tuyo para pegarle al agente. No decide ni la tecnología ni la estética, y tu proyecto no tiene por qué ser una página web.</p>
       <div class="pantalla"><pre>&gt; /talleranfibia</pre></div>
-      <p><strong>Qué pasa después:</strong> lo primero que hace es preguntarte si ya sabés qué querés construir.</p>
+      <p><strong>Qué pasa después:</strong> lo primero que hace es preguntarte si ya sabés qué querés hacer.</p>
       <ul>
-        <li><strong>Si no sabés</strong> &rarr; te hace una entrevista de 6 preguntas y te ofrece tres caminos posibles.</li>
-        <li><strong>Si ya sabés</strong> &rarr; va directo a construir.</li>
-        <li><strong>Si volvés de una clase anterior</strong> &rarr; mostrale la carpeta del proyecto: lee lo que hay y sigue desde ahí.</li>
+        <li><strong>Si no sabés</strong> &rarr; te hace unas preguntas y te ofrece tres caminos posibles.</li>
+        <li><strong>Si ya sabés</strong> &rarr; va directo a las siete preguntas del cuestionario.</li>
+        <li><strong>Si ya empezaste</strong> &rarr; te arma un prompt para el paso que sigue.</li>
       </ul>
-      <p>Al final vas a tener una carpeta con tu proyecto, contenido real adentro, un <code>README.md</code> que explica qué es, y una URL pública para mandarle a alguien.</p>
-      <p class="verificar">Te va a pedir contenido de verdad y decisiones tuyas. No construye con relleno.</p>
+      <p>Al final te da el prompt para que lo revises y lo cambies. Lo pegás en una sesión nueva, en la carpeta de tu proyecto, y desde ahí trabajás con el agente.</p>
+      <p class="verificar">Traé material de verdad y dos o tres cosas que admires, de cualquier rubro. Eso es lo que hace que tu proyecto no se parezca al de al lado.</p>
     </section>
 
     <section class="paso-instalacion">
@@ -152,12 +147,12 @@
       <p><strong>Cuándo:</strong> una vez, apenas instalás Claude Code. Después la revisitás cada tanto.</p>
       <p>El <code>CLAUDE.md</code> del proyecto lo escribe Claude solo con <code>/init</code>. El personal no tiene comando equivalente, porque es sobre vos: quién sos, cómo querés que te hablen, en qué trabajás. Para eso está esta skill.</p>
       <div class="pantalla"><pre>&gt; /claude-md-global</pre></div>
-      <p><strong>Qué pasa después:</strong> te hace una entrevista corta en cuatro tandas — quién sos, qué tono querés, cómo trabajás, y con qué material trabajás. Al final te muestra el archivo terminado y te dice dónde guardarlo.</p>
+      <p><strong>Qué pasa después:</strong> te hace una entrevista corta: quién sos, qué tono querés, cómo trabajás y qué debería tener siempre presente. Al final te muestra el archivo y, si te gusta, lo guarda.</p>
       <p>Sin ese archivo, cada conversación arranca de cero: le explicás quién sos, le pedís que no se vaya por las ramas, y a la siguiente de nuevo. Con el archivo eso ya está dicho, en todos tus proyectos.</p>
       <p class="verificar">Lo que más rinde son las reglas de lo que NO querés. Si no sabés qué poner, pensá qué te da fastidio de un chatbot y escribilo como regla.</p>
     </section>
 
-    <h2 class="seccion-titulo">Las otras tres</h2>
+    <h2 class="seccion-titulo">Las otras dos</h2>
 
     <section class="nota-por-que">
       <h2>Estas no son mías</h2>
@@ -166,8 +161,8 @@
 
     <section class="paso-instalacion">
       <h2>/frontend-design</h2>
-      <p><strong>Cuándo:</strong> siempre que le pidas que construya una interfaz.</p>
-      <p>Es la respuesta al miedo de que todo termine con cara de plantilla. Empuja las decisiones visuales hacia algo con criterio y personalidad, en vez del gris genérico por defecto.</p>
+      <p><strong>Cuándo:</strong> es opcional. Usala si tu proyecto tiene una interfaz y ya elegiste una dirección propia.</p>
+      <p>Empuja las decisiones visuales hacia algo con más criterio que el gris genérico por defecto. Pero también tiene sus gustos: si la usás antes de tener tus referencias, tu proyecto se va a parecer al de los demás.</p>
       <div class="pantalla"><pre>&gt; /frontend-design</pre></div>
       <p><strong>Qué pasa después:</strong> no te hace preguntas ni arranca una conversación. Le cambia el criterio a Claude para lo que venga después, así que lo normal es invocarla y a continuación pedirle lo que querés construir.</p>
       <p class="verificar">Se instala copiando la carpeta, nada más. Viene de Anthropic.</p>
@@ -179,58 +174,47 @@
       <p>Una skill para escribir skills: te entrevista sobre qué querés que haga, arma la estructura de carpetas y archivos, y después te ayuda a probarla y corregirla. Es el paso de usar procedimientos de otros a fabricar los tuyos.</p>
       <div class="pantalla"><pre>&gt; /skill-creator</pre></div>
       <p><strong>Qué pasa después:</strong> te pregunta qué tarea querés empaquetar y para quién. Con eso te genera la carpeta con el <code>SKILL.md</code> adentro, lista para usar.</p>
-      <p class="verificar">Es la carpeta más pesada de las cinco: trae scripts y ejemplos además del SKILL.md. Copiala entera, no solo el archivo.</p>
+      <p class="verificar">Es la carpeta más pesada de las cuatro: trae scripts y ejemplos además del SKILL.md. Copiala entera, no solo el archivo.</p>
+    </section>
+
+    <h2 class="seccion-titulo">Para que Claude use el navegador</h2>
+
+    <section class="nota-por-que">
+      <h2>Esto no es una skill</h2>
+      <p>Sirve para que Claude deje de adivinar si algo funciona y vaya a probarlo: entra a un sitio, completa formularios, hace click, saca capturas. Hay dos caminos. Para probar tu propio sitio alcanza con el primero, que no hay que instalar.</p>
     </section>
 
     <section class="paso-instalacion">
-      <span class="etiqueta">Paso extra</span>
-      <h2>agent-browser</h2>
-      <p><strong>Cuándo:</strong> cuando querés que Claude abra Chrome y pruebe con sus propios ojos lo que acabás de construir.</p>
-      <p>Maneja el navegador solo: entra a un sitio, completa formularios, hace click, saca capturas. Deja de adivinar si algo funciona y va y lo prueba.</p>
-      <p><strong>Esta es la única que no alcanza con copiar.</strong> La carpeta le dice a Claude cómo usarla, pero el programa que maneja el navegador hay que instalarlo aparte, desde la terminal. Son dos líneas: la primera baja el programa y la segunda baja el navegador que va a manejar — esa segunda puede tardar un par de minutos.</p>
-      <p>Necesita Node.js, que ya lo instalaste en <a class="link-codigo" href="instalacion.html">Instalación</a>.</p>
-
-      <div class="sistemas">
-        <div class="sistema">
-          <h3>Mac</h3>
-          <ol>
-            <li>Abrí la Terminal: <code>Cmd + Espacio</code>, escribí "terminal", Enter.</li>
-            <li><code>npm i -g agent-browser</code></li>
-            <li><code>agent-browser install</code></li>
-          </ol>
-          <p class="verificar">Si la primera línea corta con <code>EACCES</code> o "permission denied", tu Node se instaló con permisos de sistema. Repetila como <code>sudo npm i -g agent-browser</code> y poné la contraseña de tu Mac.</p>
-        </div>
-        <div class="sistema">
-          <h3>Windows</h3>
-          <ol>
-            <li>Abrí PowerShell: tecla Windows, escribí "powershell", Enter.</li>
-            <li><code>npm i -g agent-browser</code></li>
-            <li><strong>Cerrá PowerShell y abrilo de nuevo.</strong> Si no, Windows todavía no encuentra el comando nuevo.</li>
-            <li><code>agent-browser install</code></li>
-          </ol>
-          <p class="verificar">Si te dice que "no se puede cargar el archivo … porque la ejecución de scripts está deshabilitada", es Windows bloqueando comandos nuevos. Se destraba una sola vez con <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code>, contestando <code>S</code>, y después repetís el paso 4.</p>
-        </div>
-      </div>
-
-      <p class="verificar">Para comprobar que quedó: <code>agent-browser --version</code>. Si devuelve un número, está.</p>
-
-      <p><strong>Cómo se usa:</strong> no tiene comando. Le pedís lo que querés en castellano y la usa sola.</p>
+      <span class="etiqueta">Sin instalar nada</span>
+      <h2>El navegador de la app</h2>
+      <p><strong>Cuándo:</strong> para probar lo que estás construyendo. Funciona igual uses el navegador que uses, Firefox y Safari incluidos.</p>
+      <p>La app de Claude trae un navegador adentro. Se abre con <code>Ctrl + Shift + B</code> en Windows y <code>Cmd + Shift + B</code> en Mac. Arranca limpio, sin tus cuentas ni tu historial.</p>
       <div class="pantalla"><pre>&gt; Abrí mi sitio en el navegador y sacame una captura
 &gt; de cómo se ve la portada en celular</pre></div>
-      <p class="verificar">Por eso no la buscás en la lista de <code>/</code>: está escondida a propósito.</p>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta opcional">Opcional</span>
+      <h2>Claude in Chrome</h2>
+      <p><strong>Cuándo:</strong> cuando Claude tiene que entrar a un sitio donde vos ya iniciaste sesión, como tu mail o un panel de trabajo.</p>
+      <p>Es una extensión que le da acceso a tu navegador real, con tus cuentas abiertas. Funciona en Chrome, Edge, Brave, Arc, Vivaldi y Opera. <strong>No funciona en Firefox ni en Safari:</strong> ahí usá el navegador de la app.</p>
+      <ol>
+        <li>Instalá la extensión desde la <a class="link-codigo" href="https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn" target="_blank" rel="noopener">Chrome Web Store</a>.</li>
+        <li>Iniciá sesión en la extensión con la misma cuenta que usás en la app.</li>
+        <li>Pedile algo del navegador a Claude. No tiene comando: se usa sola.</li>
+      </ol>
+      <p class="verificar">Ojo: entra con tu sesión, así que puede leer y tocar lo que vos podés. Mirá qué permiso te pide y no la dejes sola en sitios sensibles.</p>
     </section>
 
     <section class="paso-instalacion">
       <span class="etiqueta opcional">Si algo falla</span>
       <h2>No me aparecen</h2>
       <ul>
-        <li><strong>¿Reiniciaste Claude Code?</strong> Es lo primero, y resuelve la mayoría de los casos.</li>
+        <li><strong>¿Reiniciaste la app?</strong> Es lo primero, y resuelve la mayoría de los casos.</li>
         <li>Fijate que la carpeta se llame <code>.claude</code> con punto, no <code>claude</code>.</li>
         <li>Fijate que adentro de <code>talleranfibia/</code> esté el archivo <code>SKILL.md</code>. Si copiaste el archivo suelto sin su carpeta, no funciona.</li>
         <li>El error clásico es terminar con <code>skills/skills/talleranfibia/</code>. Tiene que haber <strong>una sola</strong> carpeta <code>skills</code>.</li>
-        <li>Si <code>/talleranfibia</code> responde raro o incompleto, verificá que esté la subcarpeta <code>referencias/</code> con sus 9 archivos. La skill los lee según el proyecto que elijas; si faltan, funciona a medias.</li>
-        <li><code>agent-browser</code> nunca va a aparecer en la lista de <code>/</code>: es normal. Si Claude te dice que no puede abrir el navegador, lo que falta son los dos comandos de <code>npm</code> de más arriba.</li>
-        <li>Si nada de esto funcionó, escribí <code>/doctor</code> adentro de Claude Code y mandame la captura.</li>
+        <li>Si nada de esto funcionó, escribí <code>/doctor</code> en la pestaña Code y mandame la captura.</li>
       </ul>
     </section>
   </main>

@@ -29,12 +29,12 @@
 
   <main>
     <h1 class="pagina-titulo">Instalación</h1>
-    <p class="pagina-bajada">Todo lo que hace falta instalar antes del taller, en orden.</p>
+    <p class="pagina-bajada">Todo lo que hace falta antes del taller, en orden. Lo opcional está al final.</p>
 
     <!-- EDITÁ ACÁ: la explicación de por qué se instala todo esto. -->
     <section class="nota-por-que">
       <h2>¿Por qué instalar todo esto?</h2>
-      <p>Para correr Claude Code te alcanza la app de escritorio. Todo lo demás no está acá para que la herramienta funcione: está para que pueda trabajar sobre tus archivos de verdad, y para que vos puedas volver atrás cuando se equivoque.</p>
+      <p>Para correr Claude Code te alcanza la app de escritorio. Git, GitHub y Node no están acá para que la herramienta funcione: están para que pueda trabajar sobre tus archivos de verdad, y para que vos puedas volver atrás cuando se equivoque.</p>
       <p>Git es el ejemplo claro. Un agente actúa, mira el resultado y vuelve a intentar: es rápido justamente porque puede equivocarse. Git es el punto de guardado que te deja dejarlo trabajar tranquilo, y GitHub es lo que después convierte eso en una dirección que podés compartir.</p>
     </section>
 
@@ -45,7 +45,6 @@
       <h2>Si preferís verlo hecho</h2>
       <p>En esta carpeta hay videos de apoyo para tener una referencia visual de la instalación. No reemplazan a esta página: sirven para ubicarte si algo no te cierra o si preferís ver a alguien haciéndolo.</p>
       <a class="boton" href="https://drive.google.com/drive/folders/1BrpfCG4VFTa9wP1lk8HjIvlR1k1xoMAf" target="_blank" rel="noopener">Abrir la carpeta de Drive</a>
-      <p class="aclaracion">Si te pide permiso de acceso, escribime y te lo doy.</p>
     </section>
 
     <!-- EDITÁ ACÁ: cada .paso-instalacion es una herramienta. Para agregar
@@ -54,25 +53,14 @@
     <section class="paso-instalacion">
       <span class="etiqueta">Imprescindible</span>
       <h2>Claude Desktop + plan Pro</h2>
-      <p>La app de escritorio donde vive Claude Code. El plan Pro cuesta USD 20 por mes y cubre Chat, Cowork y Code.</p>
+      <p>La app de escritorio donde vive Claude Code. El plan Pro cuesta USD 20 por mes y cubre Chat, Cowork y Code. Todo el taller se hace desde acá: la misma app abre tu carpeta, muestra los cambios y trae navegador y terminal.</p>
       <ol>
-        <li>Entrá a <a class="link-codigo" href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a> y descargá la app para tu sistema (Mac o Windows).</li>
+        <li>Entrá a <a class="link-codigo" href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a> y descargá la app para tu sistema (Windows o Mac).</li>
         <li>Instalala y abrila. Iniciá sesión con tu cuenta, o creá una si no tenés.</li>
         <li>Andá a <strong>Configuración → Suscripción</strong> y activá el plan <strong>Pro</strong>.</li>
+        <li>Entrá a la pestaña <strong>Code</strong> y elegí una carpeta de prueba para trabajar.</li>
       </ol>
-    </section>
-
-    <section class="paso-instalacion">
-      <span class="etiqueta solo-mac">Solo Mac</span>
-      <h2>Homebrew</h2>
-      <p>El instalador de línea de comandos de Mac. Resuelve versiones y dependencias por vos: con Homebrew instalado, todo lo que sigue se instala con una sola línea. En Windows no hace falta, se saltea este paso.</p>
-      <ol>
-        <li>Entrá a <a class="link-codigo" href="https://brew.sh" target="_blank" rel="noopener">brew.sh</a> (ahí está el mismo comando, por si cambia).</li>
-        <li>Abrí la Terminal (<code>Cmd + Espacio</code>, escribí "terminal").</li>
-        <li>Pegá esta línea y apretá Enter:<br><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></li>
-        <li>Seguí las instrucciones en pantalla. Puede pedir la contraseña de tu Mac.</li>
-      </ol>
-      <p class="verificar">Verificar: <code>brew --version</code></p>
+      <p class="verificar">Verificar: escribile <code>Hola, ¿en qué carpeta estás?</code> Si te contesta con la ruta, ya está. Todos los "verificar" que siguen se hacen acá.</p>
     </section>
 
     <section class="paso-instalacion">
@@ -80,20 +68,20 @@
       <p>El sistema de control de versiones. Hace falta para que Claude Code pueda guardar el historial de cambios de tu proyecto.</p>
       <div class="sistemas">
         <div class="sistema">
-          <h3>Mac</h3>
-          <ol>
-            <li>Con Homebrew instalado: <code>brew install git</code></li>
-          </ol>
-        </div>
-        <div class="sistema">
           <h3>Windows</h3>
           <ol>
             <li>Descargalo de <a class="link-codigo" href="https://git-scm.com/download/win" target="_blank" rel="noopener">git-scm.com/download/win</a></li>
             <li>Instalalo dejando todas las opciones por defecto.</li>
           </ol>
         </div>
+        <div class="sistema">
+          <h3>Mac</h3>
+          <ol>
+            <li>La mayoría de las Mac ya lo traen. Pedile a Claude que se fije y, si falta, que te guíe.</li>
+          </ol>
+        </div>
       </div>
-      <p class="verificar">Verificar: <code>git --version</code></p>
+      <p class="verificar">Verificar: <code>¿Tengo Git instalado? ¿Qué versión?</code></p>
     </section>
 
     <section class="paso-instalacion">
@@ -101,67 +89,79 @@
       <p>No es un programa que se instale: es la cuenta donde tu código queda guardado y compartible.</p>
       <ol>
         <li>Creá una cuenta gratis en <a class="link-codigo" href="https://github.com" target="_blank" rel="noopener">github.com</a>.</li>
-        <li>(Opcional pero recomendado) Configurá Git con tu identidad:<br>
-          <code>git config --global user.name "Tu nombre"</code><br>
-          <code>git config --global user.email "tu@mail.com"</code>
-        </li>
+        <li>(Opcional pero recomendado) Pedile a Claude: <code>Configurá Git con mi nombre y mi mail</code>, y pasale los dos datos.</li>
       </ol>
     </section>
 
     <section class="paso-instalacion">
       <h2>Node.js</h2>
       <p>El entorno que le permite a Claude Code correr scripts y levantar servidores locales fuera del navegador.</p>
-      <div class="sistemas">
-        <div class="sistema">
-          <h3>Mac</h3>
-          <ol>
-            <li><code>brew install node</code></li>
-          </ol>
-        </div>
-        <div class="sistema">
-          <h3>Windows</h3>
-          <ol>
-            <li>Descargá el instalador LTS de <a class="link-codigo" href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a></li>
-            <li>Instalalo con las opciones por defecto.</li>
-          </ol>
-        </div>
-      </div>
-      <p class="verificar">Verificar: <code>node --version</code></p>
+      <ol>
+        <li>Descargá el instalador LTS de <a class="link-codigo" href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a> (Windows o Mac).</li>
+        <li>Instalalo con las opciones por defecto.</li>
+        <li>Cerrá la app de Claude y abrila de nuevo, para que encuentre el programa nuevo.</li>
+      </ol>
+      <p class="verificar">Verificar: <code>¿Tengo Node instalado? ¿Qué versión?</code></p>
+    </section>
+
+    <h2 class="seccion-titulo">Opcionales</h2>
+
+    <section class="nota-por-que">
+      <h2>Con lo de arriba ya estás</h2>
+      <p>Esto no hace falta para el taller. Sumalo solo si lo necesitás o si te da curiosidad.</p>
     </section>
 
     <section class="paso-instalacion">
+      <span class="etiqueta opcional">Opcional</span>
       <h2>VS Code</h2>
-      <p>El editor donde vas a ver tus archivos, tu código y la terminal en un mismo lugar.</p>
+      <p>Un editor de código completo, para quien quiera ver y tocar los archivos con más detalle. La app de Claude ya muestra archivos y cambios, así que no hace falta.</p>
       <ol>
         <li>Descargalo de <a class="link-codigo" href="https://code.visualstudio.com" target="_blank" rel="noopener">code.visualstudio.com</a></li>
         <li>Instalalo y abrilo.</li>
         <li>En la barra de íconos de la izquierda, entrá a <strong>Extensiones</strong> (el ícono de los cuatro cuadraditos, o <code>Ctrl + Shift + X</code> en Windows / <code>Cmd + Shift + X</code> en Mac).</li>
         <li>Buscá <strong>Claude Code</strong> y apretá <strong>Install</strong> en la de <strong>Anthropic</strong>.</li>
       </ol>
-      <p>Con la extensión puesta, Claude trabaja adentro del editor: ves los cambios que va haciendo archivo por archivo, en vez de mirar una terminal a ciegas.</p>
       <p class="verificar">Verificar: reiniciá VS Code y fijate que aparezca el ícono de Claude en la barra lateral.</p>
     </section>
 
     <section class="paso-instalacion">
       <span class="etiqueta opcional">Opcional</span>
+      <h2>Claude in Chrome</h2>
+      <p>Una extensión que le da a Claude acceso a tu navegador real, con tus cuentas abiertas. Sirve cuando tiene que entrar a un sitio donde ya iniciaste sesión. Para probar tu propio sitio no hace falta: la app trae un navegador adentro (<code>Ctrl + Shift + B</code> en Windows, <code>Cmd + Shift + B</code> en Mac).</p>
+      <ol>
+        <li>Usá Chrome, Edge, Brave, Arc, Vivaldi u Opera. En Firefox y Safari no funciona: ahí quedate con el navegador de la app.</li>
+        <li>Instalá la extensión desde la <a class="link-codigo" href="https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn" target="_blank" rel="noopener">Chrome Web Store</a>.</li>
+        <li>Iniciá sesión en la extensión con la misma cuenta que usás en la app.</li>
+      </ol>
+      <p class="verificar">Ojo: entra con tu sesión, así que puede leer y tocar lo que vos podés. Mirá qué permiso te pide y no la dejes sola en sitios sensibles.</p>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta opcional">Opcional</span>
+      <h2>La terminal</h2>
+      <p>No se instala y no hace falta abrirla: Claude corre los comandos por vos. Si querés mirar, la app trae una adentro: botón <strong>Terminal</strong> arriba, o <code>Ctrl + `</code>. Se abre en la carpeta de tu sesión.</p>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta opcional">Opcional · Solo Mac</span>
+      <h2>Homebrew</h2>
+      <p>Un atajo para quien ya se maneja en la terminal: instala programas con una sola línea. No es obligatorio, y en Windows no hace falta.</p>
+      <ol>
+        <li>Entrá a <a class="link-codigo" href="https://brew.sh" target="_blank" rel="noopener">brew.sh</a> y copiá el comando que aparece ahí.</li>
+        <li>Pegalo en la terminal y apretá Enter. Puede pedir la contraseña de tu Mac.</li>
+      </ol>
+      <p class="verificar">Verificar: <code>brew --version</code></p>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta opcional">Opcional</span>
       <h2>Python</h2>
-      <p>Solo si tu trabajo implica manejar datos — planillas, bases, análisis, gráficos. No es requisito para el resto del taller.</p>
-      <div class="sistemas">
-        <div class="sistema">
-          <h3>Mac</h3>
-          <ol>
-            <li><code>brew install python</code></li>
-          </ol>
-        </div>
-        <div class="sistema">
-          <h3>Windows</h3>
-          <ol>
-            <li>Descargalo de <a class="link-codigo" href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a></li>
-            <li>Durante la instalación, marcá la casilla <strong>"Add Python to PATH"</strong>.</li>
-          </ol>
-        </div>
-      </div>
-      <p class="verificar">Verificar: <code>python3 --version</code> (Mac) / <code>python --version</code> (Windows)</p>
+      <p>Solo si tu trabajo implica manejar datos: planillas, bases, análisis, gráficos. No es requisito para el resto del taller.</p>
+      <ol>
+        <li>Descargalo de <a class="link-codigo" href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a> (Windows o Mac).</li>
+        <li>En Windows, durante la instalación, marcá la casilla <strong>"Add Python to PATH"</strong>.</li>
+      </ol>
+      <p class="verificar">Verificar: <code>¿Tengo Python instalado? ¿Qué versión?</code></p>
     </section>
   </main>
 

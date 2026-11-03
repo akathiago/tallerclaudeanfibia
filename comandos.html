@@ -35,6 +35,7 @@
       <h2>¿Qué es un comando?</h2>
       <p>Una instrucción corta que empieza con una barra y <strong>no se la estás pidiendo al modelo: se la estás pidiendo al programa.</strong> Cuando escribís <code>/clear</code> no le pedís a Claude que haga el esfuerzo de olvidarse; apretás un botón. Por eso son instantáneos, no fallan y no gastan contexto.</p>
       <p>Escribí una barra sola y se despliega la lista entera, la de Claude Code más la de tus skills. Si ya sabés cómo se llama el que buscás, seguí escribiendo y se va filtrando.</p>
+      <p>Esta lista incluye comandos pensados para la terminal. En la app de Claude la mayoría funciona igual, pero los que abren un panel (<code>/config</code>, <code>/permissions</code>, <code>/hooks</code>) no están disponibles: lo que te pide permiso se cambia en el selector de modo, abajo del cuadro donde escribís.</p>
     </section>
 
     <div class="pantalla"><pre>&gt; /</pre></div>
@@ -64,7 +65,7 @@
         </div>
         <div class="comando">
           <dt><code>/memory</code></dt>
-          <dd>Abre los <code>CLAUDE.md</code> para editarlos sin salir de la terminal: el del proyecto y el tuyo global, los dos niveles de los que hablamos en el taller.</dd>
+          <dd>Abre los <code>CLAUDE.md</code> para editarlos sin salir de Claude Code: el del proyecto y el tuyo global, los dos niveles de los que hablamos en el taller.</dd>
         </div>
         <div class="comando">
           <dt><code>/add-dir</code></dt>
@@ -120,7 +121,7 @@
         </div>
         <div class="comando">
           <dt><code>/resume</code></dt>
-          <dd>Volver a una conversación anterior con todo su contexto. Cerraste la terminal, apagaste la máquina, no importa: la charla sigue estando.</dd>
+          <dd>Volver a una conversación anterior con todo su contexto. Cerraste la app, apagaste la máquina, no importa: la charla sigue estando.</dd>
         </div>
         <div class="comando">
           <dt><code>/doctor</code></dt>
@@ -148,11 +149,11 @@
         </div>
         <div class="comando">
           <dt><code>/simplify</code></dt>
-          <dd>Sugerencias de limpieza, sin la revisión completa: qué sobra, qué se repite, qué quedó dando vueltas de un intento anterior.</dd>
+          <dd>Busca qué sobra, qué se repite y qué quedó dando vueltas de un intento anterior, y lo arregla. Ojo: no solo sugiere, toca los archivos.</dd>
         </div>
         <div class="comando">
           <dt><code>/verify</code></dt>
-          <dd>Verifica los cambios antes de aplicarlos.</dd>
+          <dd>Comprueba que un cambio hace lo que tiene que hacer: arma el proyecto, lo corre y mira el resultado.</dd>
         </div>
       </dl>
     </section>
@@ -208,7 +209,7 @@
       <dl class="comandos">
         <div class="comando">
           <dt><code>/agents</code></dt>
-          <dd>Subagentes: varios Claudes trabajando en paralelo, cada uno con su propio contexto. Sirve cuando tenés tres tareas que no dependen entre sí.</dd>
+          <dd>Te recuerda cómo crear y manejar subagentes: varios Claudes en paralelo, cada uno con su propio contexto. En la práctica, alcanza con pedírselos a Claude en castellano.</dd>
         </div>
         <div class="comando">
           <dt><code>/subtask</code></dt>

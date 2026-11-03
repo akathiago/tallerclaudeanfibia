@@ -38,7 +38,7 @@ window.DECK = {
       "titulo": "Pero tampoco negar su impacto",
       "kicker": "05 / APERTURA",
       "parte": "ABRIR EL PROBLEMA",
-      "notas": "Segunda mitad del par, va pegada. El escepticismo de la anterior no es una excusa para no aprender esto. El punto 05 es una promesa concreta del taller: en cinco clases se llevan algo publicado. Conviene decirla mirando al aula."
+      "notas": "Segunda mitad del par, va pegada. El escepticismo de la anterior no es una excusa para no aprender esto. El punto 05 es una promesa concreta del taller: en cuatro clases se llevan algo propio funcionando. Conviene decirla mirando al aula."
     },
     {
       "archivo": "43-que-se-llevan.html",
@@ -108,7 +108,7 @@ window.DECK = {
       "titulo": "Ser la persona de IA",
       "kicker": "15 / HABILIDAD 01",
       "parte": "PARA QUÉ SIRVE DE VERDAD",
-      "notas": "Primera de las seis habilidades. En casi todo equipo hay lugar para alguien que entienda estas herramientas y pueda traducirlas al resto. No es un puesto técnico: es el que sabe qué se puede pedir y qué no."
+      "notas": "En casi todo equipo hay lugar para alguien que entienda estas herramientas y pueda traducirlas al resto. No es un puesto técnico: es el que sabe qué se puede pedir y qué no."
     },
     {
       "archivo": "48-gusto-y-criterio.html",
@@ -255,14 +255,14 @@ window.DECK = {
       "titulo": "Los agentes ya son producto",
       "kicker": "36 / PRESENTE",
       "parte": "DEL CHAT AL AGENTE",
-      "notas": "Cierra la línea de tiempo anterior. Dejaron de ser demos: son productos pagos que se usan todos los días, y ya aparecen agentes para tareas no técnicas. El concepto se generalizó."
+      "notas": "Dejaron de ser demos: son productos pagos que se usan todos los días, y ya aparecen agentes para tareas no técnicas. El concepto se generalizó."
     },
     {
       "archivo": "36-a-que-accede.html",
       "titulo": "A qué puede acceder",
       "kicker": "37 / ACCESO",
       "parte": "DEL CHAT AL AGENTE",
-      "notas": "Después de ver qué herramientas tiene, el alcance concreto: los archivos del proyecto y otros lugares de la máquina con permiso, la terminal —cualquier comando que puedas correr vos— y el estado de Git. Acá es donde conviene detenerse y hablar de permisos."
+      "notas": "El alcance concreto: los archivos del proyecto y otros lugares de la máquina con permiso, la terminal (cualquier comando que puedas correr vos) y el estado de Git. Acá es donde conviene detenerse y hablar de permisos."
     },
     {
       "archivo": "38-claude-md-clave.html",
@@ -290,7 +290,7 @@ window.DECK = {
       "titulo": "Cómo se combinan",
       "kicker": "41 / CONFIGURACIÓN",
       "parte": "INSTRUCCIONES QUE SOBREVIVEN A LA CONVERSACIÓN",
-      "notas": "Los dos se leen a la vez, no uno en lugar del otro. Primero el global, porque define la manera de trabajar en general; después el del proyecto, porque define ese trabajo en particular. Si hay contradicción, gana el del proyecto: es la instrucción más específica."
+      "notas": "Los dos se leen a la vez, no uno en lugar del otro. Primero el global, porque define la manera de trabajar en general; después el del proyecto, porque define ese trabajo en particular. Ninguno pisa al otro: si se contradicen, Claude puede seguir cualquiera. Por eso conviene revisarlos y sacar la regla que sobra."
     },
     {
       "archivo": "117-que-es-una-skill.html",
@@ -315,10 +315,10 @@ window.DECK = {
     },
     {
       "archivo": "122-skills-recomendadas.html",
-      "titulo": "Skills que vale la pena tener",
+      "titulo": "Lo que vale la pena sumar",
       "kicker": "45 / SKILLS",
       "parte": "CONVERTIR EXPERIENCIA EN PROCEDIMIENTOS",
-      "notas": "Tres skills concretas para llevarse instaladas. agent-browser es la más vistosa: mostrar en vivo que Claude abre Chrome y prueba lo que acaban de construir. frontend-design es la respuesta al miedo de que todo quede con cara de plantilla. skill-creator cierra el arco del bloque: primero usás skills ajenas, después escribís las tuyas."
+      "notas": "Tres cosas para llevarse. Claude in Chrome es la más vistosa: mostrar en vivo que Claude abre el navegador y prueba lo que acaban de construir. No es una skill sino una extensión, y funciona en Chrome, Edge y otros navegadores basados en Chromium. Quien use Firefox o Safari tiene el navegador integrado de la app, que además alcanza para probar el propio sitio. frontend-design es opcional: suma criterio visual, pero tiene sus propios gustos, así que conviene usarla después de tener una dirección propia. skill-creator cierra el arco del bloque: primero usás skills ajenas, después escribís las tuyas."
     },
     {
       "archivo": "78-que-es-un-sub-agente.html",
@@ -339,21 +339,21 @@ window.DECK = {
       "titulo": "Qué hay que instalar",
       "kicker": "48 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
-      "notas": "Lo único imprescindible es Claude Desktop con el plan Pro (USD 20/mes). Ahí vive Claude Code. Todo lo que sigue en este bloque se instala una vez y queda funcionando."
+      "notas": "Lo único imprescindible es Claude Desktop con el plan Pro (USD 20/mes). Ahí vive Claude Code, y todo el taller se puede hacer desde la app. Git, GitHub y Node se configuran una vez. VS Code y la terminal aparte son opcionales."
     },
     {
       "archivo": "113-que-es-la-terminal.html",
       "titulo": "Qué es la terminal",
       "kicker": "49 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
-      "notas": "El paso antes de Git: no hace falta memorizar comandos, se le pide en lenguaje normal y Claude Code los traduce. Ahí vive Claude Code mientras trabaja, por eso conviene perderle el miedo antes de seguir con Git, GitHub, Node y VS Code."
+      "notas": "Opcional. Todo el taller se puede hacer desde la app, así que nadie necesita abrir una terminal. Se explica para que no asuste cuando Claude corre comandos, y para quien quiera mirar: la app trae una adentro."
     },
     {
       "archivo": "120-que-es-homebrew.html",
       "titulo": "Qué es Homebrew",
       "kicker": "50 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
-      "notas": "Solo para Mac: el paso previo a instalar Git, Node y el resto con una línea en la terminal. En Windows no hace falta, los instaladores ya resuelven todo."
+      "notas": "Opcional y solo para Mac: un atajo para quien ya usa la terminal. Sin Homebrew se puede instalar todo con los instaladores de cada programa."
     },
     {
       "archivo": "98-que-es-git.html",
@@ -381,7 +381,7 @@ window.DECK = {
       "titulo": "Qué es VS Code",
       "kicker": "54 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
-      "notas": "Visual Studio Code es un editor. Reúne archivos, texto y terminal en una interfaz gráfica, y se puede ampliar con extensiones. No compila ni publica por sí solo: organiza herramientas que hacen esas tareas. Para este taller sirve como puente visible entre la carpeta y la terminal."
+      "notas": "Visual Studio Code es un editor. Reúne archivos, texto y terminal en una interfaz gráfica, y se puede ampliar con extensiones. No compila ni publica por sí solo: organiza herramientas que hacen esas tareas. Es opcional: la app de Claude ya muestra archivos, cambios y terminal. Sirve para quien quiera un editor completo."
     },
     {
       "archivo": "119-opcional-python.html",
@@ -392,10 +392,10 @@ window.DECK = {
     },
     {
       "archivo": "87-del-localhost-a-internet.html",
-      "titulo": "Objetivo final",
+      "titulo": "Si tu proyecto va a internet",
       "kicker": "56 / CONSTRUIR",
       "parte": "CONSTRUIR ALGO PEQUEÑO",
-      "notas": "Publicar no es lo mismo que terminar el archivo. El último control ocurre en el entorno donde otras personas lo van a usar."
+      "notas": "No todos los proyectos terminan en una URL: una automatización o un informe no la necesitan. Para los que van a internet, este es el camino. Publicar no es lo mismo que terminar el archivo: el último control ocurre en el entorno donde otras personas lo van a usar."
     },
     {
       "archivo": "110-contacto.html",
@@ -437,7 +437,7 @@ window.DECK = {
       "titulo": "Momento en vivo · /talleranfibia",
       "kicker": "62 / CLASE 2",
       "parte": "CLASE 2",
-      "notas": "Slide de apoyo para el momento en vivo. La skill del taller. Mostrar: cómo se escribe /, cómo aparece, qué hace. \"Esto es lo que armé para ustedes. Con un comando, Claude ya sabe en qué contexto estamos.\""
+      "notas": "Slide de apoyo para el momento en vivo. La skill del taller. Mostrar: cómo se escribe /, cómo aparece y qué pasa. Es un cuestionario: no construye ni decide tecnología o estética. Devuelve un prompt con las palabras de cada persona, que después se pega en una sesión nueva. Por eso importa traer material real y referencias propias."
     },
     {
       "archivo": "134-chatear-pedir-prompt.html",
@@ -570,7 +570,7 @@ window.DECK = {
       "titulo": "Cuatro piezas, un agente",
       "kicker": "81 / ÚLTIMA CLASE",
       "parte": "ÚLTIMA CLASE",
-      "notas": "El cierre conceptual del taller entero. Skill: cómo se hace. Subagente: quién lo hace. MCP: con qué trabaja. API: cómo se hablan los programas. Cuatro piezas para el mismo agente que definieron en la clase 1. Ninguna exige programar; todas exigen pedir bien, que es lo que practicaron cinco clases."
+      "notas": "El cierre conceptual del taller entero. Skill: cómo se hace. Subagente: quién lo hace. MCP: con qué trabaja. API: cómo se hablan los programas. Cuatro piezas para el mismo agente que definieron en la clase 1. Ninguna exige programar; todas exigen pedir bien, que es lo que practicaron cuatro clases."
     },
     {
       "archivo": "153-tarea-final.html",
