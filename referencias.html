@@ -35,6 +35,19 @@
     <h1 class="pagina-titulo">Referencias visuales y nombres de los elementos</h1>
     <p class="pagina-bajada">Mirás el elemento, ves cómo se llama, y se lo pedís por su nombre. Todo lo que está acá abajo es de verdad: son los elementos armados con el CSS del sitio, no capturas de pantalla.</p>
 
+    <!-- EDITÁ ACÁ: el tablero de referencias (design board). -->
+    <section class="nota-por-que">
+      <h2>Primero, tu tablero</h2>
+      <p>Si no le mostrás nada, la IA vuelve a lo que vio más veces: el promedio. Degradé violeta, tarjetas redondeadas, la misma tipografía de siempre. Por eso tantos proyectos hechos con IA se parecen entre sí.</p>
+      <p>Antes de pedir diseño, armá un <strong>design board</strong>: entre 10 y 20 imágenes que te gusten, de Pinterest, Are.na, sitios, revistas, afiches o tapas de discos. Mezclá rubros: cuanto más lejos de internet, menos promedio. Guardalas en una carpeta <code>referencias</code> adentro de tu proyecto y pedile esto:</p>
+      <div class="prompt">
+        <div class="prompt-cabeza"><span>Leer el tablero</span><button type="button" class="copiar">Copiar</button></div>
+        <pre>Mirá las imágenes de la carpeta referencias y describime en palabras el estilo que tienen en común: colores, tipografías, cómo usan el espacio, qué tono transmiten.
+Después guardá esa descripción en el CLAUDE.md del proyecto como guía de diseño, para usarla en todo lo que hagas acá.</pre>
+      </div>
+      <p>Con eso la estética queda fijada para todas las sesiones. Y cuando quieras algo puntual de una imagen, decí qué tomar: "la tipografía de esta, el color de aquella".</p>
+    </section>
+
     <section class="nota-por-que">
       <h2>¿Por qué importa el nombre?</h2>
       <p>La diferencia entre "poneme el cuadradito ese arriba a la derecha" y "agregá un badge en la esquina superior derecha de la tarjeta" no es sonar más técnico. Es que la segunda tiene una sola interpretación posible y la primera tiene doce.</p>
@@ -562,6 +575,17 @@
       </div>
       <p class="verificar">Y si no sabés el nombre: sacá una captura, pegásela y preguntale cómo se llama eso. Es una buena manera de aprender el vocabulario sobre la marcha.</p>
     </section>
+  <script>
+  document.querySelectorAll('.prompt .copiar').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+      var texto = boton.closest('.prompt').querySelector('pre').textContent;
+      navigator.clipboard.writeText(texto).then(function () {
+        boton.textContent = 'Copiado';
+        setTimeout(function () { boton.textContent = 'Copiar'; }, 1500);
+      });
+    });
+  });
+</script>
   </main>
 
   <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS
