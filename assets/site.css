@@ -1309,3 +1309,70 @@ footer {
   .descarga { padding: var(--esp-4); }
   .descarga h2 { font-size: var(--titulo-lg); }
 }
+
+/* ═══════════════════ PÁGINA SEGUIR ═══════════════════ */
+
+/* Mapa de cuentas para después del taller. Cada tarjeta es un link entero:
+   se toca en cualquier parte, que en el teléfono es donde más se va a usar. */
+.bloque-seguir .seccion-titulo { margin-bottom: var(--esp-2); }
+
+.bloque-intro {
+  font-family: var(--fuente-lectura);
+  font-size: var(--cuerpo-lg);
+  line-height: var(--interlineado-lectura);
+  max-width: var(--ancho-lectura);
+  margin-bottom: var(--esp-4);
+}
+
+.cuentas {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--esp-3);
+}
+
+.cuentas a {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  padding: var(--esp-4);
+  color: var(--black);
+  text-decoration: none;
+}
+
+.cuentas a:hover { background: var(--lime); }
+
+.cuentas .red {
+  align-self: flex-start;
+  font-family: var(--fuente-pixel);
+  font-size: 0.75rem;
+  background: var(--black);
+  color: var(--lime);
+  padding: 2px 8px;
+}
+
+.cuentas .red.bsky { background: var(--electric); color: var(--cream); }
+
+.cuentas .usuario {
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-lg);
+  color: var(--electric);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.cuentas .nombre {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-subtitulo);
+  font-size: var(--titulo-xs);
+  text-transform: uppercase;
+}
+
+.cuentas .porque {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+}
