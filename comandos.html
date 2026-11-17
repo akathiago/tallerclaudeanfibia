@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Comandos — Cómo entrenar a tu IA</title>
+<title>Comandos y atajos — Cómo entrenar a tu IA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
@@ -11,26 +11,28 @@
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+  <!-- EDITÁ ACÁ: el menú. Es igual en todas las páginas; la sección y la
+       pestaña actuales llevan aria-current="page". -->
   <header class="navbar">
-    <div class="logo">ANFIBIA</div>
     <nav>
       <a href="index.html">Slides</a>
-      <a href="instalacion.html">Instalación</a>
-      <a href="skills.html">Skills</a>
-      <a href="comandos.html" aria-current="page">Comandos</a>
-      <!-- APAGADO por ahora: <a href="codigo.html">Código</a> -->
-      <a href="git.html">Git(hub)</a>
-      <a href="referencias.html">Referencias</a>
+      <a href="instalacion.html">Prepararte</a>
+      <a href="comandos.html" aria-current="page">Guías</a>
       <a href="proyectos.html">Proyectos</a>
-      <a href="recursos.html">Recursos</a>
-      <a href="lecturas.html">Lecturas</a>
-      <a href="videos.html">Videos</a>
-      <a href="seguir.html">Seguir</a>
+      <a href="seguir.html">Para seguir</a>
+      <a href="faq.html">FAQ</a>
     </nav>
   </header>
+  <nav class="subnav" aria-label="Guías">
+    <a href="comandos.html" aria-current="page">Comandos y atajos</a>
+    <a href="git.html">Git(hub)</a>
+    <a href="referencias.html">Referencias</a>
+    <a href="glosario.html">Glosario</a>
+    <!-- APAGADO por ahora: <a href="codigo.html">Código</a> -->
+  </nav>
 
   <main>
-    <h1 class="pagina-titulo">Comandos</h1>
+    <h1 class="pagina-titulo">Comandos y atajos</h1>
     <p class="pagina-bajada">Los que vas a usar de verdad, ordenados por el momento en que los necesitás. No están todos: están los que importan.</p>
 
     <section class="nota-por-que">
@@ -41,6 +43,60 @@
     </section>
 
     <div class="pantalla"><pre>&gt; /</pre></div>
+
+    <!-- EDITÁ ACÁ: los atajos de teclado de la app de escritorio (pestaña Code).
+         Verificados contra la documentación oficial el 17/11/2026. -->
+    <section class="bloque-comandos">
+      <span class="etiqueta">Atajos</span>
+      <h2>En la app, con el teclado</h2>
+      <p class="intro">No empiezan con barra: son teclas. Shift + Tab y Esc dos veces, que vas a ver en tutoriales, son de la terminal y en la app no funcionan igual.</p>
+      <dl class="comandos">
+        <div class="comando">
+          <dt><code>Esc</code></dt>
+          <dd>Frena a Claude en el medio de lo que esté haciendo. También está el botón de parar. Si querés corregirlo sin frenarlo, escribí y mandá: lo lee apenas termine el paso en curso.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>/</code></dt>
+          <dd>Abre la lista de comandos y de tus skills. También desde el botón + → Slash commands.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>@</code></dt>
+          <dd>Escribí @ y el nombre de un archivo para señalárselo sin vueltas: «resumí @notas.md».</dd>
+        </div>
+        <div class="comando">
+          <dt><code>Arrastrar</code><span class="alias">o botón +</span></dt>
+          <dd>Para sumarle archivos, fotos o PDFs: arrastralos al cuadro donde escribís, o usá + → Add files or photos.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>Ctrl + Shift + M</code><span class="alias">Mac: Cmd + Shift + M</span></dt>
+          <dd>Abre el selector de modo: Manual, Accept edits, Plan, Auto. Con el menú abierto, un número elige la opción.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>Ctrl + Shift + I</code><span class="alias">Mac: Cmd + Shift + I</span></dt>
+          <dd>Abre el selector de modelo.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>Ctrl + Shift + D</code><span class="alias">Mac: Cmd + Shift + D</span></dt>
+          <dd>Muestra los cambios (Changes): qué archivos tocó y qué líneas. Podés comentar una línea con el + al lado del número y mandarle todos los comentarios juntos.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>Ctrl + Shift + B</code><span class="alias">Mac: Cmd + Shift + B</span></dt>
+          <dd>Abre el navegador de la app, para ver lo que está construyendo.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>Ctrl + `</code><span class="alias">Mac: igual</span></dt>
+          <dd>Abre la terminal de la app. No hace falta, pero sirve para mirar.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>Ctrl + N</code><span class="alias">Mac: Cmd + N</span></dt>
+          <dd>Sesión nueva. Cuando cambiás de tema, empezá una.</dd>
+        </div>
+        <div class="comando">
+          <dt><code>Ctrl + /</code><span class="alias">Mac: Cmd + /</span></dt>
+          <dd>Muestra todos los atajos de la app.</dd>
+        </div>
+      </dl>
+    </section>
 
     <!-- EDITÁ ACÁ: cada .bloque-comandos es un momento de uso. Adentro, cada
          comando es un <div class="comando"> con el nombre en el <dt> y la
@@ -115,7 +171,7 @@
       <dl class="comandos">
         <div class="comando">
           <dt><code>/rewind</code></dt>
-          <dd>Rebobina hasta un punto anterior: vuelve atrás <strong>el código y la conversación juntos</strong>. Es el deshacer de verdad, y es la razón por la que podés dejarlo trabajar tranquilo.</dd>
+          <dd>Rebobina hasta un punto anterior: vuelve atrás <strong>el código y la conversación juntos</strong>. Funciona en la terminal (también con Esc dos veces); en la app puede no estar disponible. Ahí, pedíselo en castellano o volvé a tu último guardado de Git.</dd>
         </div>
         <div class="comando">
           <dt><code>/diff</code></dt>

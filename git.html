@@ -11,23 +11,25 @@
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+  <!-- EDITÁ ACÁ: el menú. Es igual en todas las páginas; la sección y la
+       pestaña actuales llevan aria-current="page". -->
   <header class="navbar">
-    <div class="logo">ANFIBIA</div>
     <nav>
       <a href="index.html">Slides</a>
-      <a href="instalacion.html">Instalación</a>
-      <a href="skills.html">Skills</a>
-      <a href="comandos.html">Comandos</a>
-      <!-- APAGADO por ahora: <a href="codigo.html">Código</a> -->
-      <a href="git.html" aria-current="page">Git(hub)</a>
-      <a href="referencias.html">Referencias</a>
+      <a href="instalacion.html">Prepararte</a>
+      <a href="comandos.html" aria-current="page">Guías</a>
       <a href="proyectos.html">Proyectos</a>
-      <a href="recursos.html">Recursos</a>
-      <a href="lecturas.html">Lecturas</a>
-      <a href="videos.html">Videos</a>
-      <a href="seguir.html">Seguir</a>
+      <a href="seguir.html">Para seguir</a>
+      <a href="faq.html">FAQ</a>
     </nav>
   </header>
+  <nav class="subnav" aria-label="Guías">
+    <a href="comandos.html">Comandos y atajos</a>
+    <a href="git.html" aria-current="page">Git(hub)</a>
+    <a href="referencias.html">Referencias</a>
+    <a href="glosario.html">Glosario</a>
+    <!-- APAGADO por ahora: <a href="codigo.html">Código</a> -->
+  </nav>
 
   <main>
     <h1 class="pagina-titulo">Git(hub)</h1>
@@ -169,7 +171,7 @@
 
       <div class="dato">
         <span class="dato-titulo">Ojo con la diferencia</span>
-        <p>Claude Code tiene su propio <a href="comandos.html"><code>/rewind</code></a>, que rebobina el código y la conversación juntos. Es cómodo, pero vive dentro de la sesión. Git es más lento de explicar y mucho más duradero: el historial queda en la carpeta para siempre, lo lea Claude o no.</p>
+        <p>En la terminal, Claude Code tiene su propio <a href="comandos.html"><code>/rewind</code></a>, que rebobina el código y la conversación juntos. Es cómodo, pero vive dentro de la sesión y no ve lo que cambió un comando. Git es más lento de explicar y mucho más duradero: el historial queda en la carpeta para siempre, lo lea Claude o no.</p>
       </div>
     </section>
 

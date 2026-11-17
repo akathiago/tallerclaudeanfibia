@@ -28,7 +28,7 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 40px;
   padding: 22px 60px;
   background: var(--lime);
@@ -1505,3 +1505,233 @@ footer {
   padding: 2px 8px;
   margin-bottom: var(--esp-2);
 }
+
+/* ═══════════════════ PÁGINA FAQ ═══════════════════ */
+
+/* Acordeón con <details>: funciona sin JavaScript y se abre con el teclado.
+   Cerradas por defecto; el signo + gira a − al abrir. */
+.bloque-faq { margin-top: var(--esp-6); }
+.bloque-faq .seccion-titulo { margin-bottom: var(--esp-3); }
+
+.preguntas { display: grid; gap: var(--esp-2); max-width: 900px; }
+
+.pregunta {
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+}
+
+.pregunta summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--esp-3);
+  padding: var(--esp-3) var(--esp-4);
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-subtitulo);
+  font-size: var(--titulo-xs);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+.pregunta summary::-webkit-details-marker { display: none; }
+.pregunta summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-family: var(--fuente-mono);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.pregunta[open] summary::after { content: "−"; }
+.pregunta summary:hover,
+.pregunta[open] summary { background: var(--lime); }
+.pregunta summary:focus-visible { outline: 3px solid var(--electric); outline-offset: 2px; }
+
+.respuesta {
+  border-top: var(--borde) solid var(--black);
+  padding: var(--esp-3) var(--esp-4) var(--esp-4);
+  font-family: var(--fuente-lectura);
+  font-size: var(--cuerpo-lg);
+  line-height: var(--interlineado-lectura);
+}
+.respuesta p + p,
+.respuesta ul + p,
+.respuesta p + ul { margin-top: var(--esp-2); }
+.respuesta ul { padding-left: 1.2em; }
+.respuesta li + li { margin-top: 4px; }
+.respuesta a { color: var(--electric); }
+.respuesta code {
+  font-family: var(--fuente-mono);
+  font-size: 0.9em;
+  background: var(--black);
+  color: var(--lime);
+  padding: 1px 6px;
+  white-space: nowrap;
+}
+
+
+/* ═══════════════════ PESTAÑAS DE SECCIÓN ═══════════════════ */
+
+/* El menú de arriba tiene 6 secciones. Las que juntan varias páginas
+   (Prepararte, Guías, Para seguir) muestran esta fila de pestañas abajo. */
+.subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 60px;
+  background: var(--paper);
+  border-bottom: var(--borde) solid var(--black);
+}
+
+.subnav a {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border: var(--borde) solid var(--black);
+  background: var(--cream);
+  padding: 6px 14px;
+}
+
+.subnav a:hover { background: var(--lime); }
+
+.subnav a[aria-current="page"] {
+  background: var(--black);
+  color: var(--lime);
+}
+
+/* Índice interno de una página larga (Biblioteca). */
+.indice-pagina {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-3);
+  margin-top: var(--esp-4);
+}
+.indice-pagina a {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  color: var(--electric);
+}
+.indice-pagina a::before { content: "↓ "; }
+
+.bloque-biblioteca { margin-top: var(--esp-6); scroll-margin-top: var(--esp-4); }
+.bloque-biblioteca .seccion-titulo { margin-bottom: var(--esp-2); }
+
+@media (max-width: 720px) {
+  .subnav { padding: 12px var(--margen-pagina-movil); }
+}
+
+/* ═══════════════════ GLOSARIO ═══════════════════ */
+
+/* Reusa la fila de .comando; la palabra va en titular, no en chip de código. */
+.glosario .termino dt {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-subtitulo);
+  font-size: var(--titulo-xs);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.glosario .termino dd { font-size: var(--cuerpo-md); }
+
+@media (max-width: 720px) {
+  .glosario .termino { grid-template-columns: 1fr; gap: var(--esp-1); }
+}
+
+/* ═══════════════════ PORTADA: RECORRIDO ═══════════════════ */
+
+.recorrido { margin-top: var(--esp-6); }
+.recorrido .seccion-titulo { margin-bottom: var(--esp-3); }
+
+.pasos-recorrido {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: var(--esp-3);
+}
+
+.pasos-recorrido a {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  box-shadow: 6px 6px 0 var(--black);
+  padding: var(--esp-4);
+  color: var(--black);
+  text-decoration: none;
+}
+.pasos-recorrido a:hover { background: var(--lime); }
+
+.pasos-recorrido .n {
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-lg);
+  color: var(--electric);
+  line-height: 1;
+}
+.pasos-recorrido .paso {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-titulo);
+  font-size: var(--titulo-sm);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.pasos-recorrido .detalle {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: var(--interlineado-cuerpo);
+}
+
+.recorrido-ayuda {
+  margin-top: var(--esp-3);
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+}
+.recorrido-ayuda a { color: var(--electric); }
+
+/* Proyectos: plantilla de pedido + cuatro hábitos, lado a lado. */
+.antes-de-arrancar { margin-top: var(--esp-6); }
+.antes-de-arrancar .seccion-titulo { margin-bottom: var(--esp-3); }
+.arranque {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: var(--esp-4);
+  align-items: start;
+}
+.arranque .prompt { margin-top: 0; border: var(--borde) solid var(--black); box-shadow: 6px 6px 0 var(--black); }
+.habitos {
+  list-style: none;
+  counter-reset: habito;
+  display: grid;
+  gap: var(--esp-2);
+}
+.habitos li {
+  counter-increment: habito;
+  position: relative;
+  padding: var(--esp-2) var(--esp-3) var(--esp-2) 64px;
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  font-family: var(--fuente-lectura);
+  font-size: var(--cuerpo-md);
+  line-height: var(--interlineado-lectura);
+}
+.habitos li::before {
+  content: "0" counter(habito);
+  position: absolute;
+  left: 16px;
+  top: var(--esp-2);
+  font-family: var(--fuente-terminal);
+  font-size: var(--terminal-lg);
+  line-height: 1.1;
+  color: var(--electric);
+}
+
+/* Prompts para copiar dentro de un paso (Primera sesión). */
+.paso-instalacion .prompt { margin-top: var(--esp-3); max-width: 760px; }
+.paso-instalacion .prompt pre { color: var(--cream); }
+
+/* Prompts para copiar dentro de un paso (Primera sesión). */
+.paso-instalacion .prompt { margin-top: var(--esp-3); max-width: 760px; }
+.paso-instalacion .prompt pre { color: var(--cream); }

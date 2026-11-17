@@ -11,21 +11,16 @@
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+  <!-- EDITÁ ACÁ: el menú. Es igual en todas las páginas; la sección y la
+       pestaña actuales llevan aria-current="page". -->
   <header class="navbar">
-    <div class="logo">ANFIBIA</div>
     <nav>
       <a href="index.html" aria-current="page">Slides</a>
-      <a href="instalacion.html">Instalación</a>
-      <a href="skills.html">Skills</a>
-      <a href="comandos.html">Comandos</a>
-      <!-- APAGADO por ahora: <a href="codigo.html">Código</a> -->
-      <a href="git.html">Git(hub)</a>
-      <a href="referencias.html">Referencias</a>
+      <a href="instalacion.html">Prepararte</a>
+      <a href="comandos.html">Guías</a>
       <a href="proyectos.html">Proyectos</a>
-      <a href="recursos.html">Recursos</a>
-      <a href="lecturas.html">Lecturas</a>
-      <a href="videos.html">Videos</a>
-      <a href="seguir.html">Seguir</a>
+      <a href="seguir.html">Para seguir</a>
+      <a href="faq.html">FAQ</a>
     </nav>
   </header>
 
@@ -37,6 +32,18 @@
       <iframe src="deck/index.html" title="Reproductor de slides — Cómo entrenar a tu IA" loading="lazy"></iframe>
     </div>
     <p class="visor-ayuda">Flechas / espacio para avanzar · F pantalla completa</p>
+
+    <!-- EDITÁ ACÁ: el recorrido de la portada. Cada <li> es un paso con su link. -->
+    <section class="recorrido">
+      <h2 class="seccion-titulo">Empezá por acá</h2>
+      <ol class="pasos-recorrido">
+        <li><a href="instalacion.html"><span class="n">01</span><span class="paso">Instalá</span><span class="detalle">La app, el plan Pro, Git y Node. Una sola vez.</span></a></li>
+        <li><a href="primera-sesion.html"><span class="n">02</span><span class="paso">Hacé tu primera sesión</span><span class="detalle">Diez minutos: pedís algo, lo ves, lo cambiás, lo deshacés y lo guardás.</span></a></li>
+        <li><a href="proyectos.html"><span class="n">03</span><span class="paso">Elegí tu proyecto</span><span class="detalle">Ideas reales con un prompt para copiar, o la skill /talleranfibia.</span></a></li>
+        <li><a href="git.html"><span class="n">04</span><span class="paso">Publicalo</span><span class="detalle">De tu carpeta a un link que podés mandar por WhatsApp.</span></a></li>
+      </ol>
+      <p class="recorrido-ayuda">¿Trabado? Mirá las <a href="faq.html">preguntas frecuentes</a> o escribime.</p>
+    </section>
   </main>
 
   <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS

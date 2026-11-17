@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primera sesión — Cómo entrenar a tu IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <!-- EDITÁ ACÁ: el menú. Es igual en todas las páginas; la sección y la
+       pestaña actuales llevan aria-current="page". -->
+  <header class="navbar">
+    <nav>
+      <a href="index.html">Slides</a>
+      <a href="instalacion.html" aria-current="page">Prepararte</a>
+      <a href="comandos.html">Guías</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="seguir.html">Para seguir</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+  <nav class="subnav" aria-label="Prepararte">
+    <a href="instalacion.html">Instalación</a>
+    <a href="primera-sesion.html" aria-current="page">Primera sesión</a>
+    <a href="skills.html">Skills</a>
+  </nav>
+
+  <main>
+    <h1 class="pagina-titulo">Primera sesión</h1>
+    <p class="pagina-bajada">Diez minutos para perderle el miedo a la app: pedís algo, lo ves, lo cambiás, lo deshacés y lo guardás. Hacela antes de la segunda clase.</p>
+
+    <section class="nota-por-que">
+      <h2>Antes de arrancar</h2>
+      <p>Tenés que tener la app instalada, el plan Pro activo, y Git y Node instalados: está todo en <a href="instalacion.html">Instalación</a>. No hace falta saber nada más.</p>
+      <p>Lo que vas a hacer es de prueba: una página que te presenta. No importa cómo quede. Importa que hagas cada paso una vez con tus manos.</p>
+    </section>
+
+    <!-- EDITÁ ACÁ: cada .paso-instalacion es un paso de la primera sesión.
+         Los nombres de botones son los de la app al 17/11/2026. -->
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Paso 1</span>
+      <h2>Armá una carpeta vacía</h2>
+      <p>En Documentos, creá una carpeta nueva que se llame <code>taller-prueba</code>. Vacía. Todo lo que haga Claude en esta sesión va a quedar ahí adentro, y nada de afuera se toca.</p>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Paso 2</span>
+      <h2>Abrila en la pestaña Code</h2>
+      <p>Abrí la app de Claude y entrá a la pestaña <strong>Code</strong>. Abajo del cuadro donde se escribe hay una fila de controles:</p><ul><li>El <strong>entorno</strong>: dejalo en <strong>Local</strong> (tu compu).</li><li>La <strong>carpeta</strong>: tocala → <strong>Open folder…</strong> → elegí <code>taller-prueba</code>.</li><li>El <strong>modo</strong>: elegí <strong>Manual</strong>, así te pregunta antes de cada cambio.</li></ul>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Paso 3</span>
+      <h2>Hacé tu primer pedido</h2>
+      <p>Copiá esto, completá los corchetes y mandalo con Enter:</p>
+      <div class="prompt">
+        <div class="prompt-cabeza"><span>Primer pedido</span><button type="button" class="copiar">Copiar</button></div>
+        <pre>Armame una página web de una sola pantalla que me presente.
+Me llamo [tu nombre], trabajo de [lo que hacés] y me interesa [un tema].
+Que tenga personalidad: nada de plantilla genérica ni degradé violeta.
+Cuando termines, abrila en el navegador de la app para que la vea.</pre>
+      </div>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Paso 4</span>
+      <h2>Leé antes de aprobar</h2>
+      <p>En modo Manual, antes de crear un archivo o correr un comando te muestra qué quiere hacer y espera. Leé qué archivo va a crear o qué comando va a correr. Si tiene sentido con lo que pediste, aprobalo. Si no lo entendés, preguntale: "¿para qué es esto?".</p>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Paso 5</span>
+      <h2>Miralo</h2>
+      <p>La página se abre en el <strong>navegador de la app</strong> (<code>Ctrl + Shift + B</code>, o <code>Cmd + Shift + B</code> en Mac). Para ver qué archivos creó y qué escribió en cada uno, abrí los <strong>cambios</strong>: botón Changes arriba, o <code>Ctrl + Shift + D</code>.</p>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Paso 6</span>
+      <h2>Pedile un cambio</h2>
+      <p>Ahora cambiá algo. Fijate que no hace falta saber cómo se hace: alcanza con decir qué querés ver.</p>
+      <div class="prompt">
+        <div class="prompt-cabeza"><span>Un cambio</span><button type="button" class="copiar">Copiar</button></div>
+        <pre>Cambiá la tipografía por una con más carácter y poné el fondo oscuro.
+Que en el celular se vea bien.</pre>
+      </div>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Paso 7</span>
+      <h2>Arrepentite</h2>
+      <p>Probá volver atrás. Es lo que te va a sacar el miedo a romper cosas.</p>
+      <div class="prompt">
+        <div class="prompt-cabeza"><span>Deshacer</span><button type="button" class="copiar">Copiar</button></div>
+        <pre>No me gustó. Volvé a como estaba antes del último cambio.</pre>
+      </div>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Paso 8</span>
+      <h2>Guardalo</h2>
+      <p>Cuando algo anda, se guarda. La primera vez Claude va a preparar la carpeta para Git; las siguientes es una línea.</p>
+      <div class="prompt">
+        <div class="prompt-cabeza"><span>Guardar</span><button type="button" class="copiar">Copiar</button></div>
+        <pre>Guardá esto con Git, con el mensaje «primera versión».</pre>
+      </div>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Paso 9</span>
+      <h2>Cerrá y volvé</h2>
+      <p>Cerrá la app y abrila de nuevo. Tu sesión está en la barra lateral, con toda la conversación, y los archivos siguen en <code>taller-prueba</code>. Nada se perdió.</p>
+    </section>
+
+    <section class="nota-por-que">
+      <h2>Lo que acabás de hacer</h2>
+      <p>Elegiste una carpeta de trabajo, hiciste un pedido con contexto, leíste un permiso antes de aprobarlo, revisaste el resultado, iteraste, deshiciste y guardaste. Es el ciclo entero del taller, en chico.</p>
+      <p>Siguiente paso: instalá las <a href="skills.html">skills</a> y corré <code>/claude-md-global</code>, y después buscá qué construir en <a href="proyectos.html">Proyectos</a>.</p>
+    </section>
+
+<script>
+  document.querySelectorAll('.prompt .copiar').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+      var texto = boton.closest('.prompt').querySelector('pre').textContent;
+      navigator.clipboard.writeText(texto).then(function () {
+        boton.textContent = 'Copiado';
+        setTimeout(function () { boton.textContent = 'Copiar'; }, 1500);
+      });
+    });
+  });
+</script>
+  </main>
+
+
+  <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS
+       lugares: el href="mailto:..." y el texto del link. -->
+  <section class="contacto">
+    <span class="etiqueta">CONTACTO</span>
+    <h2>Cualquier consulta, escribime</h2>
+    <p>Dudas, inquietudes, preguntas técnicas: lo que sea, durante el taller o después. No hay pregunta demasiado básica.</p>
+    <a href="mailto:thiagovdonato@gmail.com">thiagovdonato@gmail.com</a>
+  </section>
+
+  <footer>Anfibia · Taller Cómo entrenar a tu IA</footer>
+</body>
+</html>

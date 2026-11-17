@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glosario — Cómo entrenar a tu IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <!-- EDITÁ ACÁ: el menú. Es igual en todas las páginas; la sección y la
+       pestaña actuales llevan aria-current="page". -->
+  <header class="navbar">
+    <nav>
+      <a href="index.html">Slides</a>
+      <a href="instalacion.html">Prepararte</a>
+      <a href="comandos.html" aria-current="page">Guías</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="seguir.html">Para seguir</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+  <nav class="subnav" aria-label="Guías">
+    <a href="comandos.html">Comandos y atajos</a>
+    <a href="git.html">Git(hub)</a>
+    <a href="referencias.html">Referencias</a>
+    <a href="glosario.html" aria-current="page">Glosario</a>
+    <!-- APAGADO por ahora: <a href="codigo.html">Código</a> -->
+  </nav>
+
+  <main>
+    <h1 class="pagina-titulo">Glosario</h1>
+    <p class="pagina-bajada">Las palabras que van a aparecer en el taller, explicadas en una o dos líneas. Si falta alguna, preguntásela a Claude: "explicame qué es X como si no supiera nada de programación".</p>
+
+    <!-- EDITÁ ACÁ: un <div class="comando termino"> por palabra, en orden
+         alfabético. La palabra va en el <dt> y la explicación en el <dd>. -->
+    <dl class="comandos glosario">
+        <div class="comando termino"><dt>Agente</dt><dd>Un modelo al que le diste herramientas y permiso para usarlas: lee archivos, corre comandos, prueba lo que hizo y vuelve a intentar hasta terminar. Claude Code es un agente; el chat común no.</dd></div>
+        <div class="comando termino"><dt>Alucinación</dt><dd>Cuando la IA inventa algo que suena verdadero y no lo es: un dato, una cita, una fuente. Por eso todo lo que importa se verifica.</dd></div>
+        <div class="comando termino"><dt>API</dt><dd>La puerta por la que un programa le pide cosas a otro. Cuando una app "usa Claude" por dentro, le habla por su API.</dd></div>
+        <div class="comando termino"><dt>API key</dt><dd>La llave que identifica quién paga cada pedido a una API. No se comparte ni se sube a GitHub: si se filtra, otro gasta con tu cuenta.</dd></div>
+        <div class="comando termino"><dt>CLAUDE.md</dt><dd>Un archivo de instrucciones que Claude lee siempre al empezar. Hay uno global (sobre vos, para todos tus proyectos) y uno por proyecto (sobre ese proyecto).</dd></div>
+        <div class="comando termino"><dt>Commit</dt><dd>Una foto de tu carpeta guardada con Git, con un mensaje que dice qué cambió. Es el punto al que podés volver si algo se rompe.</dd></div>
+        <div class="comando termino"><dt>Contexto</dt><dd>Todo lo que el modelo tiene presente para responder: la conversación, las instrucciones, los archivos que leyó. Tiene un tamaño máximo: cuando se llena, se pone lento y olvida.</dd></div>
+        <div class="comando termino"><dt>Deploy</dt><dd>Publicar: pasar tu proyecto de tu compu a internet, con una dirección que cualquiera puede abrir.</dd></div>
+        <div class="comando termino"><dt>Diff</dt><dd>La lista de diferencias entre dos versiones de un archivo: qué líneas se agregaron y cuáles se borraron. Sirve para ver qué tocó Claude.</dd></div>
+        <div class="comando termino"><dt>Git</dt><dd>El programa que guarda la historia de una carpeta en tu compu. Funciona sin internet y sin cuenta.</dd></div>
+        <div class="comando termino"><dt>GitHub</dt><dd>Un sitio web donde se guarda una copia de lo que Git registró. Es como el Google Drive de los programadores.</dd></div>
+        <div class="comando termino"><dt>HTML, CSS y JavaScript</dt><dd>Los tres archivos de una página web. HTML es qué hay (textos, fotos, links), CSS es cómo se ve y dónde va cada cosa, y JavaScript es qué pasa cuando alguien toca algo.</dd></div>
+        <div class="comando termino"><dt>Localhost</dt><dd>Tu propia computadora funcionando como servidor. Cuando Claude te dice que tu sitio está en "localhost", anda, pero solo lo ves vos.</dd></div>
+        <div class="comando termino"><dt>Markdown</dt><dd>Una forma de escribir texto con estructura usando símbolos simples: # para títulos, - para listas. Los archivos .md (como CLAUDE.md o SKILL.md) están escritos así.</dd></div>
+        <div class="comando termino"><dt>MCP</dt><dd>El enchufe que conecta a Claude con otro programa (Notion, Drive, GitHub) para que pueda leer y escribir ahí sin que vos copies y pegues.</dd></div>
+        <div class="comando termino"><dt>Modelo</dt><dd>El sistema que genera las respuestas: Haiku, Sonnet, Opus. La app es la interfaz; el modelo es el motor.</dd></div>
+        <div class="comando termino"><dt>Modo plan</dt><dd>Un modo en el que Claude investiga y te propone qué va a hacer, pero no toca nada hasta que lo aprobás.</dd></div>
+        <div class="comando termino"><dt>Node.js</dt><dd>El programa que permite correr JavaScript fuera del navegador. Claude lo usa para levantar tu proyecto y probarlo.</dd></div>
+        <div class="comando termino"><dt>Plugin</dt><dd>Un paquete que se instala de una vez y trae skills, subagentes o conexiones que armó otra persona.</dd></div>
+        <div class="comando termino"><dt>Prompt</dt><dd>Lo que le escribís a la IA: tu pedido, con su contexto.</dd></div>
+        <div class="comando termino"><dt>Push y pull</dt><dd>Push manda a GitHub los commits nuevos de tu compu. Pull trae a tu compu lo nuevo que haya en GitHub.</dd></div>
+        <div class="comando termino"><dt>Repositorio (repo)</dt><dd>Una carpeta con su historia de Git. "Subí el repo" quiere decir "subí la carpeta con todo su historial".</dd></div>
+        <div class="comando termino"><dt>Sesión</dt><dd>Una conversación con Claude Code. Queda guardada en la barra lateral de la app y la podés retomar.</dd></div>
+        <div class="comando termino"><dt>Skill</dt><dd>Un instructivo guardado en un archivo SKILL.md que le enseña a Claude a hacer una tarea de una manera puntual. Se usa con / y su nombre.</dd></div>
+        <div class="comando termino"><dt>Subagente</dt><dd>Otra copia de Claude, con su propio contexto, a la que el agente principal le encarga una parte del trabajo. Vuelve solo con el resultado.</dd></div>
+        <div class="comando termino"><dt>Terminal</dt><dd>Una ventana donde se le habla a la computadora escribiendo comandos en vez de hacer clic. Claude la usa por vos; no hace falta abrirla.</dd></div>
+        <div class="comando termino"><dt>Token</dt><dd>El pedacito de texto con el que trabaja el modelo: más o menos una sílaba o una palabra corta. Los límites de uso y de contexto se miden en tokens.</dd></div>
+        <div class="comando termino"><dt>Vercel</dt><dd>Un servicio que mira tu repositorio de GitHub y lo publica en internet cada vez que guardás un cambio.</dd></div>
+        <div class="comando termino"><dt>Vibe coding</dt><dd>Construir software describiendo lo que querés en lenguaje común, sin escribir el código. La palabra la inventó Andrej Karpathy en 2025.</dd></div>
+    </dl>
+  </main>
+
+
+  <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS
+       lugares: el href="mailto:..." y el texto del link. -->
+  <section class="contacto">
+    <span class="etiqueta">CONTACTO</span>
+    <h2>Cualquier consulta, escribime</h2>
+    <p>Dudas, inquietudes, preguntas técnicas: lo que sea, durante el taller o después. No hay pregunta demasiado básica.</p>
+    <a href="mailto:thiagovdonato@gmail.com">thiagovdonato@gmail.com</a>
+  </section>
+
+  <footer>Anfibia · Taller Cómo entrenar a tu IA</footer>
+</body>
+</html>

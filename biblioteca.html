@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblioteca — Cómo entrenar a tu IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <!-- EDITÁ ACÁ: el menú. Es igual en todas las páginas; la sección y la
+       pestaña actuales llevan aria-current="page". -->
+  <header class="navbar">
+    <nav>
+      <a href="index.html">Slides</a>
+      <a href="instalacion.html">Prepararte</a>
+      <a href="comandos.html">Guías</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="seguir.html" aria-current="page">Para seguir</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+  <nav class="subnav" aria-label="Para seguir">
+    <a href="seguir.html">Cuentas</a>
+    <a href="biblioteca.html" aria-current="page">Biblioteca</a>
+  </nav>
+
+  <main>
+    <h1 class="pagina-titulo">Biblioteca</h1>
+    <p class="pagina-bajada">Para leer, para mirar y para seguir aprendiendo después del taller.</p>
+
+    <nav class="indice-pagina">
+      <a href="#lecturas">Lecturas</a>
+      <a href="#videos">Videos</a>
+      <a href="#recursos">Cursos y herramientas</a>
+    </nav>
+
+    <!-- EDITÁ ACÁ: un <li> por ítem, en la sección que corresponda.
+         Lecturas: textos (las destacadas llevan class="destacada" y van primero).
+         Videos: solo material audiovisual. Cursos y herramientas: documentación,
+         cursos y herramientas. -->
+
+    <section class="bloque-biblioteca" id="lecturas">
+      <h2 class="seccion-titulo">Lecturas</h2>
+      <p class="bloque-intro">Textos para pensar esto con más calma.</p>
+    <ul class="lista-recursos">
+      <li class="destacada">
+        <a href="https://www.421.news/es/chat-modelos-lenguaje-academia-llm/" target="_blank" rel="noopener">Más allá del chat: cómo los modelos de lenguaje potencian el conocimiento académico — Mauro Santelli (421.news)</a>
+        ¿Y si la IA no viene a reemplazarte, sino a ser el asistente de investigación que nunca pudiste pagar? Cómo usar herramientas como Claude Code, Zotero y Obsidian para automatizar lo tedioso y potenciar la argumentación académica profunda.
+      </li>
+      <li class="destacada">
+        <a href="https://www.421.news/es/claude-code-el-fin-del-software-como-lo-conocemos/" target="_blank" rel="noopener">Claude Code: el fin del software como lo conocemos — Juan Ruocco (421.news)</a>
+        Una mirada sobre cómo Claude Code cambia los moats del software y el lugar de quien programa.
+      </li>
+      <li class="destacada">
+        <a href="https://www.anthropic.com/features/making-of-claude-code" target="_blank" rel="noopener">The Making of Claude Code — Anthropic</a>
+        La historia de cómo se construyó la herramienta, contada por quienes la hicieron.
+      </li>
+      <li>
+        <a href="https://latamjournalismreview.org/es/articles/sin-programadores-no-hay-problema-periodistas-crean-sus-propias-aplicaciones-de-ia/" target="_blank" rel="noopener">¿Sin programadores? No hay problema: periodistas crean sus propias aplicaciones de IA — LatAm Journalism Review</a>
+        Redacciones de Argentina y Uruguay (ADNSUR, Búsqueda) que se armaron sus propias herramientas sin tener a nadie que programe. Lo más cerca de casa que hay.
+      </li>
+      <li>
+        <a href="https://fintualist.com/chile/opinion/como-uso-claude-code-sin-ser-ingeniero/" target="_blank" rel="noopener">Cómo uso Claude Code sin ser ingeniero — José Ignacio Flores (Fintualist)</a>
+        Un periodista chileno cuenta cómo hizo weatherchile.app y cómo trabaja con el agente: el método, no solo el resultado. Está en la página de Proyectos.
+      </li>
+      <li>
+        <a href="https://www.xataka.com/aplicaciones/antes-documentos-word-ahora-hago-apps-para-tonto" target="_blank" rel="noopener">Antes hacía documentos de Word. Ahora hago apps hasta para lo más tonto — Ricardo Aguilar (Xataka)</a>
+        Herramientas chiquitas para el trabajo de todos los días, hechas por alguien que no programa. La mejor respuesta a "¿y yo para qué lo usaría?".
+      </li>
+      <li>
+        <a href="https://www.platformer.news/claude-code-for-writers-tips-ideas" target="_blank" rel="noopener">Claude Code for writers — Casey Newton (Platformer, en inglés)</a>
+        Consejos e ideas para quien escribe, de un periodista que se hizo su web con Claude Code y no paró más.
+      </li>
+      <li>
+        <a href="https://reutersinstitute.politics.ox.ac.uk/news/i-vibe-coded-complex-data-visualisation-and-analysis-dashboard-heres-what-i-learned" target="_blank" rel="noopener">I vibe coded a complex data visualisation and analysis dashboard. Here's what I learned — Jaemark Tordecilla (Reuters Institute, en inglés)</a>
+        Un periodista sin formación técnica arma un tablero de datos entero y cuenta qué salió bien, qué no y cómo chequeó que los números fueran correctos.
+      </li>
+      <li>
+        <a href="https://thepaperlessagent.com/blog/i-used-claude-to-build-a-personalized-crm-then-i-tried-using-it" target="_blank" rel="noopener">I Used Claude to Build a Personalized CRM (Then I Tried Using It) — Chris Scott (The Paperless Agent, en inglés)</a>
+        Construir algo es la mitad. Esta nota cuenta la otra: qué pasó cuando lo usó todos los días, y por qué lo terminó dejando.
+      </li>
+    </ul>
+    </section>
+
+    <section class="bloque-biblioteca" id="videos">
+      <h2 class="seccion-titulo">Videos</h2>
+      <p class="bloque-intro">Para mirar fuera de clase.</p>
+    <ul class="lista-recursos">
+      <li>
+        <a href="https://youtu.be/Ye6yMpbtEGg" target="_blank" rel="noopener">Todo es Fake: la historia real de los fundadores de la IA</a>
+        En mayo de 2015 Sam Altman le mandó un mail a Elon Musk, y ese mail fue el principio de todo. Es el que recomendamos en la primera clase.
+      </li>
+    </ul>
+    </section>
+
+    <section class="bloque-biblioteca" id="recursos">
+      <h2 class="seccion-titulo">Cursos y herramientas</h2>
+      <p class="bloque-intro">Documentación, cursos y herramientas para seguir después del taller.</p>
+    <ul class="lista-recursos">
+      <li>
+        <a href="https://ccforeveryone.com" target="_blank" rel="noopener">Claude Code for Everyone — Carl Vellotti</a>
+        Aprendé Claude Code adentro de Claude Code. Curso gratuito que enseña IA haciéndola: sin videos, sin documentación y sin experiencia previa en programación, solo trabajo real adentro de la herramienta. Muy bueno para practicar con un caso ficticio.
+      </li>
+      <li>
+        <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Documentación oficial de Claude Code</a>
+        La referencia técnica completa: comandos, configuración, todo lo que no entra en el taller.
+      </li>
+      <li>
+        <a href="https://github.com/hesreallyhim/awesome-claude-code" target="_blank" rel="noopener">Awesome Claude Code</a>
+        Lista curada de skills, hooks, comandos y herramientas de la comunidad, para cuando quieras ir más allá de lo básico.
+      </li>
+      <li>
+        <a href="https://namethatui.com/" target="_blank" rel="noopener">NameThatUI</a>
+        Le mostrás un elemento de interfaz y te dice cómo se llama — para pedirle exactamente eso a tu agente, no "el cuadradito ese".
+      </li>
+    </ul>
+    </section>
+  </main>
+
+  <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS
+       lugares: el href="mailto:..." y el texto del link. -->
+  <section class="contacto">
+    <span class="etiqueta">CONTACTO</span>
+    <h2>Cualquier consulta, escribime</h2>
+    <p>Dudas, inquietudes, preguntas técnicas: lo que sea, durante el taller o después. No hay pregunta demasiado básica.</p>
+    <a href="mailto:thiagovdonato@gmail.com">thiagovdonato@gmail.com</a>
+  </section>
+
+  <footer>Anfibia · Taller Cómo entrenar a tu IA</footer>
+</body>
+</html>

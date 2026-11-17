@@ -1,0 +1,243 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE CONTENIDO — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  CÓMO USARLO
+  1. Abrí este archivo con doble click (se abre en tu navegador).
+  2. Para editarlo, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Buscá los comentarios que dicen "EDITÁ ACÁ" y cambiá SOLO ese texto.
+  4. Guardá y refrescá el navegador (F5).
+
+  Este slide tiene DOS COLUMNAS: el texto principal a la izquierda y una
+  caja de ejemplo a la derecha. Si no querés la caja, borrá todo el bloque
+  que empieza en <aside class="ejemplo"> y termina en </aside>.
+
+  NO TOQUES el bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — La app por dentro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+    --fuente-lectura: 'Newsreader', Georgia, serif;
+
+    /* Acento de esta pieza: var(--lime) var(--electric) var(--pink) */
+    --acento: var(--lime);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Barra superior lime, igual que el header del sitio */
+  .barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 60px;
+    background: var(--lime);
+    border-bottom: 2px solid var(--black);
+    flex-shrink: 0;
+  }
+  .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
+  .barra .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; }
+
+  .cuerpo { flex: 1; padding: 70px 90px 80px; display: flex; flex-direction: column; }
+
+  .kicker {
+    font-family: var(--fuente-pixel);
+    font-size: 22px;
+    color: var(--electric);
+    margin-bottom: 26px;
+  }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 108px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1400px;
+    text-wrap: balance;
+    margin-bottom: 54px;
+  }
+
+  .columnas { display: grid; grid-template-columns: 1fr 620px; gap: 80px; align-items: start; flex: 1; }
+
+  .texto {
+    font-family: var(--fuente-lectura);
+    font-size: 33px;
+    line-height: 1.62;
+    max-width: 62ch;
+  }
+  .texto p + p { margin-top: 26px; }
+  .texto strong { background: var(--acento); padding: 0 6px; font-weight: 600; }
+
+  /* Caja de ejemplo con sombra dura de color */
+  .ejemplo {
+    background: var(--paper);
+    border: 3px solid var(--black);
+    box-shadow: 16px 16px 0 var(--acento);
+    padding: 38px 40px;
+  }
+  .ejemplo span { display: block; font-family: var(--fuente-pixel); font-size: 20px; margin-bottom: 20px; }
+  .ejemplo p { font-family: var(--fuente-mono); font-size: 24px; line-height: 1.65; }
+
+  /* Lista alternativa: si en vez de la caja querés bullets, usá <ul class="lista"> */
+  .lista { list-style: none; display: grid; gap: 16px; }
+  .lista li {
+    font-family: var(--fuente-mono); font-size: 24px; line-height: 1.5;
+    border: 2px solid var(--black); background: var(--paper); padding: 18px 22px;
+  }
+
+  .pie { display: flex; justify-content: space-between; align-items: center; margin-top: 46px; }
+  .pie .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--black); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+
+  /* ——— MOCK DE LA APP: solo para esta slide ——— */
+  .app { flex: 1; display: grid; grid-template-columns: 1fr 470px; gap: 40px; min-height: 0; }
+  .ventana { border: 3px solid var(--black); background: #fbf8f1; display: grid; grid-template-columns: 250px 1fr 230px; grid-template-rows: 54px 1fr; box-shadow: 10px 10px 0 var(--black); min-height: 0; position: relative; }
+  .v-lateral { grid-row: 1 / 3; background: var(--paper); border-right: 2px solid var(--black); padding: 18px 16px; display: flex; flex-direction: column; gap: 10px; font-family: var(--fuente-mono); font-size: 17px; }
+  .v-tabs { display: flex; gap: 6px; margin-bottom: 8px; }
+  .v-tabs span { padding: 4px 10px; border: 2px solid var(--black); font-size: 15px; }
+  .v-tabs span.on { background: var(--black); color: var(--lime); }
+  .v-nueva { border: 2px solid var(--black); padding: 6px 10px; background: var(--cream); font-weight: 700; }
+  .v-ses { padding: 6px 10px; color: var(--gray); }
+  .v-ses.on { background: var(--lime); color: var(--black); font-weight: 700; }
+  .v-titulo { grid-column: 2 / 4; border-bottom: 2px solid var(--black); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; font-family: var(--fuente-mono); font-size: 17px; font-weight: 700; }
+  .v-botones { display: flex; gap: 8px; }
+  .v-botones span { border: 2px solid var(--black); padding: 3px 10px; font-size: 14px; background: var(--cream); }
+  .v-chat { padding: 22px 26px 18px; display: flex; flex-direction: column; gap: 14px; font-family: var(--fuente-mono); font-size: 16px; line-height: 1.45; min-height: 0; }
+  .m-yo { align-self: flex-end; max-width: 78%; background: var(--paper); border: 2px solid var(--black); padding: 10px 14px; }
+  .m-tool { color: var(--gray); border-left: 4px solid var(--cream-mute); padding-left: 12px; font-size: 15px; }
+  .m-claude { max-width: 92%; }
+  .m-permiso { border: 3px solid var(--electric); background: #eef0ff; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+  .m-permiso .bot { display: flex; gap: 10px; }
+  .m-permiso .bot span { padding: 4px 14px; border: 2px solid var(--black); font-weight: 700; font-size: 15px; }
+  .m-permiso .bot .si { background: var(--black); color: var(--lime); }
+  .v-input { margin-top: auto; border: 2px solid var(--black); background: var(--white, #fff); }
+  .v-input .txt { padding: 12px 14px; color: var(--gray); }
+  .v-input .fila { display: flex; gap: 8px; align-items: center; border-top: 2px dashed var(--cream-mute); padding: 8px 10px; font-size: 14px; }
+  .v-input .fila span { border: 2px solid var(--black); padding: 2px 8px; background: var(--cream); white-space: nowrap; }
+  .v-input .fila .anillo { width: 24px; height: 24px; border-radius: 50%; border: 4px solid var(--cream-mute); border-top-color: var(--electric); border-right-color: var(--electric); padding: 0; background: none; }
+  .v-input .fila .der { margin-left: auto; }
+  .v-rail { border-left: 2px solid var(--black); padding: 18px 16px; display: flex; flex-direction: column; gap: 12px; font-family: var(--fuente-mono); font-size: 15px; background: var(--paper); }
+  .v-rail div { border: 2px solid var(--black); background: var(--cream); padding: 8px 10px; }
+  .v-rail b { display: block; font-size: 13px; color: var(--gray); text-transform: uppercase; }
+  .mas { color: #138a36; font-weight: 700; } .menos { color: var(--pink); font-weight: 700; }
+  .pin { position: absolute; width: 44px; height: 44px; border-radius: 50%; background: var(--pink); color: var(--black); border: 3px solid var(--black); font-family: var(--fuente-titulo); font-weight: 900; font-size: 28px; display: grid; place-items: center; z-index: 5; }
+  .pi { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--pink); color: var(--black); border: 2px solid var(--black); font-style: normal; font-family: var(--fuente-titulo); font-weight: 900; font-size: 20px; line-height: 1; vertical-align: middle; flex-shrink: 0; }
+  .v-input .fila .pi { margin-left: -4px; }
+  .v-botones { align-items: center; }
+  .leyenda { display: flex; flex-direction: column; gap: 14px; list-style: none; }
+  .leyenda li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; font-family: var(--fuente-mono); font-size: 19px; line-height: 1.35; }
+  .leyenda li i { width: 40px; height: 40px; border-radius: 50%; background: var(--pink); border: 3px solid var(--black); font-style: normal; font-family: var(--fuente-titulo); font-weight: 900; font-size: 24px; display: grid; place-items: center; }
+  .leyenda strong { font-family: var(--fuente-titulo); font-weight: 900; font-size: 26px; text-transform: uppercase; display: block; line-height: 1; margin-bottom: 2px; }
+  .cuerpo { padding: 40px 80px 40px; }
+  .titulo { font-size: 76px; }
+  .cabecera { margin-bottom: 28px; }
+
+</style>
+</head>
+<body>
+<div class="lienzo">
+  <div class="barra"><div class="logo">ANFIBIA</div><div class="num">43 / 108</div></div>
+  <div class="cuerpo">
+    <div class="cabecera"><div><p class="kicker">LA HERRAMIENTA</p><h2 class="titulo">La app por dentro</h2></div></div>
+    <div class="app">
+      <div class="ventana">
+        <div class="v-lateral">
+          <div class="v-tabs"><span>Chat</span><span>Cowork</span><span class="on">Code</span></div>
+          <div class="v-nueva">+ New <i class="pi">1</i></div>
+          <div class="v-ses on">Mi página</div>
+          <div class="v-ses">Planilla de socios</div>
+          <div class="v-ses">Resumen entrevistas</div>
+        </div>
+        <div class="v-titulo"><span>Mi página</span><div class="v-botones"><i class="pi">6</i><span>Terminal</span><span>Changes</span><span>Browser</span><span>Files</span><span>⋮</span></div></div>
+        <div class="v-chat">
+          <div class="m-yo">Armame una página que me presente. Que tenga personalidad.</div>
+          <div class="m-tool">▸ Leyó 2 archivos · Creó index.html</div>
+          <div class="m-claude">Listo: armé la página con tu bio y tus notas. Ahora la abro para que la veas.</div>
+          <div class="m-permiso"><span><i class="pi">4</i> Quiere correr: <b>abrir index.html en el navegador</b></span><div class="bot"><span class="si">Aprobar</span><span>Rechazar</span></div></div>
+          <div class="v-input">
+            <div class="txt">Pedile algo a Claude…</div>
+            <div class="fila"><span>+</span><i class="pi">7</i><span>Local</span><span>taller-prueba</span><i class="pi">2</i><span>Manual ▾</span><i class="pi">3</i><span class="anillo"></span><i class="pi">5</i><span class="der">Sonnet ▾</span></div>
+          </div>
+        </div>
+        <div class="v-rail">
+          <div><b>Changes</b><span class="mas">+48</span> <span class="menos">−0</span></div>
+          <div><b>Contexto</b>18 %</div>
+          <div><b>Corre en</b>Local</div>
+        </div>
+      </div>
+      <ul class="leyenda">
+        <li><i>1</i><div><strong>Sesiones</strong>Cada conversación queda acá. + New para empezar otra (Ctrl+N).</div></li>
+        <li><i>2</i><div><strong>Carpeta</strong>Dónde trabaja. Solo ve lo que está adentro.</div></li>
+        <li><i>3</i><div><strong>Modo</strong>Cuánto te pregunta: Manual, Accept edits, Plan, Auto (Ctrl+Shift+M).</div></li>
+        <li><i>4</i><div><strong>El permiso</strong>En Manual, te muestra qué va a hacer y espera tu OK.</div></li>
+        <li><i>5</i><div><strong>Uso</strong>El anillo: cuánto te queda de tu plan.</div></li>
+        <li><i>6</i><div><strong>Ver</strong>Changes (Ctrl+Shift+D), navegador (Ctrl+Shift+B), terminal.</div></li>
+        <li><i>7</i><div><strong>El +</strong>Archivos, fotos, comandos, conectores y plugins.</div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="ayuda">SLIDE DE CONTENIDO · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+</body>
+</html>

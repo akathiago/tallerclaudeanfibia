@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preguntas frecuentes — Cómo entrenar a tu IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <!-- EDITÁ ACÁ: el menú. Es igual en todas las páginas; la sección y la
+       pestaña actuales llevan aria-current="page". -->
+  <header class="navbar">
+    <nav>
+      <a href="index.html">Slides</a>
+      <a href="instalacion.html">Prepararte</a>
+      <a href="comandos.html">Guías</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="seguir.html">Para seguir</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="pagina-titulo">Preguntas frecuentes</h1>
+    <p class="pagina-bajada">Las dudas que aparecen siempre, antes, durante y después del taller. Tocá una pregunta para ver la respuesta.</p>
+
+    <!-- EDITÁ ACÁ: cada <section class="bloque-faq"> es un grupo y cada
+         <details class="pregunta"> una pregunta. Para sumar una, copiá un
+         <details> entero: la pregunta va en <summary> y la respuesta adentro
+         de <div class="respuesta">. Datos verificados al 17/11/2026. -->
+
+    <section class="bloque-faq">
+      <h2 class="seccion-titulo">Antes de empezar</h2>
+      <div class="preguntas">
+        <details class="pregunta">
+          <summary>¿Necesito saber programar?</summary>
+          <div class="respuesta"><p>No. El taller está pensado para gente que no programa. Claude escribe el código; lo que aprendés es a decirle qué querés, a darle el material correcto y a revisar que lo que hizo esté bien.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Cuánto cuesta?</summary>
+          <div class="respuesta"><p>Claude Code viene con el plan <strong>Pro</strong>, que cuesta USD 20 por mes y alcanza para el taller. El plan gratis no lo incluye. Hay planes más grandes (Max y Ultra) para quien trabaja con esto todo el día, pero no hacen falta.</p><p>No hay descuento para estudiantes en los planes individuales. El precio final, con impuestos y en tu moneda si está disponible, lo ves en <a href="https://claude.ai/upgrade" target="_blank" rel="noopener">claude.ai/upgrade</a>.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Anda en mi computadora?</summary>
+          <div class="respuesta"><p>Sí, en Windows y en Mac, incluidas las Mac con chip Apple. En Linux está en prueba (beta), solo para Ubuntu y Debian. Los pasos están en <a href="instalacion.html">Instalación</a>.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Qué diferencia hay entre Chat, Cowork y Code?</summary>
+          <div class="respuesta"><p>Son tres pestañas de la misma app. <strong>Chat</strong> es conversar: escribís y te responde, sin tocar nada de tu compu. <strong>Cowork</strong> hace tareas de oficina con tus archivos y aplicaciones. <strong>Code</strong> trabaja sobre una carpeta: crea y modifica archivos, los prueba y los publica. En el taller usamos Code.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Voy a tener que usar la terminal?</summary>
+          <div class="respuesta"><p>No. Claude corre los comandos por vos. La app trae una terminal adentro por si querés mirar qué está haciendo, pero no hace falta abrirla nunca.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>Si Claude Code anda solo con la app, ¿para qué instalo Git y Node?</summary>
+          <div class="respuesta"><p>Para que el trabajo sea de verdad. Git guarda la historia de tu proyecto y te deja volver atrás si algo se rompe; Node le permite correr y probar lo que construye. Los dos se instalan una vez y te olvidás. Más en <a href="instalacion.html">Instalación</a> y en <a href="git.html">Git(hub)</a>.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="bloque-faq">
+      <h2 class="seccion-titulo">Mientras trabajás</h2>
+      <div class="preguntas">
+        <details class="pregunta">
+          <summary>Me dice que llegué al límite. ¿Qué hago?</summary>
+          <div class="respuesta"><p>El plan Pro tiene dos topes. Uno es por sesión: una ventana de 5 horas que arranca con tu primer mensaje y después se renueva entera. El otro es semanal. El chat y Claude Code comparten el mismo cupo.</p><p>Cuando llegás al tope podés esperar a que se renueve, pasarte a un plan más grande o comprar créditos de uso aparte. Para ver cuánto te queda: <strong>Configuración → Uso</strong>, o escribí <code>/usage</code>.</p><p>Lo que más gasta son las conversaciones larguísimas: cuando cambiás de tema, empezá una nueva.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>Se puso lento o se empezó a olvidar de cosas</summary>
+          <div class="respuesta"><p>Se llenó la ventana de contexto: la conversación es tan larga que ya no entra todo. Con <code>/context</code> ves cuánto ocupa cada cosa, con <code>/compact</code> resume y sigue con el hilo, y con <code>/clear</code> empezás de cero (tus archivos no se tocan). Están todos en <a href="comandos.html">Comandos</a>.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>Hizo algo que no quería. ¿Se puede deshacer?</summary>
+          <div class="respuesta"><p>Casi siempre. Lo primero: si todavía está trabajando, frenalo con <strong>Esc</strong> o con el botón de parar. Después pedíselo en castellano: "volvé a como estaba antes del último cambio".</p><p>La red de seguridad de verdad es Git: si guardaste cada vez que algo andaba, siempre podés volver a esa versión, aunque el cambio lo haya hecho un comando. (En la terminal existe además <code>/rewind</code>, que rebobina el código y la conversación.)</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>Me pide permiso para todo (o quiero que pregunte más)</summary>
+          <div class="respuesta"><p>Eso se cambia en el selector de modo, abajo del cuadro donde escribís (<code>Ctrl + Shift + M</code> en Windows, <code>Cmd + Shift + M</code> en Mac):</p><ul><li><strong>Manual:</strong> pregunta antes de cada cambio. El más seguro para arrancar.</li><li><strong>Accept edits:</strong> edita archivos de tu carpeta sin preguntar, pero sí pregunta antes de correr comandos.</li><li><strong>Plan:</strong> no toca nada; te propone un plan y espera tu OK. Ideal antes de una tarea grande.</li><li><strong>Auto:</strong> avanza solo y un sistema de control revisa cada acción.</li></ul><p>Hay un quinto modo, <strong>Bypass permissions</strong>, que no pregunta nada. Viene apagado y conviene dejarlo así.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Puede tocar archivos fuera de la carpeta que abrí?</summary>
+          <div class="respuesta"><p>De entrada trabaja en la carpeta que elegiste, y para escribir o borrar fuera de ella te pide permiso. Pero no es un candado: si aprobás un comando o usás el modo que no pregunta, podría tocar otras cosas. Por eso conviene leer qué te está pidiendo antes de decir que sí, y trabajar en una carpeta nueva para cada proyecto.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Puede buscar en internet?</summary>
+          <div class="respuesta"><p>Sí. Puede buscar en la web y abrir una página puntual para leerla. Según el modo en el que estés, te va a pedir permiso antes. Igual que con cualquier fuente, lo que trae de internet hay que chequearlo.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Qué modelo uso?</summary>
+          <div class="respuesta"><p>Para el taller alcanza con el que viene elegido. Si una tarea se le complica, probá uno más grande desde <code>/model</code>, sabiendo que gasta más rápido tu cupo. Los modelos chicos son más rápidos y sirven para tareas mecánicas, como reformatear o clasificar.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>Cerré la app. ¿Perdí la conversación?</summary>
+          <div class="respuesta"><p>No. Cada conversación queda guardada en tu compu como una sesión en la barra lateral de la app, y la podés abrir para seguirla. Y los archivos que creó están en tu carpeta, cierres lo que cierres.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Se acuerda de lo que hablamos ayer?</summary>
+          <div class="respuesta"><p>No de la conversación entera: cada sesión nueva arranca de cero. Lo que pasa de una a otra son dos cosas. El <strong>CLAUDE.md</strong>, un archivo de instrucciones que escribís vos y que Claude lee siempre al empezar. Y la <strong>memoria automática</strong>, que viene prendida: notas cortas que Claude guarda solo sobre tus correcciones y preferencias en cada proyecto. Las ves, las editás o las apagás con <code>/memory</code>.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>No me aparecen las skills</summary>
+          <div class="respuesta"><p>Fijate los pasos y la sección "Si algo falla" en <a href="skills.html">Skills</a>. El error más común es la carpeta: tiene que llamarse <code>.claude</code>, con punto adelante.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="bloque-faq">
+      <h2 class="seccion-titulo">Cuando algo no anda</h2>
+      <div class="preguntas">
+        <details class="pregunta">
+          <summary>La página sale en blanco</summary>
+          <div class="respuesta"><p>Decíselo tal cual: "la página sale en blanco". Pedile que la abra en el navegador de la app (<code>Ctrl + Shift + B</code>) y que mire si hay errores. Casi siempre es un archivo que no encuentra o un error en el código, y lo ve solo.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>Me aparece un error en rojo</summary>
+          <div class="respuesta"><p>Copialo entero y pegáselo, sin resumirlo ni traducirlo: los detalles que parecen basura son los que le sirven. Si no se puede copiar, sacá una captura y arrastrala al cuadro donde escribís.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>Le pedí un cambio y no lo veo</summary>
+          <div class="respuesta"><p>Primero recargá la página (<code>Ctrl + R</code>, o <code>Cmd + R</code> en Mac). Si es el sitio publicado: ¿lo subiste a GitHub? Vercel publica solo lo que está subido, y tarda uno o dos minutos. Si sigue igual, preguntale a Claude: "¿qué archivo cambiaste y dónde se ve ese cambio?".</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>Me cambió cosas que no le pedí</summary>
+          <div class="respuesta"><p>Frenalo, pedile que vuelva atrás y decile qué no tiene que tocar. Si se repite, ponelo como regla en el CLAUDE.md del proyecto ("no cambies los textos de las notas") y no lo vas a tener que repetir. Y antes de una tarea grande, pedile un plan.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>No encuentra un archivo que sé que está</summary>
+          <div class="respuesta"><p>Fijate que el archivo esté adentro de la carpeta que abriste en la sesión: lo que está afuera no lo ve. Para señalárselo, escribí <code>@</code> y el nombre. Si está en otra carpeta, movelo adentro o sumá esa carpeta con <code>/add-dir</code>.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>Se quedó dando vueltas</summary>
+          <div class="respuesta"><p>Si hace rato que intenta lo mismo sin avanzar, frenalo con <strong>Esc</strong>. Contale qué ves vos, pedile que te explique qué está intentando y proponé otro camino. A veces conviene empezar una sesión nueva con un resumen de dónde quedaron.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>En la compu se ve bien y en el celular no</summary>
+          <div class="respuesta"><p>Pedile: "abrí el sitio en el navegador de la app en tamaño celular y sacame una captura". Con eso ve el problema. Si podés, describí qué pasa: "en el celu las fotos se salen de la pantalla".</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>GitHub me pide usuario y contraseña</summary>
+          <div class="respuesta"><p>GitHub ya no acepta tu contraseña para subir archivos desde la compu: tenés que autorizar la conexión una vez. Pedile a Claude: "ayudame a conectar Git con mi cuenta de GitHub". Normalmente se abre el navegador para que aprietes Autorizar.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>Vercel no publica o el link da error</summary>
+          <div class="respuesta"><p>En vercel.com, entrá a tu proyecto → Deployments y abrí el que falló: ahí está el mensaje de error. Copialo y pegáselo a Claude. Lo más común es algo que anda en tu compu y no se subió a GitHub.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="bloque-faq">
+      <h2 class="seccion-titulo">Privacidad y datos</h2>
+      <div class="preguntas">
+        <details class="pregunta">
+          <summary>¿Usan lo que hago para entrenar a la IA?</summary>
+          <div class="respuesta"><p>Lo elegís vos. En los planes Free, Pro y Max hay una opción que se llama <strong>"Ayudar a mejorar los modelos de IA"</strong> (en inglés, <em>Help improve our AI models</em>). Si está prendida, Anthropic puede usar tus chats y tus sesiones de Claude Code para entrenar, y los guarda hasta 5 años. Si está apagada, no los usa para eso y los guarda 30 días.</p><p>Está en tu nombre → <strong>Configuración → Privacidad</strong>, o directo en <a href="https://claude.ai/settings/data-privacy-controls" target="_blank" rel="noopener">claude.ai/settings/data-privacy-controls</a>. Vale la pena entrar una vez y ver cómo la tenés.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Qué no le tengo que pasar?</summary>
+          <div class="respuesta"><p>Contraseñas, claves y accesos, siempre. Y pensalo dos veces con datos de terceros: material de fuentes, datos de salud, información que te dieron en confianza. Una buena regla: si no lo mandarías por mail, no lo pegues en un chat. Lo mismo vale para lo que subís a GitHub, que tiene su propia sección en <a href="git.html">Git(hub)</a>.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿De quién es lo que hago?</summary>
+          <div class="respuesta"><p>Tuyo. Los términos de Anthropic te ceden sus derechos sobre lo que Claude genera, y los archivos están en tu computadora. Los podés usar, cambiar, publicar o vender.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="bloque-faq">
+      <h2 class="seccion-titulo">Después del taller</h2>
+      <div class="preguntas">
+        <details class="pregunta">
+          <summary>¿Cómo lo publico para mandar un link?</summary>
+          <div class="respuesta"><p>El camino del taller es subirlo a GitHub y conectarlo con Vercel, que lo publica solo cada vez que guardás un cambio. Está explicado paso a paso en <a href="git.html">Git(hub)</a>.</p><p>El plan gratis de Vercel es para uso personal y no comercial. Si tu proyecto es para vender algo, mirá otras opciones: GitHub Pages y Netlify también tienen planes gratis, cada uno con sus reglas. Pedile a Claude que te las compare para tu caso.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Qué pasa si dejo de pagar?</summary>
+          <div class="respuesta"><p>Seguís con Pro hasta que termina el mes que ya pagaste. Después perdés Claude Code, pero todo lo que hiciste sigue siendo tuyo: los archivos están en tu compu y lo publicado sigue online. Si volvés a pagar, retomás donde estabas.</p></div>
+        </details>
+        <details class="pregunta">
+          <summary>¿Por dónde sigo?</summary>
+          <div class="respuesta"><p>Tres lugares de este sitio: <a href="proyectos.html">Proyectos</a> para encontrar qué hacer, con prompts para copiar; <a href="seguir.html">Cuentas</a> para no perder el hilo de lo que sale; y la <a href="biblioteca.html">Biblioteca</a> para leer, mirar y seguir aprendiendo. Y si te trabás, escribime: el mail está acá abajo.</p></div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS
+       lugares: el href="mailto:..." y el texto del link. -->
+  <section class="contacto">
+    <span class="etiqueta">CONTACTO</span>
+    <h2>Cualquier consulta, escribime</h2>
+    <p>Dudas, inquietudes, preguntas técnicas: lo que sea, durante el taller o después. No hay pregunta demasiado básica.</p>
+    <a href="mailto:thiagovdonato@gmail.com">thiagovdonato@gmail.com</a>
+  </section>
+
+  <footer>Anfibia · Taller Cómo entrenar a tu IA</footer>
+</body>
+</html>

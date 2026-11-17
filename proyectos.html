@@ -11,21 +11,16 @@
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+  <!-- EDITÁ ACÁ: el menú. Es igual en todas las páginas; la sección y la
+       pestaña actuales llevan aria-current="page". -->
   <header class="navbar">
-    <div class="logo">ANFIBIA</div>
     <nav>
       <a href="index.html">Slides</a>
-      <a href="instalacion.html">Instalación</a>
-      <a href="skills.html">Skills</a>
-      <a href="comandos.html">Comandos</a>
-      <!-- APAGADO por ahora: <a href="codigo.html">Código</a> -->
-      <a href="git.html">Git(hub)</a>
-      <a href="referencias.html">Referencias</a>
+      <a href="instalacion.html">Prepararte</a>
+      <a href="comandos.html">Guías</a>
       <a href="proyectos.html" aria-current="page">Proyectos</a>
-      <a href="recursos.html">Recursos</a>
-      <a href="lecturas.html">Lecturas</a>
-      <a href="videos.html">Videos</a>
-      <a href="seguir.html">Seguir</a>
+      <a href="seguir.html">Para seguir</a>
+      <a href="faq.html">FAQ</a>
     </nav>
   </header>
 
@@ -38,6 +33,28 @@
       <p>Cada tarjeta es un proyecto que existe: tiene link y la historia de cómo se hizo, contada por quien lo hizo. Abajo de cada una hay un prompt <strong>para probar vos</strong>, en versión chica y adaptado a material de acá. Copialo, cambiá lo que está entre corchetes o lo que no te sirva, y pegalo en la pestaña Code, en una carpeta nueva.</p>
       <p>Fijate que todos los prompts dicen lo mismo de cinco maneras distintas: <strong>qué querés</strong>, <strong>qué material le pasás</strong>, <strong>para quién es</strong>, <strong>qué reglas tiene que respetar</strong> y <strong>cuándo está terminado</strong>. Esa última es la que más se olvida y la que más ayuda. Cuando el autor publicó el prompt que usó de verdad, también está, textual, en "Ver el prompt original".</p>
       <p>Algunos proyectos los hizo gente que sí sabe programar, o son mucho más grandes de lo que entra en el taller. Está aclarado en cada tarjeta: sirven para ver hasta dónde llega esto, no para compararte.</p>
+    </section>
+
+    <!-- EDITÁ ACÁ: la plantilla de pedido y los cuatro hábitos. -->
+    <section class="antes-de-arrancar">
+      <h2 class="seccion-titulo">Antes de arrancar el tuyo</h2>
+      <div class="arranque">
+        <div class="prompt">
+          <div class="prompt-cabeza"><span>Plantilla de pedido</span><button type="button" class="copiar">Copiar</button></div>
+          <pre>Quiero [qué querés lograr, en una oración].
+Te paso [el material: archivos, links, capturas, referencias].
+Es para [quién lo va a usar y dónde: en el celu, en la compu, impreso].
+Reglas: [lo que no puede pasar: no inventes datos, no cambies mis textos].
+Está terminado cuando [lo que vas a poder ver o hacer para saber que anda].
+Antes de empezar, mostrame un plan y esperá mi OK.</pre>
+        </div>
+        <ol class="habitos">
+          <li><strong>Pedí un plan primero.</strong> Con la última línea de la plantilla, o eligiendo el modo Plan. Corregir un plan es más barato que corregir un sitio.</li>
+          <li><strong>Decí cuándo está terminado.</strong> Es la parte que más se olvida y la que más ayuda: le da a Claude una forma de chequear su propio trabajo.</li>
+          <li><strong>Guardá cada vez que algo ande.</strong> "Guardá esto con Git" alcanza. Si después se rompe, volvés a ese punto.</li>
+          <li><strong>Revisá antes de darlo por bueno.</strong> Abrilo, probalo en el celu, pedile que te cuente qué cambió. Si sale con tu firma, es tuyo.</li>
+        </ol>
+      </div>
     </section>
 
     <!-- EDITÁ ACÁ: cada <section class="bloque-proyectos"> es un grupo y cada
