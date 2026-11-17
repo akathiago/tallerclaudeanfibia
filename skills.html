@@ -38,6 +38,38 @@
       <p>Son cuatro, y vienen de dos lados. <strong>Dos las escribí para el taller:</strong> una te ayuda a armar el prompt de tu proyecto y la otra te entrevista para armar tu archivo de preferencias. <strong>Las otras dos son ajenas:</strong> las recomiendo porque las uso todos los días, y están en el mismo Drive para que no las tengas que ir a buscar.</p>
     </section>
 
+    <!-- EDITÁ ACÁ: el ejemplo de skill. Es solo para mostrar cómo se ve por dentro. -->
+    <section class="paso-instalacion">
+      <span class="etiqueta">Ejemplo</span>
+      <h2>Cómo se ve una por dentro</h2>
+      <p>Una skill es un archivo <code>SKILL.md</code> adentro de una carpeta con su nombre. Arriba, entre las dos líneas de guiones, van el nombre y una descripción: es lo que Claude lee para saber <strong>cuándo</strong> usarla. Abajo va el instructivo, escrito como se lo explicarías a alguien nuevo en el equipo.</p>
+      <div class="codigo">
+        <div class="archivo">titulos/SKILL.md</div>
+        <pre><span class="c">---</span>
+<span class="t">name:</span> titulos
+<span class="t">description:</span> Propone títulos y bajadas para una nota. Usala cuando
+  te pidan titular un texto o mejorar un título que no convence.
+<span class="c">---</span>
+
+<span class="t"># Títulos para una nota</span>
+
+Leé la nota entera antes de proponer nada.
+
+<span class="t">## Qué entregar</span>
+- Cinco títulos distintos entre sí: uno informativo, uno con una
+  pregunta, uno con una cita textual de la nota, uno corto (menos
+  de seis palabras) y uno arriesgado.
+- Para cada uno, una bajada de una o dos líneas.
+- Al final, cuál elegirías vos y por qué, en una oración.
+
+<span class="t">## Reglas</span>
+- Nada de signos de exclamación ni de "lo que nadie te cuenta".
+- No prometas en el título algo que la nota no cumple.
+- Si la nota tiene un dato fuerte, que aparezca en algún título.</pre>
+      </div>
+      <p>Con esa carpeta en <code>.claude/skills/</code>, la usás escribiendo <code>/titulos</code>, o simplemente pidiendo "titulame esta nota": Claude lee la descripción y se da cuenta solo de que es el momento.</p>
+    </section>
+
     <!-- EDITÁ ACÁ: el link de descarga. Si cambiás la carpeta de Drive,
          cambialo en el href Y en el texto de abajo del botón. -->
     <section class="descarga">
