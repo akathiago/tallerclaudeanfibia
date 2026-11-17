@@ -262,7 +262,7 @@ window.DECK = {
       "titulo": "Cómo revisar lo que hizo",
       "kicker": "37 / VIBE CODING",
       "parte": "CÓMO TRABAJAR CON EL MODELO",
-      "notas": "El paso que separa un prototipo de un trabajo que se puede firmar. Cada punto es una acción concreta: usarlo como lo usaría otra persona, verlo en celular (pedirle la captura desde el navegador de la app), mirar en Changes qué archivos tocó, pedirle que cuente qué cambió sin jerga y chequear los datos contra la fuente. Para los que quieran ir más allá: /code-review busca errores y propone arreglos."
+      "notas": "El paso que separa un prototipo de un trabajo que se puede firmar. Cada punto es una acción concreta: usarlo como lo usaría otra persona, verlo en celular (pedirle la captura desde el navegador de la app), mirar en los cambios (Ctrl+Shift+D) qué archivos tocó, pedirle que cuente qué cambió sin jerga y chequear los datos contra la fuente. Para los que quieran ir más allá: /code-review busca errores y propone arreglos."
     },
     {
       "archivo": "114-prompt-vago-especifico.html",
@@ -304,14 +304,14 @@ window.DECK = {
       "titulo": "La app por dentro",
       "kicker": "43 / LA HERRAMIENTA",
       "parte": "DEL CHAT AL AGENTE",
-      "notas": "Es un esquema, no una captura: los botones pueden cambiar de lugar entre versiones. Recorrerlo en orden y después abrir la app de verdad y señalar cada cosa. Lo que más importa para la primera sesión: la carpeta (2), el modo en Manual (3) y leer el permiso antes de aprobar (4). Los nombres exactos de los botones del permiso no están documentados; en el mock dicen Aprobar y Rechazar."
+      "notas": "Captura real de la app en castellano (noviembre de 2026), con el menú de modos abierto. Recorrer los números en orden y después abrir la app de verdad. Lo que más importa para la primera sesión: elegir la carpeta (2), el modo en Manual (3) y que el entorno sea Este equipo (4). Los cambios, el navegador y la terminal aparecen arriba a la derecha una vez que hay una sesión andando. Si la app se actualiza y algo cambió de lugar, sacar una captura nueva."
     },
     {
       "archivo": "174-cuando-te-pide-permiso.html",
       "titulo": "Cuando te pide permiso",
       "kicker": "44 / LA HERRAMIENTA",
       "parte": "DEL CHAT AL AGENTE",
-      "notas": "El cartel de permiso aparece en el primer minuto y asusta. La regla: leer qué quiere hacer y compararlo con lo que pediste. Si coincide, aprobar; si no se entiende, rechazar y preguntar para qué es. Modos: Manual pregunta todo; Accept edits edita archivos de la carpeta solo y pregunta antes de correr comandos; Plan no toca nada; Auto avanza solo con un sistema de control. Bypass permissions no pregunta nada: viene apagado y conviene dejarlo así. En la app el modo se cambia con el selector o Ctrl+Shift+M; Shift+Tab es de la terminal."
+      "notas": "El cartel de permiso aparece en el primer minuto y asusta. La regla: leer qué quiere hacer y compararlo con lo que pediste. Si coincide, aprobar; si no se entiende, rechazar y preguntar para qué es. Modos (así figuran en la app en castellano): Manual pregunta todo; Aceptar ediciones edita archivos de la carpeta solo y pregunta antes de correr comandos; Planificación no toca nada; Automático avanza solo con un sistema de control. Omitir permisos no pregunta nada: viene apagado y conviene dejarlo así. En la app el modo se cambia con el selector o Ctrl+Shift+M; Shift+Tab es de la terminal."
     },
     {
       "archivo": "104-que-es-un-agente.html",
@@ -521,7 +521,7 @@ window.DECK = {
       "titulo": "Dos ajustes antes de empezar",
       "kicker": "74 / INSTALACIÓN",
       "parte": "INSTALAR LO QUE HACE FALTA",
-      "notas": "Dos cosas que conviene hacer el primer día. Privacidad: en Configuración → Privacidad está la opción «Ayudar a mejorar los modelos de IA». Prendida, Anthropic puede entrenar con tus chats y sesiones de Claude Code y los guarda hasta 5 años; apagada, 30 días. No está documentado si viene prendida o apagada: que cada uno entre a mirar. Modo: arrancar en Manual para ver qué hace antes de cada cambio; cuando ganen confianza, Accept edits."
+      "notas": "Dos cosas que conviene hacer el primer día. Privacidad: en Configuración → Privacidad está la opción «Ayudar a mejorar los modelos de IA». Prendida, Anthropic puede entrenar con tus chats y sesiones de Claude Code y los guarda hasta 5 años; apagada, 30 días. No está documentado si viene prendida o apagada: que cada uno entre a mirar. Modo: arrancar en Manual para ver qué hace antes de cada cambio; cuando ganen confianza, Aceptar ediciones."
     },
     {
       "archivo": "87-del-localhost-a-internet.html",

@@ -193,6 +193,19 @@
   .titulo { font-size: 76px; }
   .cabecera { margin-bottom: 28px; }
 
+  /* ——— CAPTURA REAL: solo para esta slide ——— */
+  .app { grid-template-columns: 1120px 1fr; gap: 50px; align-items: start; }
+  .captura { margin: 0; }
+  .marco { position: relative; border: 3px solid var(--black); box-shadow: 10px 10px 0 var(--black); line-height: 0; }
+  .marco img { width: 100%; display: block; }
+  .pc { position: absolute; transform: translate(-50%, -50%); width: 40px; height: 40px; border-radius: 50%; background: var(--pink); color: var(--black); border: 3px solid var(--black); font-style: normal; font-family: var(--fuente-titulo); font-weight: 900; font-size: 24px; line-height: 1; display: grid; place-items: center; box-shadow: 0 0 0 3px var(--cream); }
+  .captura figcaption { margin-top: 44px; font-family: var(--fuente-terminal); font-size: 24px; text-transform: uppercase; color: var(--gray); }
+  .leyenda { gap: 10px; }
+  .cuerpo { padding-top: 30px; }
+  .cabecera { margin-bottom: 22px; }
+  .kicker { margin-bottom: 12px; }
+  .leyenda li { font-size: 18px; }
+  .leyenda strong { font-size: 25px; }
 </style>
 </head>
 <body>
@@ -201,39 +214,29 @@
   <div class="cuerpo">
     <div class="cabecera"><div><p class="kicker">LA HERRAMIENTA</p><h2 class="titulo">La app por dentro</h2></div></div>
     <div class="app">
-      <div class="ventana">
-        <div class="v-lateral">
-          <div class="v-tabs"><span>Chat</span><span>Cowork</span><span class="on">Code</span></div>
-          <div class="v-nueva">+ New <i class="pi">1</i></div>
-          <div class="v-ses on">Mi página</div>
-          <div class="v-ses">Planilla de socios</div>
-          <div class="v-ses">Resumen entrevistas</div>
+      <figure class="captura">
+        <div class="marco">
+          <img src="app-claude-code.png" alt="La pestaña Code de la app de Claude, con el menú de modos abierto">
+          <i class="pc" style="left:13.65%; top:5.21%;">1</i>
+          <i class="pc" style="left:47.66%; top:103.30%;">2</i>
+          <i class="pc" style="left:58.33%; top:70.66%;">3</i>
+          <i class="pc" style="left:40.89%; top:103.30%;">4</i>
+          <i class="pc" style="left:66.25%; top:103.30%;">5</i>
+          <i class="pc" style="left:76.15%; top:103.30%;">6</i>
+          <i class="pc" style="left:36.46%; top:94.62%;">7</i>
+          <i class="pc" style="left:89.74%; top:7.38%;">8</i>
         </div>
-        <div class="v-titulo"><span>Mi página</span><div class="v-botones"><i class="pi">6</i><span>Terminal</span><span>Changes</span><span>Browser</span><span>Files</span><span>⋮</span></div></div>
-        <div class="v-chat">
-          <div class="m-yo">Armame una página que me presente. Que tenga personalidad.</div>
-          <div class="m-tool">▸ Leyó 2 archivos · Creó index.html</div>
-          <div class="m-claude">Listo: armé la página con tu bio y tus notas. Ahora la abro para que la veas.</div>
-          <div class="m-permiso"><span><i class="pi">4</i> Quiere correr: <b>abrir index.html en el navegador</b></span><div class="bot"><span class="si">Aprobar</span><span>Rechazar</span></div></div>
-          <div class="v-input">
-            <div class="txt">Pedile algo a Claude…</div>
-            <div class="fila"><span>+</span><i class="pi">7</i><span>Local</span><span>taller-prueba</span><i class="pi">2</i><span>Manual ▾</span><i class="pi">3</i><span class="anillo"></span><i class="pi">5</i><span class="der">Sonnet ▾</span></div>
-          </div>
-        </div>
-        <div class="v-rail">
-          <div><b>Changes</b><span class="mas">+48</span> <span class="menos">−0</span></div>
-          <div><b>Contexto</b>18 %</div>
-          <div><b>Corre en</b>Local</div>
-        </div>
-      </div>
+        <figcaption>Captura real · noviembre de 2026 · la app en castellano</figcaption>
+      </figure>
       <ul class="leyenda">
-        <li><i>1</i><div><strong>Sesiones</strong>Cada conversación queda acá. + New para empezar otra (Ctrl+N).</div></li>
-        <li><i>2</i><div><strong>Carpeta</strong>Dónde trabaja. Solo ve lo que está adentro.</div></li>
-        <li><i>3</i><div><strong>Modo</strong>Cuánto te pregunta: Manual, Accept edits, Plan, Auto (Ctrl+Shift+M).</div></li>
-        <li><i>4</i><div><strong>El permiso</strong>En Manual, te muestra qué va a hacer y espera tu OK.</div></li>
-        <li><i>5</i><div><strong>Uso</strong>El anillo: cuánto te queda de tu plan.</div></li>
-        <li><i>6</i><div><strong>Ver</strong>Changes (Ctrl+Shift+D), navegador (Ctrl+Shift+B), terminal.</div></li>
-        <li><i>7</i><div><strong>El +</strong>Archivos, fotos, comandos, conectores y plugins.</div></li>
+        <li><i>1</i><div><strong>Sesiones</strong>«+ Nuevo» empieza una. Abajo, las tuyas, agrupadas por carpeta.</div></li>
+        <li><i>2</i><div><strong>Carpeta</strong>«Elige una carpeta»: dónde trabaja. Solo ve lo que está adentro.</div></li>
+        <li><i>3</i><div><strong>Modo</strong>Manual, Aceptar ediciones, Planificación, Automático. «Omitir permisos», no.</div></li>
+        <li><i>4</i><div><strong>Entorno</strong>«Este equipo»: trabaja en tu compu.</div></li>
+        <li><i>5</i><div><strong>Modelo</strong>Opus, Sonnet o Haiku, y cuánto esfuerzo pone.</div></li>
+        <li><i>6</i><div><strong>Uso</strong>El anillo: cuánto te queda de tu plan.</div></li>
+        <li><i>7</i><div><strong>El +</strong>Archivos, fotos, comandos, conectores.</div></li>
+        <li><i>8</i><div><strong>Terminal</strong>Arriba a la derecha. Cambios y navegador aparecen dentro de una sesión.</div></li>
       </ul>
     </div>
   </div>
