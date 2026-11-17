@@ -1376,3 +1376,132 @@ footer {
   font-size: var(--cuerpo-sm);
   line-height: var(--interlineado-cuerpo);
 }
+
+/* ═══════════════════ PÁGINA PROYECTOS ═══════════════════ */
+
+/* Proyectos reales con un prompt para copiar. Las tarjetas son más largas
+   que las de Seguir: dos columnas en escritorio, una en el teléfono. */
+.bloque-proyectos { margin-top: var(--esp-6); }
+.bloque-proyectos .seccion-titulo { margin-bottom: var(--esp-2); }
+
+.proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr));
+  gap: var(--esp-4);
+}
+
+.proyecto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  border: var(--borde) solid var(--black);
+  background: var(--paper);
+  padding: var(--esp-4);
+  box-shadow: 6px 6px 0 var(--black);
+  min-width: 0;
+}
+
+.proyecto-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.proyecto-meta .herramienta,
+.proyecto-meta .lugar {
+  font-family: var(--fuente-pixel);
+  font-size: 0.75rem;
+  padding: 2px 8px;
+}
+.proyecto-meta .herramienta { background: var(--black); color: var(--lime); }
+.proyecto-meta .lugar { border: 1px solid var(--black); }
+
+.proyecto h3 {
+  font-family: var(--fuente-titulo);
+  font-weight: var(--peso-titulo);
+  font-size: var(--titulo-sm);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.proyecto .autor {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  color: var(--gray);
+}
+
+.proyecto .que-hace,
+.proyecto .ojo {
+  font-family: var(--fuente-lectura);
+  font-size: var(--cuerpo-md, 1.05rem);
+  line-height: var(--interlineado-lectura);
+}
+
+.proyecto .ojo {
+  border-left: 4px solid var(--pink);
+  padding-left: var(--esp-2);
+  font-size: var(--cuerpo-sm);
+}
+
+.proyecto-links { display: flex; flex-wrap: wrap; gap: var(--esp-2); }
+.proyecto-links a {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  color: var(--electric);
+}
+.proyecto-links a:hover { background: var(--lime); }
+
+.prompt { margin-top: auto; background: var(--black); color: var(--cream); }
+
+.prompt-cabeza {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--lime);
+  color: var(--black);
+  padding: 4px 4px 4px 12px;
+  font-family: var(--fuente-pixel);
+  font-size: 0.75rem;
+}
+
+.prompt .copiar {
+  font-family: var(--fuente-pixel);
+  font-size: 0.75rem;
+  background: var(--black);
+  color: var(--lime);
+  border: 0;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.prompt .copiar:hover { background: var(--electric); color: var(--cream); }
+
+.prompt pre,
+.original pre {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  padding: var(--esp-3);
+}
+
+.original {
+  font-family: var(--fuente-mono);
+  font-size: var(--cuerpo-sm);
+}
+.original summary { cursor: pointer; color: var(--electric); }
+.original pre { background: var(--cream); border: 1px dashed var(--black); margin-top: var(--esp-2); }
+.original p { margin-top: 6px; color: var(--gray); }
+.original a { color: var(--electric); }
+
+/* Lecturas destacadas: las elegidas por el docente. Van primero, en lima. */
+.lista-recursos li.destacada {
+  background: var(--lime);
+  box-shadow: 6px 6px 0 var(--black);
+}
+.lista-recursos li.destacada::before {
+  content: "DESTACADA";
+  display: inline-block;
+  font-family: var(--fuente-pixel);
+  font-size: 0.75rem;
+  background: var(--black);
+  color: var(--lime);
+  padding: 2px 8px;
+  margin-bottom: var(--esp-2);
+}

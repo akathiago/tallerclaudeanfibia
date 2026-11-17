@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyectos — Cómo entrenar a tu IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ANFIBIA</div>
+    <nav>
+      <a href="index.html">Slides</a>
+      <a href="instalacion.html">Instalación</a>
+      <a href="skills.html">Skills</a>
+      <a href="comandos.html">Comandos</a>
+      <!-- APAGADO por ahora: <a href="codigo.html">Código</a> -->
+      <a href="git.html">Git(hub)</a>
+      <a href="referencias.html">Referencias</a>
+      <a href="proyectos.html" aria-current="page">Proyectos</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="lecturas.html">Lecturas</a>
+      <a href="videos.html">Videos</a>
+      <a href="seguir.html">Seguir</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="pagina-titulo">Proyectos</h1>
+    <p class="pagina-bajada">Cosas reales que hizo gente con IA, casi siempre sin saber programar, y un prompt para que arranques una parecida hoy.</p>
+
+    <section class="nota-por-que">
+      <h2>Cómo usar esta página</h2>
+      <p>Cada tarjeta es un proyecto que existe: tiene link y la historia de cómo se hizo, contada por quien lo hizo. Abajo de cada una hay un prompt <strong>para probar vos</strong>, en versión chica y adaptado a material de acá. Copialo, cambiá lo que está entre corchetes o lo que no te sirva, y pegalo en la pestaña Code, en una carpeta nueva.</p>
+      <p>Fijate que todos los prompts dicen lo mismo de cinco maneras distintas: <strong>qué querés</strong>, <strong>qué material le pasás</strong>, <strong>para quién es</strong>, <strong>qué reglas tiene que respetar</strong> y <strong>cuándo está terminado</strong>. Esa última es la que más se olvida y la que más ayuda. Cuando el autor publicó el prompt que usó de verdad, también está, textual, en "Ver el prompt original".</p>
+      <p>Algunos proyectos los hizo gente que sí sabe programar, o son mucho más grandes de lo que entra en el taller. Está aclarado en cada tarjeta: sirven para ver hasta dónde llega esto, no para compararte.</p>
+    </section>
+
+    <!-- EDITÁ ACÁ: cada <section class="bloque-proyectos"> es un grupo y cada
+         <article class="proyecto"> un proyecto. Para sumar uno, copiá un
+         <article> entero y cambiá la herramienta, el lugar, el título, el autor,
+         la descripción, los links y el prompt. El bloque <details> es opcional:
+         va solo cuando el autor publicó su prompt original. -->
+
+    <section class="bloque-proyectos">
+      <h2 class="seccion-titulo">Periodismo y escritura</h2>
+      <p class="bloque-intro">Notas que se leen distinto, webs propias y libros publicados sin pedirle nada a nadie.</p>
+      <div class="proyectos">
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Code</span><span class="lugar">EE.UU.</span></div>
+          <h3>Una nota que se lee como un chat</h3>
+          <p class="autor">Joanna Stern y Ben Cohen · The Wall Street Journal</p>
+          <p class="que-hace">Dos periodistas que dicen no saber programar armaron una nota donde los mensajes se ven como un chat de iMessage. Tiene un botón que la pasa a un chat de los 90 y otro que la convierte en diario de papel.</p>
+          <p class="ojo"><strong>Ojo:</strong> La terminó el equipo de programadores del diario. La nota tiene muro de pago.</p>
+          <div class="proyecto-links"><a href="https://www.wsj.com/tech/ai/anthropic-claude-vibe-coding-experiment-a4a3bb0f" target="_blank" rel="noopener">Ver la nota ↗</a><a href="https://www.niemanlab.org/reading/we-have-no-idea-how-to-code-so-we-got-claude-to-code-this-article-for-us/" target="_blank" rel="noopener">Cómo lo hicieron ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Quiero convertir una entrevista que hice en una página web donde las preguntas y respuestas se vean como un chat de WhatsApp.
+Te paso el texto de la entrevista en un archivo (entrevista.txt).
+Es para los lectores de mi newsletter, que la van a leer desde el celular.
+Sumale un botón que cambie la vista a &quot;diario de papel&quot; clásico.
+Está terminado cuando la abro en el navegador, se lee bien en el celu y el botón cambia de estilo sin romper nada.</pre>
+          </div>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Code</span><span class="lugar">EE.UU.</span></div>
+          <h3>La web personal de un periodista</h3>
+          <p class="autor">Casey Newton · Platformer</p>
+          <p class="que-hace">Dio de baja Squarespace y se hizo su propia web: quién es, sus últimas notas y episodios, sus posteos de Bluesky y una caja para suscribirse. Dice que le llevó más o menos una hora.</p>
+          <div class="proyecto-links"><a href="https://cnewton.org/" target="_blank" rel="noopener">Ver la web ↗</a><a href="https://www.platformer.news/claude-code-review-web-design" target="_blank" rel="noopener">Cómo la hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Soy periodista y quiero mi propia web en vez de pagar una plataforma.
+Te paso mi bio, una foto, los links a mis redes y a cinco notas de las que estoy orgulloso.
+Quiero una sola página con personalidad, nada de plantilla genérica: arriba quién soy, después mis notas destacadas y abajo cómo contactarme.
+Que se vea bien en el celular.
+Está lista cuando se la mande a alguien que me conoce y me diga &quot;esto sos vos&quot;.</pre>
+          </div>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">v0 + Claude</span><span class="lugar">Colombia</span></div>
+          <h3>Un asistente para armar hilos</h3>
+          <p class="autor">Laboratorio de IA de La Silla Vacía</p>
+          <p class="que-hace">Toma una nota ya publicada y propone un borrador de hilo para X, que el periodista revisa antes de publicar. Según el medio, ahorra entre 60 y 85 % del tiempo. La coordinadora de calidad, que no programa, ajusta las instrucciones sola.</p>
+          <div class="proyecto-links"><a href="https://www.lasillavacia.com/sobre-nosotros/laboratorio-de-inteligencia-artificial/asi-creamos-un-asistente-para-hilos-de-x-que-ahorra-entre-60-y-85-del-tiempo-a-nuestros-periodistas/" target="_blank" rel="noopener">Cómo lo hicieron ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Soy periodista y cada vez que publico una nota tengo que escribir un hilo para redes, y me lleva mucho tiempo.
+Te paso tres notas mías con los hilos que escribí para cada una, para que veas mi tono.
+Armame una página donde pego el texto de una nota y me propone un hilo de 5 a 8 posteos, cada uno de menos de 280 caracteres, que arranque con un gancho y termine con el link.
+Sumá un botón para copiar cada posteo.
+Está lista cuando pegue una nota nueva y el hilo suene a mí y no a un robot.</pre>
+          </div>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Code</span><span class="lugar">EE.UU.</span></div>
+          <h3>Un poemario publicado en web, PDF y libro electrónico</h3>
+          <p class="autor">Sarah (poeta) y Kenneth Reitz</p>
+          <p class="que-hace">De un manuscrito de 120 poemas eligieron 26, los ordenaron en cuatro actos y los publicaron como sitio web, PDF para imprenta y EPUB. Claude no tocó ni una palabra de los poemas: las decisiones creativas fueron de ellos.</p>
+          <p class="ojo"><strong>Ojo:</strong> Kenneth Reitz es programador. El prompt de abajo es una versión mucho más chica.</p>
+          <div class="proyecto-links"><a href="https://poemsbysarah.com/" target="_blank" rel="noopener">Ver el libro ↗</a><a href="https://kennethreitz.org/essays/2026-01-30-the-becoming-building-a-poetry-publishing-pipeline-with-claude-code" target="_blank" rel="noopener">Cómo lo hicieron ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Tengo una colección de cuentos (o poemas) en un solo archivo de Word y quiero publicarla como un librito web elegante.
+Separá cada texto en su propia página, con un índice y botones de &quot;anterior&quot; y &quot;siguiente&quot;.
+No cambies ni una coma de mis textos.
+Es para compartir con lectores y editoriales.
+Está terminado cuando puedo leer el libro entero en el navegador y además bajar un PDF prolijo para imprimir.</pre>
+          </div>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Code</span><span class="lugar">EE.UU.</span></div>
+          <h3>&quot;En este día&quot;: el archivo que vuelve</h3>
+          <p class="autor">Joshua Benton · Nieman Lab</p>
+          <p class="que-hace">El fundador de Nieman Lab rediseñó el sitio entero del medio, y dice que hizo &quot;la gran mayoría&quot; con Claude Code. Una de las secciones nuevas muestra las notas que el medio publicó en la misma fecha de años anteriores.</p>
+          <p class="ojo"><strong>Ojo:</strong> Es un rediseño grande: sirve para inspirarse. El prompt de abajo toma solo la sección &quot;En este día&quot;.</p>
+          <div class="proyecto-links"><a href="https://www.niemanlab.org/" target="_blank" rel="noopener">Ver el sitio ↗</a><a href="https://www.niemanlab.org/2026/10/nieman-lab-has-a-new-look/" target="_blank" rel="noopener">Cómo lo hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Tengo un Excel con todas las notas que publiqué: título, fecha y link.
+Quiero una página que muestre &quot;En este día&quot;: las notas que publiqué en esta misma fecha en años anteriores.
+Es para mis lectores y para mí, para volver a mover material viejo.
+Sumale un buscador por palabra.
+Está terminada cuando la abro hoy y me muestra las notas de esta fecha, y si no hay ninguna, me lo dice.</pre>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bloque-proyectos">
+      <h2 class="seccion-titulo">Datos e investigación</h2>
+      <p class="bloque-intro">Datos públicos que nadie mira, planillas que nadie entiende y documentos que nadie puede buscar.</p>
+      <div class="proyectos">
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Code</span><span class="lugar">Chile</span></div>
+          <h3>El clima de Chile, claro y sin publicidad</h3>
+          <p class="autor">José Ignacio Flores</p>
+          <p class="que-hace">Un periodista (&quot;un poco computín, pero de hardware, nunca de software&quot;) tomó los datos abiertos de la Dirección Meteorológica de Chile y los mostró claros: pronóstico por hora y a cinco días para más de cien ciudades.</p>
+          <div class="proyecto-links"><a href="https://weatherchile.app/" target="_blank" rel="noopener">Ver la web ↗</a><a href="https://fintualist.com/chile/opinion/como-uso-claude-code-sin-ser-ingeniero/" target="_blank" rel="noopener">Cómo la hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Quiero una página que muestre de forma clara un dato público de Argentina que hoy está escondido en una web oficial fea (por ejemplo, la calidad del aire o los cortes de luz por barrio).
+Te paso el link de la fuente oficial y una captura de cómo se ve hoy.
+Es para vecinos comunes, que la van a mirar desde el celular.
+Tiene que poder elegirse la ciudad o el barrio y mostrar la fecha del último dato.
+Está terminada cuando la abro, elijo mi barrio y entiendo el dato en cinco segundos.</pre>
+          </div>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Code + Codex</span><span class="lugar">Filipinas</span></div>
+          <h3>Una encuesta nacional de salud, en mapas</h3>
+          <p class="autor">Jaemark Tordecilla</p>
+          <p class="que-hace">Un periodista que dice que no tenía &quot;las habilidades para programar&quot; armó un tablero con mapas por región y gráficos de una encuesta nacional, con un paso de chequeo de los datos antes de publicar.</p>
+          <div class="proyecto-links"><a href="https://tordecilla.github.io/ph-ndhs-2025-web/" target="_blank" rel="noopener">Ver el tablero ↗</a><a href="https://reutersinstitute.politics.ox.ac.uk/news/i-vibe-coded-complex-data-visualisation-and-analysis-dashboard-heres-what-i-learned" target="_blank" rel="noopener">Cómo lo hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Tengo un Excel con los resultados de una encuesta con datos por provincia (por ejemplo, la EPH del INDEC).
+Quiero una página con un mapa de Argentina coloreado según el indicador que elija, y un gráfico que compare provincias.
+Es para lectores de un medio, no para expertos: cada gráfico tiene que tener una frase que diga qué muestra.
+No inventes ni redondees datos; si falta una provincia, que se vea vacía.
+Está terminado cuando cambio de indicador, el mapa y el gráfico se actualizan y los números coinciden con el Excel.</pre>
+          </div>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Code</span><span class="lugar">EE.UU.</span></div>
+          <h3>Juntar decenas de planillas en una sola</h3>
+          <p class="autor">Kevin Schaul · The Washington Post</p>
+          <p class="que-hace">Cada agencia del gobierno publicaba en un formato distinto en qué usa IA. Claude buscó y bajó la planilla de cada una y las unió en una sola tabla, que el periodista revisó a mano.</p>
+          <p class="ojo"><strong>Ojo:</strong> Schaul es periodista de datos y sabe programar. Su consejo: pedirle que vaya guardando el avance en un archivo, porque a él se le cortó a la mitad.</p>
+          <div class="proyecto-links"><a href="https://github.com/kevinschaul/2025-Federal-Agency-AI-Use-Case-Inventory" target="_blank" rel="noopener">Ver los datos ↗</a><a href="https://kschaul.com/post/2026/02/09/2026-02-09-ai-data-journalism/" target="_blank" rel="noopener">Cómo lo hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>En la carpeta hay un archivo, organismos.txt, con una lista de organismos públicos.
+Para cada uno, buscá en internet su página oficial de datos abiertos sobre [el tema que investigues] y bajá la planilla. Guardala en la carpeta datos.
+Cuando las tengas todas, juntalas en una sola planilla, aunque las columnas se llamen distinto en cada una.
+Anotá en un archivo aparte todo lo que te haya generado dudas, para que yo lo revise.
+Guardá el avance a medida que trabajás, por si se corta.</pre>
+          </div>
+          <details class="original">
+            <summary>Ver el prompt original</summary>
+            <pre>for every agency in data/raw/agencies.txt:
+
+search the internet for &quot;AGENCY_NAME AI use inventory&quot;. each agency should have an official .gov page outlining ai uses.
+find in that page the downloadable csv/excel file for the agency use cases. save it in data/raw.
+when you have found them all, write a python script that converts them all into one csv file. make it easy to read so I can double check that every agency is correct. the columns should all include the same information even if they are not named exactly the same. keep a log of any questions or potentially confusing situations that I should double check.</pre>
+            <p>Textual, tal como lo publicó. <a href="https://kschaul.com/post/2026/02/09/2026-02-09-ai-data-journalism/" target="_blank" rel="noopener">Fuente ↗</a></p>
+          </details>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude</span><span class="lugar">Reino Unido</span></div>
+          <h3>Sacarle el texto a un PDF escaneado</h3>
+          <p class="autor">Simon Willison</p>
+          <p class="que-hace">Arrastrás un PDF escaneado y te devuelve el texto de cada página, listo para copiar. Todo pasa en tu compu: el archivo no se sube a ningún lado. Sirve para expedientes, fallos y documentos oficiales.</p>
+          <p class="ojo"><strong>Ojo:</strong> Willison es programador y lo hizo en 2024, con Claude y no con Claude Code. Igual es el mejor ejemplo de herramienta de una sola página.</p>
+          <div class="proyecto-links"><a href="https://tools.simonwillison.net/ocr" target="_blank" rel="noopener">Usar la herramienta ↗</a><a href="https://simonwillison.net/2024/Mar/30/ocr-pdfs-images/" target="_blank" rel="noopener">Cómo la hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Quiero una página web que funcione sin internet y sin subir nada a ningún servidor.
+Tiene un recuadro grande donde arrastro un PDF escaneado. Cuando lo suelto, me muestra cada página como imagen y, abajo de cada una, el texto que se pudo leer.
+Al final de todo, el documento completo en un solo cuadro de texto para copiar.
+Es para trabajar con expedientes que no puedo compartir.
+Está terminada cuando le paso un PDF escaneado de diez páginas y puedo copiar el texto entero.</pre>
+          </div>
+          <details class="original">
+            <summary>Ver el prompt original</summary>
+            <pre>Use these examples to put together a single HTML page with embedded HTML and CSS and JavaScript that provides a big square which users can drag and drop a PDF file onto and when they do that the PDF has every page converted to a JPEG and shown below on the page, then OCR is run with tesseract and the results are shown in textarea blocks below each image.</pre>
+            <p>Textual, tal como lo publicó. <a href="https://simonwillison.net/2024/Mar/30/ocr-pdfs-images/" target="_blank" rel="noopener">Fuente ↗</a></p>
+          </details>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Cowork</span><span class="lugar">Italia</span></div>
+          <h3>Un mapa de muertes en las cárceles</h3>
+          <p class="autor">Jacopo Ottaviani</p>
+          <p class="que-hace">Un mapa con filtros de las muertes en cárceles italianas, en inglés e italiano. Era un proyecto suyo de 2012 que le había llevado semanas, y lo rehízo en días.</p>
+          <p class="ojo"><strong>Ojo:</strong> Ottaviani es periodista de datos con formación en informática.</p>
+          <div class="proyecto-links"><a href="https://jacopoottaviani.com/PatrieGalere.eu/en/" target="_blank" rel="noopener">Ver el mapa ↗</a><a href="https://reutersinstitute.politics.ox.ac.uk/news/weeks-work-days-how-i-rebuilt-two-data-journalism-projects-ai" target="_blank" rel="noopener">Cómo lo hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Tengo una planilla con casos que fui juntando para una investigación: fecha, lugar, provincia, tipo de hecho y link a la nota.
+Quiero un mapa de Argentina con un punto por caso, filtros por año y por tipo, y que al hacer clic aparezca la ficha del caso con su link.
+Es para publicar junto a mi nota, para lectores generales.
+El contador de casos tiene que coincidir siempre con la planilla.
+Está terminado cuando filtro por año y el número de puntos coincide con lo que da el Excel.</pre>
+          </div>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Code</span><span class="lugar">Bélgica</span></div>
+          <h3>Senderos de lectura entre cien libros</h3>
+          <p class="autor">Pieter Maes</p>
+          <p class="que-hace">Claude recorre cien libros de no ficción y arma &quot;senderos&quot;: fragmentos de libros distintos unidos por una misma idea. Uno de ellos va de Steve Jobs a Theranos.</p>
+          <p class="ojo"><strong>Ojo:</strong> Su prompt fue &quot;encontrá algo interesante&quot;, pero funcionó porque antes había preparado las herramientas para que Claude pudiera buscar dentro de los libros. El de abajo es una versión chica.</p>
+          <div class="proyecto-links"><a href="https://trails.pieterma.es" target="_blank" rel="noopener">Ver los senderos ↗</a><a href="https://pieterma.es/syntopic-reading-claude" target="_blank" rel="noopener">Cómo lo hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Te paso cinco libros o artículos en PDF sobre un mismo tema.
+Buscá tres ideas que aparezcan en varios de ellos y, para cada idea, armá un recorrido con las citas textuales en orden, diciendo de qué texto y de qué página sale cada una.
+Es para preparar una clase o un ensayo.
+Mostralo en una página web simple.
+Está terminado cuando cada cita se puede encontrar tal cual en el original.</pre>
+          </div>
+          <details class="original">
+            <summary>Ver el prompt original</summary>
+            <pre>find something interesting</pre>
+            <p>Textual, tal como lo publicó. <a href="https://pieterma.es/syntopic-reading-claude" target="_blank" rel="noopener">Fuente ↗</a></p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="bloque-proyectos">
+      <h2 class="seccion-titulo">Trabajo y oficina</h2>
+      <p class="bloque-intro">Lo que hoy hacés a mano todas las semanas, en una planilla o en un mail.</p>
+      <div class="proyectos">
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude</span><span class="lugar">EE.UU.</span></div>
+          <h3>Una revisión legal antes de mandar a Legal</h3>
+          <p class="autor">Mark Pike · equipo legal de Anthropic</p>
+          <p class="que-hace">Un abogado que se define como no técnico armó una herramienta donde marketing pega su texto y le marca riesgos (promesas exageradas, estadísticas sin fuente, derechos de imagen) con nivel bajo, medio o alto, y cómo arreglarlos. &quot;Escribí una oración normal describiendo lo que quería. Y funcionó&quot;.</p>
+          <div class="proyecto-links"><a href="https://claude.com/blog/how-anthropic-uses-claude-legal" target="_blank" rel="noopener">Cómo lo hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Trabajo en comunicación y antes de publicar siempre reviso lo mismo: datos sin fuente, promesas exageradas, nombres mal escritos, tono.
+Te paso mi lista de revisión y tres textos viejos con los errores que solíamos tener.
+Armame una página simple donde pego un texto y me devuelve una lista de alertas, cada una marcada como leve, media o grave, con una sugerencia de corrección.
+La va a usar mi equipo, que no es técnico: tiene que abrirse con doble clic y estar en castellano.
+Está lista cuando la pruebe con los tres textos viejos y detecte los errores que ya conocemos.</pre>
+          </div>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude</span><span class="lugar">España</span></div>
+          <h3>Corregir un test que se corregía a mano</h3>
+          <p class="autor">Ricardo Aguilar · Xataka</p>
+          <p class="que-hace">Una página que calcula el puntaje de un test clínico de 21 preguntas, incluidas las que se puntúan al revés, y ubica el resultado en su categoría. En la misma nota cuenta otras herramientas chicas que se hizo para el trabajo: &quot;antes hacía documentos de Word, ahora hago apps hasta para lo más tonto&quot;.</p>
+          <div class="proyecto-links"><a href="https://www.xataka.com/aplicaciones/antes-documentos-word-ahora-hago-apps-para-tonto" target="_blank" rel="noopener">La nota ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>En mi trabajo corrijo a mano una planilla de evaluación: 21 preguntas, algunas se puntúan al revés, y al final el total cae en una categoría.
+Te paso la planilla en blanco, la tabla de puntajes y las categorías.
+Quiero una página donde cargo las respuestas tildando opciones y me muestra el puntaje total, el detalle por pregunta y la categoría final.
+La uso sola en mi compu, sin internet; los datos no se guardan en ningún lado.
+Está lista cuando cargue dos casos que ya corregí a mano y me dé el mismo resultado.</pre>
+          </div>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Desktop + conectores</span><span class="lugar">EE.UU.</span></div>
+          <h3>Un CRM sin comprar un CRM</h3>
+          <p class="autor">Alex Shartsis · en Growth Unhinged</p>
+          <p class="que-hace">Conectó Claude a su Gmail y su calendario y le pide listas: a quién hacerle seguimiento, con quién se reunió la semana pasada y para qué. No construyó un programa: le enseñó a Claude a mirar sus cosas.</p>
+          <div class="proyecto-links"><a href="https://www.growthunhinged.com/p/personal-ai-crm" target="_blank" rel="noopener">Cómo lo hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Revisá mis mails y mi calendario de la semana pasada y de esta.
+Armame una tabla con las reuniones que tuve y las que tengo agendadas, y marcá si cada una es con una fuente, un cliente, un colega o algo personal, según lo que se habló por mail.
+Después, una lista de las personas a las que les debo una respuesta hace más de una semana.
+No mandes ni borres nada: solo leé y armá las listas.</pre>
+          </div>
+          <details class="original">
+            <summary>Ver el prompt original</summary>
+            <pre>Compile a list and count of meetings I had last week, and meetings I have scheduled this week. Note if they are sales meetings, partnership meetings, or some other form of meeting based on the correspondence with the attendees. Provide these as a table.</pre>
+            <p>Textual, tal como lo publicó. <a href="https://www.growthunhinged.com/p/personal-ai-crm" target="_blank" rel="noopener">Fuente ↗</a></p>
+          </details>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude</span><span class="lugar">EE.UU.</span></div>
+          <h3>Un CRM en Excel, con final honesto</h3>
+          <p class="autor">Chris Scott · The Paperless Agent</p>
+          <p class="que-hace">Un tablero que lee su Excel de contactos y le muestra a quién hace rato que no le escribe. Lo bueno de la nota es el final: lo dejó de usar porque cada registro tardaba casi un minuto. A veces lo que armás no te sirve, y también se aprende de eso.</p>
+          <div class="proyecto-links"><a href="https://thepaperlessagent.com/blog/i-used-claude-to-build-a-personalized-crm-then-i-tried-using-it" target="_blank" rel="noopener">La nota ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Quiero dejar de perder el hilo con mis contactos de trabajo (fuentes, clientes, colegas).
+Te paso un Excel con nombre, a qué se dedica, cada cuánto quiero hablarle y la última vez que hablamos.
+Armame una página que lea ese Excel, me muestre arriba y en rojo a quién le debo un mensaje, y me deje anotar &quot;hablé hoy&quot; con un clic.
+Es solo para mí y tiene que funcionar en mi compu.
+Está lista cuando la abro un lunes y en diez segundos sé a quién escribirle.</pre>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bloque-proyectos">
+      <h2 class="seccion-titulo">Personales y lúdicos</h2>
+      <p class="bloque-intro">Software para una sola persona: vos. No tiene que servirle a nadie más.</p>
+      <div class="proyectos">
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude Code</span><span class="lugar">EE.UU.</span></div>
+          <h3>Un &quot;leer después&quot; propio</h3>
+          <p class="autor">Kevin Roose · The New York Times</p>
+          <p class="que-hace">Cuando cerró Pocket, la app donde guardaba notas para leer después, se hizo la suya en unas dos horas. &quot;Ahora es mía y le puedo cambiar lo que quiera&quot;. Guarda artículos, los lee en voz alta y los manda al Kindle.</p>
+          <p class="ojo"><strong>Ojo:</strong> La app no es pública. La de Roose es más grande que lo que entra en el taller: el prompt de abajo es la versión chica.</p>
+          <div class="proyecto-links"><a href="https://gizmodo.com/thanks-but-no-thanks-on-the-claudeswarms-kevin-roose-2000714238" target="_blank" rel="noopener">La historia ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Junto notas para leer después y siempre se me pierden entre pestañas y chats.
+Quiero una página donde pego un link y se guarda con título y fecha, y la puedo marcar como leída.
+Que tenga un buscador y un botón para que me lea el texto en voz alta.
+Es solo para mí; con que funcione en mi compu alcanza.
+Está lista cuando guarde diez links esta semana y los encuentre todos el domingo.</pre>
+          </div>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Claude</span><span class="lugar">En castellano</span></div>
+          <h3>Un juego de tipeo para relajarse</h3>
+          <p class="autor">José Antonio Lanz · Decrypt</p>
+          <p class="que-hace">Caen palabras por la pantalla y las tenés que tipear antes de que lleguen abajo. Al principio el botón de inicio no andaba; lo fue arreglando a fuerza de pedidos hasta que quedó. Se puede jugar online.</p>
+          <div class="proyecto-links"><a href="https://jaldps.itch.io/tranquil-type" target="_blank" rel="noopener">Jugarlo ↗</a><a href="https://decrypt.co/es/312323/vibe-coding-realmente-funciona-construimos-un-juego-con-claude-y-asi-es-como-resulto" target="_blank" rel="noopener">Cómo lo hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Escribí un juego hermoso y relajante en el que tengo que escribir palabras rápido para mantenerme con vida. Las palabras van cayendo y cada letra se desvanece a medida que la escribo.</pre>
+          </div>
+          <details class="original">
+            <summary>Ver el prompt original</summary>
+            <pre>Escribe un juego hermoso y relajante en el que debo escribir palabras rápidamente para mantenerme con vida. Las palabras van cayendo y cada letra tiene un efecto de desvanecimiento a medida que las escribo</pre>
+            <p>Textual, tal como lo publicó. <a href="https://decrypt.co/es/312323/vibe-coding-realmente-funciona-construimos-un-juego-con-claude-y-asi-es-como-resulto" target="_blank" rel="noopener">Fuente ↗</a></p>
+          </details>
+        </article>
+
+        <article class="proyecto">
+          <div class="proyecto-meta"><span class="herramienta">Gemini (Google AI Studio)</span><span class="lugar">España</span></div>
+          <h3>Una app para dormir con sonidos</h3>
+          <p class="autor">Pepu Ricca · Xataka Móvil</p>
+          <p class="que-hace">Un editor sin &quot;experiencia ni conocimiento alguno&quot; se hizo en quince minutos una app para su celular con lluvia, viento y mar, un mezclador de volúmenes y favoritos. Cuando algo falló, copió el error, se lo pasó a la IA y lo arregló.</p>
+          <p class="ojo"><strong>Ojo:</strong> No está hecha con Claude, pero el método es el mismo: describir, probar y pedir el arreglo.</p>
+          <div class="proyecto-links"><a href="https://www.xatakamovil.com/movil-y-sociedad/he-creado-app-para-mi-android-quince-minutos-tener-idea-programacion-ahora-puedo-hacer-cualquier-idea-que-me-apetezca" target="_blank" rel="noopener">Cómo lo hizo ↗</a></div>
+          <div class="prompt">
+            <div class="prompt-cabeza"><span>Para probar vos</span><button type="button" class="copiar">Copiar</button></div>
+            <pre>Quiero una página para dormir con sonidos de naturaleza: lluvia, viento, mar y fuego.
+Que pueda prender varios a la vez y subir o bajar el volumen de cada uno por separado.
+Sumá un temporizador que lo apague solo a los 30 minutos y una lista de mis mezclas favoritas.
+La voy a usar de noche desde el celular: fondo oscuro y botones grandes.
+Está lista cuando armo una mezcla, la guardo y al otro día la encuentro.</pre>
+          </div>
+          <details class="original">
+            <summary>Ver el prompt original</summary>
+            <pre>An app with nature sounds and music for relaxing and sleep. Material 3 Expressive design with 3 tabs in the bottom navigation menu: Play (controls), Sound Selector and Mixer, and Favorites.</pre>
+            <p>Textual, tal como lo publicó. <a href="https://www.xatakamovil.com/movil-y-sociedad/he-creado-app-para-mi-android-quince-minutos-tener-idea-programacion-ahora-puedo-hacer-cualquier-idea-que-me-apetezca" target="_blank" rel="noopener">Fuente ↗</a></p>
+          </details>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- EDITÁ ACÁ: el bloque de contacto. Si cambiás el mail, cambialo en los DOS
+       lugares: el href="mailto:..." y el texto del link. -->
+  <section class="contacto">
+    <span class="etiqueta">CONTACTO</span>
+    <h2>Cualquier consulta, escribime</h2>
+    <p>Dudas, inquietudes, preguntas técnicas: lo que sea, durante el taller o después. No hay pregunta demasiado básica.</p>
+    <a href="mailto:thiagovdonato@gmail.com">thiagovdonato@gmail.com</a>
+  </section>
+
+  <footer>Anfibia · Taller Cómo entrenar a tu IA</footer>
+
+<script>
+  // Botón "Copiar": copia el prompt de su tarjeta y avisa un segundo.
+  document.querySelectorAll('.prompt .copiar').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+      var texto = boton.closest('.prompt').querySelector('pre').textContent;
+      navigator.clipboard.writeText(texto).then(function () {
+        boton.textContent = 'Copiado';
+        setTimeout(function () { boton.textContent = 'Copiar'; }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>
