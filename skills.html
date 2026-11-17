@@ -113,7 +113,7 @@
     <section class="paso-instalacion">
       <span class="etiqueta">Paso 3</span>
       <h2>Verificá que aparezcan</h2>
-      <p><strong>Cerrá la app de Claude y abrila de nuevo.</strong> Las skills se leen al arrancar: si no reiniciás, no aparecen.</p>
+      <p>Claude detecta las skills nuevas solo, sin reiniciar. Si no aparecen, <strong>cerrá la app de Claude y abrila de nuevo</strong>.</p>
       <p>Después escribí una barra y nada más:</p>
       <div class="pantalla"><pre>&gt; /</pre></div>
       <p>Se despliega la lista de comandos disponibles. Tienen que estar estas cuatro:</p>
@@ -157,7 +157,11 @@
 
     <section class="nota-por-que">
       <h2>Estas no son mías</h2>
-      <p>Las escribió otra gente y las recomiendo porque las uso todos los días. Están en el Drive para que las tengas a mano, pero no son parte del taller: si mañana sacan una versión mejor, bajala de la fuente y pisá la carpeta.</p>
+      <p>Las escribió otra gente y las recomiendo porque las uso todos los días. Están en el Drive para que las tengas a mano, pero no son parte del taller.</p>
+      <p><strong>Otra forma de instalarlas:</strong> las dos están en el marketplace oficial de plugins de Anthropic. Instaladas desde ahí se actualizan solas, sin que tengas que volver a bajar nada. En la app: botón <strong>+</strong> → <strong>Add plugins</strong>, y las buscás por nombre. O escribís:</p>
+      <div class="pantalla"><pre>&gt; /plugin install frontend-design@claude-plugins-official
+&gt; /plugin install skill-creator@claude-plugins-official</pre></div>
+      <p>Si las instalás así, no copies sus carpetas del Drive: tendrías cada una dos veces.</p>
     </section>
 
     <section class="paso-instalacion">
@@ -166,7 +170,7 @@
       <p>Empuja las decisiones visuales hacia algo con más criterio que el gris genérico por defecto. Pero también tiene sus gustos: si la usás antes de tener tus referencias, tu proyecto se va a parecer al de los demás.</p>
       <div class="pantalla"><pre>&gt; /frontend-design</pre></div>
       <p><strong>Qué pasa después:</strong> no te hace preguntas ni arranca una conversación. Le cambia el criterio a Claude para lo que venga después, así que lo normal es invocarla y a continuación pedirle lo que querés construir.</p>
-      <p class="verificar">Se instala copiando la carpeta, nada más. Viene de Anthropic.</p>
+      <p class="verificar">Viene de Anthropic. Se instala copiando la carpeta o como plugin.</p>
     </section>
 
     <section class="paso-instalacion">
@@ -189,7 +193,7 @@
       <span class="etiqueta">Sin instalar nada</span>
       <h2>El navegador de la app</h2>
       <p><strong>Cuándo:</strong> para probar lo que estás construyendo. Funciona igual uses el navegador que uses, Firefox y Safari incluidos.</p>
-      <p>La app de Claude trae un navegador adentro. Se abre con <code>Ctrl + Shift + B</code> en Windows y <code>Cmd + Shift + B</code> en Mac. Arranca limpio, sin tus cuentas ni tu historial.</p>
+      <p>La app de Claude trae un navegador adentro. Se abre con <code>Ctrl + Shift + B</code> en Windows y <code>Cmd + Shift + B</code> en Mac. Arranca limpio, sin tus cuentas ni tu historial. Si querés que se acuerde de una sesión iniciada, en su menú (⋮) activá <strong>Keep cookies</strong>.</p>
       <div class="pantalla"><pre>&gt; Abrí mi sitio en el navegador y sacame una captura
 &gt; de cómo se ve la portada en celular</pre></div>
     </section>
@@ -197,7 +201,7 @@
     <section class="paso-instalacion">
       <span class="etiqueta opcional">Opcional</span>
       <h2>Claude in Chrome</h2>
-      <p><strong>Cuándo:</strong> cuando Claude tiene que entrar a un sitio donde vos ya iniciaste sesión, como tu mail o un panel de trabajo.</p>
+      <p><strong>Cuándo:</strong> cuando Claude tiene que entrar a un sitio donde vos ya iniciaste sesión, como tu mail o un panel de trabajo. Necesita un plan pago: con Pro alcanza.</p>
       <p>Es una extensión que le da acceso a tu navegador real, con tus cuentas abiertas. Funciona en Chrome, Edge, Brave, Arc, Vivaldi y Opera. <strong>No funciona en Firefox ni en Safari:</strong> ahí usá el navegador de la app.</p>
       <ol>
         <li>Instalá la extensión desde la <a class="link-codigo" href="https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn" target="_blank" rel="noopener">Chrome Web Store</a>.</li>
