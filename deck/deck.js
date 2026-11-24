@@ -31,14 +31,14 @@ window.DECK = {
       "titulo": "El taller en cuatro clases",
       "kicker": "04 / CLASE 1",
       "parte": "CLASE 1",
-      "notas": "El mapa entero antes de arrancar. La clase 1 es de conceptos: qué es un modelo, cómo funciona el contexto, qué es un agente y cómo pararse frente al ruido. La app recién se abre en la clase 2, con el CLAUDE.md global como primera configuración. La 3 es para que el agente trabaje como cada uno, y la 4 lo saca de la carpeta."
+      "notas": "El mapa entero antes de arrancar. La clase 1 es de conceptos: qué es un modelo, cómo funciona el contexto, qué es un agente y cómo pararse frente al ruido. La clase 2 arranca con el CLAUDE.md global como primera configuración. La 3 es para que el agente trabaje como cada uno, y la 4 lo saca de la carpeta."
     },
     {
       "archivo": "187-clase-1-portada.html",
       "titulo": "Clase 1",
       "kicker": "05 / CLASE 1",
       "parte": "CLASE 1",
-      "notas": "Avisar de entrada que hoy no se abre la app. Es la clase para entender qué hay del otro lado antes de usarlo. La tarea es llegar a la clase 2 con todo instalado."
+      "notas": "La clase para entender qué hay del otro lado antes de usarlo. La tarea es llegar a la clase 2 con todo instalado."
     },
     {
       "archivo": "125-no-creer-las-promesas.html",
