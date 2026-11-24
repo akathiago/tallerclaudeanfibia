@@ -518,10 +518,10 @@ window.DECK = {
     },
     {
       "archivo": "205-seis-comandos.html",
-      "titulo": "Seis comandos clave",
+      "titulo": "Cuatro comandos clave",
       "kicker": "74 / CLASE 2",
       "parte": "CLASE 2",
-      "notas": "Un comando empieza con barra y no se lo pedís al modelo sino al programa: por eso es instantáneo y no gasta contexto. /init y /plan son para arrancar; /context, /compact y /clear para cuando el chat se pone lento o se olvida, que es lo que acaban de ver en los hábitos; /resume para retomar al otro día. /rewind queda afuera a propósito porque en la app puede no estar. La lista completa, con los atajos de teclado, está en la web en Comandos y atajos."
+      "notas": "Un comando empieza con barra y no se lo pedís al modelo sino al programa: por eso es instantáneo y no gasta contexto. /init y /plan son para arrancar; /context y /compact para cuando el chat se pone lento o se olvida, que es lo que acaban de ver en los hábitos. Para empezar de cero, sesión nueva con Ctrl+N; para retomar otra, la lista de sesiones de la barra lateral. /rewind queda afuera a propósito porque en la app puede no estar. La lista completa, con los atajos de teclado, está en la web en Comandos y atajos."
     },
     {
       "archivo": "172-el-pacto.html",
