@@ -1,31 +1,40 @@
 <!doctype html>
 <!--
   ══════════════════════════════════════════════════════════════════
-  ANFIBIA · SLIDE DE COMPARACIÓN — 1920 × 1080 (16:9)
+  ANFIBIA · SLIDE DE CHECKLIST — 1920 × 1080 (16:9)
   ══════════════════════════════════════════════════════════════════
 
-  Dos columnas enfrentadas con un borde negro en el medio. Es la
-  estructura de los ejercicios de "cazá el mito": lo que la gente
-  cree a la izquierda, lo que pasa de verdad a la derecha.
+  Una lista de acciones numeradas, todas del mismo peso. Es para
+  cerrar un bloque con "esto es lo que hay que hacer": hábitos,
+  pasos de un método, cosas para llevarse anotadas.
 
-  Sirve igual para antes/después, o para dos opciones enfrentadas.
+  CUÁNDO NO USARLA
+  Si es la agenda de la charla y querés marcar en qué punto estás,
+  andá a slide-indice: ahí hay un ítem resaltado y el resto en gris.
+  Acá no hay jerarquía a propósito, son todos igual de importantes.
+  Si son pasos que van uno después del otro, andá a slide-diagrama.
 
   CÓMO USARLO
   1. Doble click para verlo en el navegador.
   2. Para editar, abrilo con el Bloc de notas / TextEdit / VS Code.
   3. Cambiá solo lo que dice "EDITÁ ACÁ".
 
-  LA COLUMNA IZQUIERDA ES ROSA (lo falso, lo viejo) Y LA DERECHA LIME
-  (lo correcto, lo nuevo). Es el mismo código de color que usa el
-  sitio para corregir un ejercicio: no lo inviertas.
+  CUÁNTO ENTRA
+  Hasta 7 ítems. Una línea cada uno, hasta 12 palabras.
+  Con 5 o menos queda más aire y se lee mejor de lejos.
+  Si tenés 9, son dos slides. No achiques la letra.
 
-  NO TOQUES el bloque <style>.
+  LOS NÚMEROS SE ESCRIBEN A MANO
+  Van en el HTML, no salen de un contador. Así se puede empezar en
+  08 cuando la lista sigue en una segunda slide.
+
+  NO TOQUES el resto del bloque <style>.
   ══════════════════════════════════════════════════════════════════
 -->
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>ANFIBIA — Slide de comparación</title>
+<title>ANFIBIA — Qué llamamos IA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
@@ -45,6 +54,12 @@
     --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
     --fuente-mono: 'Space Mono', 'Courier New', monospace;
     --fuente-terminal: 'VT323', 'Courier New', monospace;
+  }
+
+  /* ——— Lo único ajustable de esta pieza ——— */
+  :root {
+    /* EDITÁ ACÁ: el acento. var(--lime), var(--electric) o var(--pink) */
+    --acento: var(--pink);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -72,7 +87,7 @@
   .barra {
     display: flex; align-items: center; justify-content: space-between;
     padding: 22px 60px;
-    background: var(--lime); border-bottom: 2px solid var(--black);
+    background: var(--acento); border-bottom: 2px solid var(--black);
     flex-shrink: 0;
   }
   .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
@@ -91,62 +106,50 @@
     text-transform: uppercase;
     max-width: 1400px;
     text-wrap: balance;
-    margin-bottom: 46px;
+    margin-bottom: 44px;
   }
 
-  /* Las dos columnas. El gap de 3px sobre fondo negro ES el borde del medio. */
-  .duelo {
+  .lista { flex: 1; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+  .item {
     flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    background: var(--black);
+    display: flex;
+    align-items: stretch;
     border: 3px solid var(--black);
+    background: var(--paper);
+    box-shadow: 6px 6px 0 var(--black);
+    min-height: 0;
   }
 
-  .lado { background: var(--paper); display: flex; flex-direction: column; }
-
-  .lado-cabecera {
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-    padding: 16px 30px;
-    border-bottom: 3px solid var(--black);
+  /* El número. Silkscreen acá está bien: es una etiqueta, no un párrafo. */
+  .item .n {
+    flex-shrink: 0;
+    width: 96px;
+    display: grid;
+    place-items: center;
+    background: var(--acento);
+    border-right: 3px solid var(--black);
     font-family: var(--fuente-pixel);
-    font-size: 20px;
-    text-transform: uppercase;
+    font-size: 26px;
+    color: var(--black);
   }
-  .lado.falso .lado-cabecera { background: var(--pink); }
-  .lado.cierto .lado-cabecera { background: var(--lime); }
-  .lado-cabecera b { font-family: var(--fuente-terminal); font-size: 34px; font-weight: 400; line-height: 0.8; }
 
-  .lado-cuerpo { padding: 40px 40px 44px; display: flex; flex-direction: column; }
-
-  .lado h3 {
-    font-family: var(--fuente-titulo);
-    font-weight: 800;
-    font-size: 54px;
-    line-height: 0.95;
-    text-transform: uppercase;
-    text-wrap: balance;
-    margin-bottom: 24px;
-  }
-  .lado p {
+  /* align-self centra el texto sin volver esto un contenedor flex. Si se le
+     pone display:flex, el <b> y el texto que sigue pasan a ser dos items y el
+     espacio del medio desaparece: queda "distintas.Es". */
+  .item .txt {
+    flex: 1;
+    align-self: center;
+    padding: 0 34px;
     font-family: var(--fuente-mono);
-    font-size: 23px;
-    line-height: 1.65;
-    max-width: 46ch;
+    font-size: 26px;
+    line-height: 1.4;
   }
 
-  .lado ul { list-style: none; margin-top: auto; padding-top: 30px; display: grid; gap: 10px; }
-  .lado li {
-    font-family: var(--fuente-mono);
-    font-size: 20px;
-    line-height: 1.45;
-    padding: 14px 18px;
-    border: 2px solid var(--black);
-    background: var(--cream);
-  }
+  /* La primera palabra o dos, en negrita, funcionan de título del ítem. */
+  .item .txt b { font-weight: 700; }
 
-  .pie { display: flex; justify-content: space-between; align-items: center; margin-top: 34px; }
+  .pie { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
   .pie .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
 
   .firma { display: flex; gap: 10px; }
@@ -172,55 +175,51 @@
 
 <div class="lienzo">
 
-  <div class="barra">
-    <!-- EDITÁ ACÁ: nombre de la marca -->
-    <div class="logo">ANFIBIA</div>
-    <!-- EDITÁ ACÁ: número de slide -->
-    <div class="num">50 / 115</div>
-  </div>
+  <div class="barra"><div class="logo">ANFIBIA</div><div class="num">16 / 118</div></div>
 
   <div class="cuerpo">
-    <!-- EDITÁ ACÁ: el kicker -->
-    <p class="kicker">SISTEMA DE TRABAJO</p>
+    <p class="kicker">CÓMO FUNCIONA</p>
 
-    <!-- EDITÁ ACÁ: el título -->
-    <h2 class="titulo">Chat, Cowork y Code</h2>
+    <h2 class="titulo">Qué llamamos IA</h2>
 
-    <div class="duelo">
-      <div class="lado falso">
-        <div class="lado-cabecera"><span>CHAT</span><b>✕</b></div>
-        <div class="lado-cuerpo">
-          <h3>Conversar</h3>
-          <p>Escribís y recibís una respuesta dentro de la web.</p>
-          <ul>
-            <li>Familiar</li><li>No toca tu entorno</li>
-          </ul>
-        </div>
-      </div>
+    <ul class="lista">
 
-      <div class="lado cierto">
-        <div class="lado-cabecera"><span>COWORK → CODE</span><b>✓</b></div>
-        <div class="lado-cuerpo">
-          <h3>Hacer</h3>
-          <p>Cowork trabaja con tareas de oficina. Code puede operar sobre proyectos y archivos.</p>
-          <ul>
-            <li>Más autonomía</li><li>No exige saber programar</li><li>Cowork fue hecho con Code</li>
-          </ul>
-        </div>
-      </div>
+      <li class="item">
+        <span class="n">01</span>
+        <span class="txt"><b>Es una palabra paraguas.</b> Nombra un campo de investigación de los años cincuenta y, a la vez, una etiqueta de marketing.</span>
+      </li>
 
-    </div>
+      <li class="item">
+        <span class="n">02</span>
+        <span class="txt"><b>Antes, reglas escritas a mano.</b> Si pasa esto, hacé aquello. Funcionaba en tareas cerradas, como el ajedrez.</span>
+      </li>
+
+      <li class="item">
+        <span class="n">03</span>
+        <span class="txt"><b>Hoy, aprendizaje automático.</b> En vez de reglas, el sistema aprende patrones a partir de muchísimos ejemplos.</span>
+      </li>
+
+      <li class="item">
+        <span class="n">04</span>
+        <span class="txt"><b>La novedad es que genera.</b> Produce texto, imágenes, audio o video nuevos, en vez de solo clasificar lo que ya existe.</span>
+      </li>
+
+      <li class="item">
+        <span class="n">05</span>
+        <span class="txt"><b>Cuando hoy se dice «IA»,</b> casi siempre se habla de IA generativa. Es la que vamos a usar en el taller.</span>
+      </li>
+
+    </ul>
 
     <div class="pie">
-      <!-- EDITÁ ACÁ: dato de pie -->
-      <div class="meta"></div>
+      <div class="meta">Una palabra, muchas cosas</div>
       <div class="firma"><i></i><i></i><i></i></div>
     </div>
   </div>
 
 </div>
 
-<div class="ayuda">SLIDE DE COMPARACIÓN · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
+<div class="ayuda">SLIDE DE CHECKLIST · 1920×1080 · EDITÁ SOLO DONDE DICE "EDITÁ ACÁ" · ESTA BARRA NO SALE EN LA IMAGEN</div>
 
 </body>
 </html>
