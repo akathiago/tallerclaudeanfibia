@@ -489,39 +489,39 @@ window.DECK = {
       "notas": "Captura real de la app en castellano (noviembre de 2026), con el menú de modos abierto. Recorrer los números en orden y después abrir la app de verdad. Lo que más importa para la primera sesión: elegir la carpeta (2), el modo en Manual (3) y que el entorno sea Este equipo (4). Los cambios, el navegador y la terminal aparecen arriba a la derecha una vez que hay una sesión andando. Si la app se actualiza y algo cambió de lugar, sacar una captura nueva."
     },
     {
-      "archivo": "174-cuando-te-pide-permiso.html",
-      "titulo": "Cuando te pide permiso",
-      "kicker": "70 / CLASE 2",
-      "parte": "CLASE 2",
-      "notas": "El cartel de permiso aparece en el primer minuto y asusta. La regla: leer qué quiere hacer y compararlo con lo que pediste. Si coincide, aprobar; si no se entiende, rechazar y preguntar para qué es. Modos (así figuran en la app en castellano): Manual pregunta todo; Aceptar ediciones edita archivos de la carpeta solo y pregunta antes de correr comandos; Planificación no toca nada; Automático avanza solo con un sistema de control. Omitir permisos no pregunta nada: viene apagado y conviene dejarlo así. En la app el modo se cambia con el selector o Ctrl+Shift+M; Shift+Tab es de la terminal."
-    },
-    {
       "archivo": "36-a-que-accede.html",
       "titulo": "A qué puede acceder",
-      "kicker": "71 / CLASE 2",
+      "kicker": "70 / CLASE 2",
       "parte": "CLASE 2",
       "notas": "El alcance concreto: los archivos del proyecto y otros lugares de la máquina con permiso, la terminal (cualquier comando que puedas correr vos) y el estado de Git. Acá es donde conviene detenerse y hablar de permisos."
     },
     {
       "archivo": "157-redes-de-seguridad.html",
       "titulo": "Dos redes de seguridad",
-      "kicker": "72 / CLASE 2",
+      "kicker": "71 / CLASE 2",
       "parte": "CLASE 2",
       "notas": "Las dos funciones que sacan el miedo. Modo plan: el selector de modo en la app (Ctrl+Shift+M; Shift+Tab solo anda en la terminal); Claude investiga y propone, y no toca nada hasta que aprobás. Deshacer: en la terminal, Esc dos veces o /rewind; en la app de escritorio eso no está documentado, así que lo seguro es pedírselo en castellano y, sobre todo, guardar seguido con Git, que vuelve incluso lo que hizo un comando. Si en tu versión de la app aparece un botón para rebobinar en cada mensaje, mostralo en vivo."
     },
     {
       "archivo": "90-resumen-por-que-importa.html",
       "titulo": "Por qué esto importa",
-      "kicker": "73 / CLASE 2",
+      "kicker": "72 / CLASE 2",
       "parte": "CLASE 2",
       "notas": "Abre el resumen de tokens y costo. Antes de la lista de hábitos, dejar claro para qué sirve: no es tacañería, es que el contexto sucio empeora las respuestas además de encarecerlas."
     },
     {
       "archivo": "91-resumen-nivel-1.html",
       "titulo": "Hábitos básicos",
-      "kicker": "74 / CLASE 2",
+      "kicker": "73 / CLASE 2",
       "parte": "CLASE 2",
       "notas": "Cuidar contexto no significa hablar menos. Significa evitar que cada vuelta vuelva a cargar decisiones, errores y material que ya no aportan."
+    },
+    {
+      "archivo": "205-seis-comandos.html",
+      "titulo": "Seis comandos clave",
+      "kicker": "74 / CLASE 2",
+      "parte": "CLASE 2",
+      "notas": "Un comando empieza con barra y no se lo pedís al modelo sino al programa: por eso es instantáneo y no gasta contexto. /init y /plan son para arrancar; /context, /compact y /clear para cuando el chat se pone lento o se olvida, que es lo que acaban de ver en los hábitos; /resume para retomar al otro día. /rewind queda afuera a propósito porque en la app puede no estar. La lista completa, con los atajos de teclado, está en la web en Comandos y atajos."
     },
     {
       "archivo": "172-el-pacto.html",
