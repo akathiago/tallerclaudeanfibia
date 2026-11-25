@@ -1,0 +1,191 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE CONTENIDO — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  CÓMO USARLO
+  1. Abrí este archivo con doble click (se abre en tu navegador).
+  2. Para editarlo, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Buscá los comentarios que dicen "EDITÁ ACÁ" y cambiá SOLO ese texto.
+  4. Guardá y refrescá el navegador (F5).
+
+  Este slide tiene DOS COLUMNAS: el texto principal a la izquierda y una
+  caja de ejemplo a la derecha. Si no querés la caja, borrá todo el bloque
+  que empieza en <aside class="ejemplo"> y termina en </aside>.
+
+  NO TOQUES el bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — Doce cosas que hicieron alumnos del taller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+    --fuente-lectura: 'Newsreader', Georgia, serif;
+
+    /* Acento de esta pieza: var(--lime) var(--electric) var(--pink) */
+    --acento: var(--lime);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Barra superior lime, igual que el header del sitio */
+  .barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 60px;
+    background: var(--lime);
+    border-bottom: 2px solid var(--black);
+    flex-shrink: 0;
+  }
+  .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
+  .barra .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; }
+
+  .cuerpo { flex: 1; padding: 70px 90px 80px; display: flex; flex-direction: column; }
+
+  .kicker {
+    font-family: var(--fuente-pixel);
+    font-size: 22px;
+    color: var(--electric);
+    margin-bottom: 26px;
+  }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 108px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1400px;
+    text-wrap: balance;
+    margin-bottom: 54px;
+  }
+
+  .columnas { display: grid; grid-template-columns: 1fr 620px; gap: 80px; align-items: start; flex: 1; }
+
+  .texto {
+    font-family: var(--fuente-lectura);
+    font-size: 33px;
+    line-height: 1.62;
+    max-width: 62ch;
+  }
+  .texto p + p { margin-top: 26px; }
+  .texto strong { background: var(--acento); padding: 0 6px; font-weight: 600; }
+
+  /* Caja de ejemplo con sombra dura de color */
+  .ejemplo {
+    background: var(--paper);
+    border: 3px solid var(--black);
+    box-shadow: 16px 16px 0 var(--acento);
+    padding: 38px 40px;
+  }
+  .ejemplo span { display: block; font-family: var(--fuente-pixel); font-size: 20px; margin-bottom: 20px; }
+  .ejemplo p { font-family: var(--fuente-mono); font-size: 24px; line-height: 1.65; }
+
+  /* Lista alternativa: si en vez de la caja querés bullets, usá <ul class="lista"> */
+  .lista { list-style: none; display: grid; gap: 16px; }
+  .lista li {
+    font-family: var(--fuente-mono); font-size: 24px; line-height: 1.5;
+    border: 2px solid var(--black); background: var(--paper); padding: 18px 22px;
+  }
+
+  .pie { display: flex; justify-content: space-between; align-items: center; margin-top: 46px; }
+  .pie .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--black); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+
+  .cuerpo { padding: 56px 80px 50px; }
+  .titulo { font-size: 84px; margin-bottom: 40px; max-width: none; }
+  .grilla { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; flex: 1; }
+  .proy { border: 3px solid var(--black); background: var(--paper); padding: 24px 20px; display: flex; flex-direction: column; box-shadow: 8px 8px 0 var(--black); }
+  .proy:nth-child(6n+3) { background: var(--acento); }
+  .proy span { font-family: var(--fuente-pixel); font-size: 14px; color: var(--electric); margin-bottom: 18px; line-height: 1.4; }
+  .proy:nth-child(6n+3) span { color: var(--black); }
+  .proy strong { font-family: var(--fuente-titulo); font-weight: 900; font-size: 34px; line-height: 0.98; text-transform: uppercase; letter-spacing: -0.01em; }
+  .proy em { margin-top: auto; padding-top: 18px; font-style: normal; font-family: var(--fuente-mono); font-size: 16px; line-height: 1.4; color: var(--gray); }
+  .proy:nth-child(6n+3) em { color: var(--black); }
+  .pie-proy { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); margin-top: 34px; }
+
+</style>
+</head>
+<body>
+<div class="lienzo">
+  <div class="barra"><div class="logo">ANFIBIA</div><div class="num">15 / 121</div></div>
+  <div class="cuerpo">
+    <p class="kicker">APERTURA · EDICIONES ANTERIORES</p><h2 class="titulo">Doce cosas que hicieron alumnos del taller</h2>
+    <div class="grilla">
+      <div class="proy"><span>WEB PERSONAL</span><strong>La web de su emprendimiento</strong></div>
+      <div class="proy"><span>WEB PERSONAL</span><strong>Una web para mostrar su trabajo</strong></div>
+      <div class="proy"><span>AUTOMATIZAR EXCEL</span><strong>Una planilla que se arma sola</strong></div>
+      <div class="proy"><span>OTROS FORMATOS</span><strong>Ordenar PDFs y documentos sin copiar a mano</strong></div>
+      <div class="proy"><span>INVESTIGACIÓN INTERACTIVA</span><strong>Una investigación que se recorre en un mapa</strong></div>
+      <div class="proy"><span>INVESTIGACIÓN INTERACTIVA</span><strong>Un texto largo convertido en sitio interactivo</strong></div>
+      <div class="proy"><span>BIBLIOTECA DIGITAL</span><strong>Un buscador para la biblioteca extensa de una fundación literaria</strong></div>
+      <div class="proy"><span>DATOS</span><strong>Un dashboard para presentar datos de forma ilustrada</strong></div>
+      <div class="proy"><span>LEGALES</span><strong>Un flujo para revisar contratos</strong></div>
+      <div class="proy"><span>ARTE DIGITAL</span><strong>Obras que se dibujan con código</strong></div>
+      <div class="proy"><span>OBJETOS</span><strong>Una maceta inteligente</strong></div>
+      <div class="proy"><span>VIDEOJUEGO</span><strong>Un videojuego propio</strong></div>
+    </div>
+    <p class="pie-proy">Proyectos de alumnos de ediciones anteriores del taller</p>
+  </div>
+</div>
+<div class="ayuda">SLIDE DE GRILLA · 1920×1080 · ESTA BARRA NO SALE EN LA IMAGEN</div>
+</body>
+</html>
