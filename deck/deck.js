@@ -55,74 +55,74 @@ window.DECK = {
       "notas": "Segunda mitad del par, va pegada. El escepticismo de la anterior no es una excusa para no aprender esto. El punto 05 es una promesa concreta del taller: en cuatro clases se llevan algo propio funcionando. Conviene decirla mirando al aula."
     },
     {
-      "archivo": "182-lectura-santelli.html",
-      "titulo": "Lecturas: Mauro Santelli",
-      "kicker": "08 / CLASE 1",
-      "parte": "CLASE 1",
-      "notas": "Primera de cuatro lecturas recomendadas, todas en la Biblioteca de la web. Santelli no dice que los modelos sean conscientes ni inteligentes: justo antes aclara que no lo cree y que no sabe si la pregunta está bien planteada. Lo que le interesa es otra cosa: que el texto, que antes era inerte salvo para una persona, ahora también está vivo en lo digital. La nota cuenta cómo usa Claude Code, Zotero y Obsidian para investigar."
-    },
-    {
       "archivo": "183-lectura-ruocco.html",
       "titulo": "Lecturas: Juan Ruocco",
-      "kicker": "09 / CLASE 1",
+      "kicker": "08 / CLASE 1",
       "parte": "CLASE 1",
-      "notas": "Ruocco tampoco programa y lo dice de entrada. La nota mira qué cambia para el software cuando cualquiera puede pedir herramientas en castellano. Es la idea del taller dicha por alguien de afuera: la barrera ya no es el código, es saber qué pedir."
+      "notas": "Primera de las lecturas recomendadas, todas en la Biblioteca de la web. Ruocco no programa y lo dice de entrada. La nota mira qué cambia para el software cuando cualquiera puede pedir herramientas en castellano. Es la idea del taller dicha por alguien de afuera: la barrera ya no es el código, es saber qué pedir."
     },
     {
       "archivo": "191-lectura-ruocco-valor.html",
       "titulo": "Lecturas: Juan Ruocco, el valor del trabajo intelectual",
-      "kicker": "10 / CLASE 1",
+      "kicker": "09 / CLASE 1",
       "parte": "CLASE 1",
       "notas": "No es una cita textual: es la idea de la nota «Es más complejo», de Ruocco, sobre la licenciatura en sistemas complejos. Él escribe que la inteligencia acelerada puede volverse un commodity. Si pensar se abarata, lo que vale es saber qué problema elegir y qué hacer con lo que la máquina devuelve. Engancha con «Gusto y criterio» y con la idea de que la firma sigue siendo de ellos."
     },
     {
       "archivo": "184-lectura-flores.html",
       "titulo": "Lecturas: José Ignacio Flores",
-      "kicker": "11 / CLASE 1",
+      "kicker": "10 / CLASE 1",
       "parte": "CLASE 1",
       "notas": "Un periodista chileno que hizo weatherchile.app. Sirve para bajar el miedo: nadie les pide que cambien de profesión. Lo que cuenta es el método de trabajo con el agente, no solo el resultado. Su proyecto está en la página de Proyectos."
     },
     {
       "archivo": "185-lectura-aguilar.html",
       "titulo": "Lecturas: Ricardo Aguilar",
-      "kicker": "12 / CLASE 1",
+      "kicker": "11 / CLASE 1",
       "parte": "CLASE 1",
       "notas": "Cierra las lecturas con lo cotidiano: herramientas chiquitas que no tardan más de veinte minutos. Vale mencionar que el mismo Aguilar dice que sigue sin fiarse de la IA por su capacidad de alucinación: el entusiasmo no reemplaza el chequeo. Las cuatro notas, con link, están en la Biblioteca de la web del taller."
     },
     {
       "archivo": "164-de-buscador-a-companero.html",
       "titulo": "De buscador a compañero de trabajo",
-      "kicker": "13 / CLASE 1",
+      "kicker": "12 / CLASE 1",
       "parte": "CLASE 1",
-      "notas": "La idea central del taller. Casi todo el mundo usa la IA como un Google que contesta en prosa: el primer escalón. El taller no es una lista de herramientas, es un flujo de pensamiento para subir los otros tres: usarla para pensar con contexto, y después delegarle tareas enteras como a un compañero de trabajo. Preguntar en qué escalón está cada uno."
+      "notas": "La idea central del taller. Casi todo el mundo usa la IA como un Google que contesta en prosa: el primer escalón. El taller no es una lista de herramientas, es un flujo de pensamiento para subir los otros dos: usarla como asistente para pensar con contexto, y después delegarle tareas enteras como a un compañero de trabajo. Preguntar en qué escalón está cada uno."
     },
     {
       "archivo": "165-como-se-delega.html",
       "titulo": "Cómo se delega",
-      "kicker": "14 / CLASE 1",
+      "kicker": "13 / CLASE 1",
       "parte": "CLASE 1",
       "notas": "Delegar en una IA se parece a delegar en una persona nueva en el equipo: no sabe nada de tu trabajo salvo lo que le contás. Lo que cambia la calidad no es la herramienta sino cómo se encarga y cómo se revisa. Esto vuelve en todo el taller: CLAUDE.md es el contexto, el modo plan es pedir el plan, y la responsabilidad sigue siendo tuya."
     },
     {
       "archivo": "43-que-se-llevan.html",
       "titulo": "El objetivo del recorrido",
-      "kicker": "15 / CLASE 1",
+      "kicker": "14 / CLASE 1",
       "parte": "CLASE 1",
       "notas": "La meta no es salir con una lista de prompts. Es poder detectar una tarea, diseñar una forma de abordarla y evaluar el resultado sin delegar el juicio."
     },
     {
       "archivo": "192-que-llamamos-ia.html",
       "titulo": "Qué llamamos IA",
-      "kicker": "16 / CLASE 1",
+      "kicker": "15 / CLASE 1",
       "parte": "CLASE 1",
       "notas": "Antes de hablar de modelos, ordenar la palabra. «IA» sirve para un campo académico que existe desde 1956 y para una etiqueta de venta. El salto de los últimos años es el aprendizaje automático aplicado a generar contenido nuevo. Cuando alguien dice «la IA» hoy, casi siempre habla de IA generativa."
     },
     {
       "archivo": "193-que-es-un-llm.html",
       "titulo": "Qué es un LLM",
-      "kicker": "17 / CLASE 1",
+      "kicker": "16 / CLASE 1",
       "parte": "CLASE 1",
       "notas": "LLM es la sigla en inglés de Large Language Model. Contarlo simple: leyó muchísimo, aprendió qué suele venir después de qué, y escribe prediciendo el próximo pedacito. Después lo ajustan con personas para que converse y sea útil. El pie es lo que más importa: no consulta una base de datos, genera. Eso explica tanto lo bien que escribe como las alucinaciones. El token vuelve unas slides más adelante."
+    },
+    {
+      "archivo": "194-video-karpathy-llm.html",
+      "titulo": "Para ir más hondo: Karpathy, Intro to Large Language Models",
+      "kicker": "17 / CLASE 1",
+      "parte": "CLASE 1",
+      "notas": "Sugerencia, no tarea. Para quien se quedó con ganas después de «Qué es un LLM»: la charla de una hora de Andrej Karpathy (noviembre de 2023) cuenta el entrenamiento, la predicción del próximo token y los problemas de seguridad con mucho más detalle. Está en inglés con subtítulos. El link también queda en la sección Videos de la Biblioteca."
     },
     {
       "archivo": "194-otras-ias.html",
