@@ -111,22 +111,8 @@
   }
 
   /* El buffer visible. El otro se queda cargando la slide que sigue. */
-  .slide-frame.activo { opacity: 1; }
+  .slide-frame.activo { opacity: 1; pointer-events: auto; }
 
-  .hit-area {
-    position: absolute;
-    z-index: 3;
-    top: 0;
-    bottom: 0;
-    width: 34%;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    cursor: pointer;
-  }
-
-  .hit-area.prev { left: 0; cursor: w-resize; }
-  .hit-area.next { right: 0; cursor: e-resize; }
 
   .chrome {
     position: absolute;
@@ -250,8 +236,6 @@
       <iframe class="slide-frame" data-buffer="b" title="Slide siguiente" aria-hidden="true"></iframe>
     </div>
 
-    <button class="hit-area prev" id="hitPrev" aria-label="Slide anterior"></button>
-    <button class="hit-area next" id="hitNext" aria-label="Slide siguiente"></button>
 
     <div class="chrome">
       <div class="topbar">
@@ -403,11 +387,9 @@
 
   document.querySelector("#prev").addEventListener("click", anterior);
   document.querySelector("#next").addEventListener("click", siguiente);
-  document.querySelector("#hitPrev").addEventListener("click", anterior);
-  document.querySelector("#hitNext").addEventListener("click", siguiente);
   document.querySelector("#fullscreen").addEventListener("click", alternarPantallaCompleta);
 
-  document.addEventListener("keydown", function (evento) {
+  function manejarTecla(evento) {
     var tecla = evento.key;
 
     if (["ArrowRight", "ArrowDown", "PageDown", " "].indexOf(tecla) !== -1) {
@@ -428,6 +410,26 @@
     }
 
     mostrarControles();
+  }
+
+  document.addEventListener("keydown", manejarTecla);
+
+  /* Si hacés click adentro de una slide (por ejemplo para darle play a un
+     video), el foco queda en esa slide y las flechas no llegarían acá.
+     Por eso cada slide le reenvía al reproductor el teclado y el mouse.
+     Con file:// Chrome puede bloquear esto: ahí hacé click en el borde
+     negro para volver a usar las flechas. */
+  buffers.forEach(function (buffer) {
+    buffer.addEventListener("load", function () {
+      try {
+        var doc = buffer.contentDocument;
+        doc.addEventListener("keydown", manejarTecla);
+        doc.addEventListener("mousemove", mostrarControles);
+        doc.addEventListener("click", mostrarControles);
+      } catch (error) {
+        /* origen aislado (file://): se navega desde el borde o los botones */
+      }
+    });
   });
 
   window.addEventListener("hashchange", function () {

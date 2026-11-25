@@ -1,0 +1,188 @@
+<!doctype html>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  ANFIBIA · SLIDE DE CONTENIDO — 1920 × 1080 (16:9)
+  ══════════════════════════════════════════════════════════════════
+
+  CÓMO USARLO
+  1. Abrí este archivo con doble click (se abre en tu navegador).
+  2. Para editarlo, abrilo con el Bloc de notas / TextEdit / VS Code.
+  3. Buscá los comentarios que dicen "EDITÁ ACÁ" y cambiá SOLO ese texto.
+  4. Guardá y refrescá el navegador (F5).
+
+  Este slide tiene DOS COLUMNAS: el texto principal a la izquierda y una
+  caja de ejemplo a la derecha. Si no querés la caja, borrá todo el bloque
+  que empieza en <aside class="ejemplo"> y termina en </aside>.
+
+  NO TOQUES el bloque <style>.
+  ══════════════════════════════════════════════════════════════════
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANFIBIA — De 4 mil a 1 millón de tokens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  /* ——— TOKENS · copia exacta de tokens/tokens.css. No editar. ——— */
+  :root {
+    --cream: #f0e9d8;
+    --paper: #e8e0cc;
+    --lime: #c6f526;
+    --electric: #1e1eff;
+    --pink: #ff2a6d;
+    --black: #0d0d0d;
+    --gray: #6b6b5a;
+    --cream-mute: #bbb5a7;
+
+    --fuente-titulo: 'Darker Grotesque', 'Arial Narrow', Impact, sans-serif;
+    --fuente-pixel: 'Silkscreen', 'Courier New', monospace;
+    --fuente-mono: 'Space Mono', 'Courier New', monospace;
+    --fuente-terminal: 'VT323', 'Courier New', monospace;
+    --fuente-lectura: 'Newsreader', Georgia, serif;
+
+    /* Acento de esta pieza: var(--lime) var(--electric) var(--pink) */
+    --acento: var(--lime);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a28;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .lienzo {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Barra superior lime, igual que el header del sitio */
+  .barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 60px;
+    background: var(--lime);
+    border-bottom: 2px solid var(--black);
+    flex-shrink: 0;
+  }
+  .barra .logo { font-family: var(--fuente-pixel); font-size: 26px; }
+  .barra .num { font-family: var(--fuente-terminal); font-size: 30px; text-transform: uppercase; }
+
+  .cuerpo { flex: 1; padding: 70px 90px 80px; display: flex; flex-direction: column; }
+
+  .kicker {
+    font-family: var(--fuente-pixel);
+    font-size: 22px;
+    color: var(--electric);
+    margin-bottom: 26px;
+  }
+
+  .titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 108px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1400px;
+    text-wrap: balance;
+    margin-bottom: 54px;
+  }
+
+  .columnas { display: grid; grid-template-columns: 1fr 620px; gap: 80px; align-items: start; flex: 1; }
+
+  .texto {
+    font-family: var(--fuente-lectura);
+    font-size: 33px;
+    line-height: 1.62;
+    max-width: 62ch;
+  }
+  .texto p + p { margin-top: 26px; }
+  .texto strong { background: var(--acento); padding: 0 6px; font-weight: 600; }
+
+  /* Caja de ejemplo con sombra dura de color */
+  .ejemplo {
+    background: var(--paper);
+    border: 3px solid var(--black);
+    box-shadow: 16px 16px 0 var(--acento);
+    padding: 38px 40px;
+  }
+  .ejemplo span { display: block; font-family: var(--fuente-pixel); font-size: 20px; margin-bottom: 20px; }
+  .ejemplo p { font-family: var(--fuente-mono); font-size: 24px; line-height: 1.65; }
+
+  /* Lista alternativa: si en vez de la caja querés bullets, usá <ul class="lista"> */
+  .lista { list-style: none; display: grid; gap: 16px; }
+  .lista li {
+    font-family: var(--fuente-mono); font-size: 24px; line-height: 1.5;
+    border: 2px solid var(--black); background: var(--paper); padding: 18px 22px;
+  }
+
+  .pie { display: flex; justify-content: space-between; align-items: center; margin-top: 46px; }
+  .pie .meta { font-family: var(--fuente-terminal); font-size: 28px; text-transform: uppercase; color: var(--gray); }
+  .firma { display: flex; gap: 10px; }
+  .firma i { width: 18px; height: 18px; border: 2px solid var(--black); display: block; }
+  .firma i:nth-child(1) { background: var(--lime); }
+  .firma i:nth-child(2) { background: var(--pink); }
+  .firma i:nth-child(3) { background: var(--electric); }
+
+  .ayuda {
+    width: 100%;
+    background: var(--black); color: var(--lime);
+    font-family: var(--fuente-terminal); font-size: 18px;
+    padding: 10px 20px; text-align: center; z-index: 99;
+  }
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    body { background: none; padding: 0; display: block; }
+    .ayuda { display: none; }
+  }
+
+  .cuerpo { padding: 56px 90px 50px; }
+  .titulo { font-size: 100px; margin-bottom: 44px; }
+  .barras { display: grid; gap: 18px; }
+  .fila { display: grid; grid-template-columns: 380px 1fr 250px; align-items: center; gap: 28px; }
+  .modelo { font-family: var(--fuente-titulo); font-weight: 900; font-size: 40px; line-height: 1; text-transform: uppercase; }
+  .modelo span { display: block; font-family: var(--fuente-pixel); font-weight: 400; font-size: 16px; color: var(--gray); margin-top: 8px; text-transform: none; }
+  .pista { height: 58px; background: var(--paper); border: 2px solid var(--black); position: relative; }
+  .barra-dato { position: absolute; left: 0; top: 0; bottom: 0; min-width: 8px; background: var(--black); }
+  .fila.hoy .barra-dato { background: var(--acento); border-right: 2px solid var(--black); }
+  .valor { font-family: var(--fuente-mono); font-size: 30px; font-weight: 700; text-align: right; }
+  .valor em { display: block; font-style: normal; font-weight: 400; font-family: var(--fuente-pixel); font-size: 15px; color: var(--gray); margin-top: 6px; }
+  .fila.hoy .valor em { color: var(--electric); }
+  .bajada { font-family: var(--fuente-lectura); font-size: 29px; line-height: 1.5; max-width: 84ch; margin-top: 40px; }
+  .bajada strong { background: var(--acento); padding: 0 6px; font-weight: 600; }
+
+</style>
+</head>
+<body>
+<div class="lienzo">
+  <div class="barra"><div class="logo">ANFIBIA</div><div class="num">27 / 119</div></div>
+  <div class="cuerpo">
+    <p class="kicker">CONTEXTO Y TOKENS · CÓMO CRECIÓ LA VENTANA</p><h2 class="titulo">De 4 mil a 1 millón de tokens</h2>
+    <div class="barras">
+      <div class="fila"><div class="modelo">ChatGPT<span>nov 2022</span></div><div class="pista"><div class="barra-dato" style="width:0.41%"></div></div><div class="valor">4.096</div></div>
+      <div class="fila"><div class="modelo">Claude<span>mar 2023</span></div><div class="pista"><div class="barra-dato" style="width:0.90%"></div></div><div class="valor">9.000</div></div>
+      <div class="fila"><div class="modelo">Claude<span>may 2023</span></div><div class="pista"><div class="barra-dato" style="width:10.00%"></div></div><div class="valor">100.000</div></div>
+      <div class="fila"><div class="modelo">Claude 3 Sonnet<span>mar 2024</span></div><div class="pista"><div class="barra-dato" style="width:20.00%"></div></div><div class="valor">200.000</div></div>
+      <div class="fila"><div class="modelo">Claude Sonnet 4<span>ago 2025</span></div><div class="pista"><div class="barra-dato" style="width:100.00%"></div></div><div class="valor">1.000.000<em>EN BETA</em></div></div>
+      <div class="fila hoy"><div class="modelo">Claude Opus 5.5<span>hoy</span></div><div class="pista"><div class="barra-dato" style="width:100.00%"></div></div><div class="valor">1.000.000<em>ESTÁNDAR</em></div></div>
+    </div>
+    <p class="bajada">En unos cuatro años la ventana creció <strong>unas 250 veces</strong>. Un millón de tokens son cientos de miles de palabras: varias novelas enteras en una sola conversación. Que entre no quiere decir que lo aproveche igual de bien.</p>
+  </div>
+</div>
+<div class="ayuda">SLIDE DE DATOS · 1920×1080 · ESTA BARRA NO SALE EN LA IMAGEN</div>
+</body>
+</html>
