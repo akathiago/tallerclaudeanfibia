@@ -31,12 +31,12 @@
 
   <main>
     <h1 class="pagina-titulo">Skills</h1>
-    <p class="pagina-bajada">Las cuatro skills del taller: qué son, cómo se instalan y cómo se usan. Diez minutos, y es copiar unas carpetas.</p>
+    <p class="pagina-bajada">Las cuatro skills del taller: qué son, cómo se instalan y cómo se usan. Diez minutos: dos se copian del Drive y dos se instalan desde la app.</p>
 
     <section class="nota-por-que">
       <h2>¿Qué es una skill?</h2>
       <p>Un instructivo empaquetado: le enseña a Claude a hacer una tarea puntual de una manera puntual. No es un programa que se instala ni algo que haya que configurar. Es una carpeta con archivos de texto que Claude lee cuando hacen falta.</p>
-      <p>Son cuatro, y vienen de dos lados. <strong>Dos las escribí para el taller:</strong> una te ayuda a armar el prompt de tu proyecto y la otra te entrevista para armar tu archivo de preferencias. <strong>Las otras dos son ajenas:</strong> las recomiendo porque las uso todos los días, y están en el mismo Drive para que no las tengas que ir a buscar.</p>
+      <p>Son cuatro, y vienen de dos lados. <strong>Dos las escribí para el taller:</strong> una te ayuda a armar el prompt de tu proyecto y la otra te entrevista para armar tu archivo de preferencias. <strong>Las otras dos son ajenas:</strong> las recomiendo porque las uso todos los días, y se instalan desde el marketplace oficial de Anthropic.</p>
     </section>
 
     <!-- EDITÁ ACÁ: el ejemplo de skill. Es solo para mostrar cómo se ve por dentro. -->
@@ -75,9 +75,9 @@ Leé la nota entera antes de proponer nada.
          cambialo en el href Y en el texto de abajo del botón. -->
     <section class="descarga">
       <span class="etiqueta">DESCARGA</span>
-      <h2>Bajate las skills del Drive</h2>
-      <p>Están las cuatro en esta carpeta. Bajala entera: en Drive, botón derecho sobre la carpeta &rarr; <strong>Descargar</strong>. Te llega un <code>.zip</code> que hay que descomprimir.</p>
-      <a class="boton" href="https://drive.google.com/drive/folders/1BrpfCG4VFTa9wP1lk8HjIvlR1k1xoMAf" target="_blank" rel="noopener">Abrir la carpeta de Drive</a>
+      <h2>Bajate las dos del taller</h2>
+      <p>En esta carpeta están <strong>talleranfibia</strong> y <strong>claude-md-global</strong>. Bajala entera: en Drive, botón derecho sobre la carpeta &rarr; <strong>Descargar</strong>. Te llega un <code>.zip</code> que hay que descomprimir.</p>
+      <a class="boton" href="https://drive.google.com/drive/folders/1c2Bpq3goTT3ptX4EvXYen_FCg-maLtFs" target="_blank" rel="noopener">Abrir la carpeta de Drive</a>
     </section>
 
     <!-- EDITÁ ACÁ: cada .paso-instalacion es un paso. Para agregar o sacar
@@ -91,29 +91,23 @@ Leé la nota entera antes de proponer nada.
         <li><code>.claude/skills/</code> <strong>dentro de un proyecto</strong> &rarr; funciona solo en ese proyecto.</li>
         <li><code>.claude/skills/</code> <strong>en tu carpeta de usuario</strong> &rarr; funciona en <strong>todos</strong> tus proyectos.</li>
       </ul>
-      <p>Estas cuatro van en tu carpeta de usuario, porque las vas a querer usar en el proyecto que armes vos, que todavía no existe. Es la misma lógica de los dos niveles del <code>CLAUDE.md</code>: hay cosas de un proyecto y cosas tuyas para siempre.</p>
+      <p>Estas dos van en tu carpeta de usuario, porque las vas a querer usar en el proyecto que armes vos, que todavía no existe. Es la misma lógica de los dos niveles del <code>CLAUDE.md</code>: hay cosas de un proyecto y cosas tuyas para siempre.</p>
       <p>Tu carpeta de usuario es <code>C:\Users\TuNombre</code> en Windows y <code>/Users/TuNombre</code> en Mac. Adentro tiene que quedar así:</p>
       <div class="arbol"><pre>TuNombre/
 └── .claude/
     └── skills/
         ├── talleranfibia/
         │   └── SKILL.md
-        ├── claude-md-global/
-        │   └── SKILL.md
-        ├── frontend-design/
-        │   └── SKILL.md
-        └── skill-creator/
-            ├── SKILL.md
-            ├── scripts/
-            └── references/</pre></div>
+        └── claude-md-global/
+            └── SKILL.md</pre></div>
     </section>
 
     <section class="paso-instalacion">
       <span class="etiqueta">Paso 2</span>
       <h2>Copiá las carpetas ahí</h2>
-      <p>Descomprimí el zip y mové las cuatro carpetas adentro de <code>.claude/skills/</code>. Van todas al mismo lugar, no importa quién las escribió.</p>
+      <p>Descomprimí el zip y mové las dos carpetas adentro de <code>.claude/skills/</code>.</p>
       <ul>
-        <li><strong>Si ya tenés la carpeta <code>.claude/skills</code>:</strong> pegá las cuatro adentro, sin borrar lo que había.</li>
+        <li><strong>Si ya tenés la carpeta <code>.claude/skills</code>:</strong> pegá las dos adentro, sin borrar lo que había.</li>
         <li><strong>Si no existe:</strong> creala. Ojo con el punto del principio: es <code>.claude</code>, no <code>claude</code>.</li>
       </ul>
       <p>¿No ves la carpeta <code>.claude</code>? No se borró: empieza con punto y eso la hace invisible.</p>
@@ -145,6 +139,15 @@ Leé la nota entera antes de proponer nada.
 
     <section class="paso-instalacion">
       <span class="etiqueta">Paso 3</span>
+      <h2>Las otras dos, desde la app</h2>
+      <p><strong>frontend-design</strong> y <strong>skill-creator</strong> están en el marketplace oficial de plugins de Anthropic. No se bajan del Drive: se instalan desde la app y se actualizan solas. Abrí la pestaña Code y escribí:</p>
+      <div class="pantalla"><pre>&gt; /plugin install frontend-design@claude-plugins-official
+&gt; /plugin install skill-creator@claude-plugins-official</pre></div>
+      <p>También las encontrás en <strong>Plugins</strong>, en la barra de la izquierda, buscándolas por nombre.</p>
+    </section>
+
+    <section class="paso-instalacion">
+      <span class="etiqueta">Paso 4</span>
       <h2>Verificá que aparezcan</h2>
       <p>Claude detecta las skills nuevas solo, sin reiniciar. Si no aparecen, <strong>cerrá la app de Claude y abrila de nuevo</strong>.</p>
       <p>Después escribí una barra y nada más:</p>
@@ -190,11 +193,7 @@ Leé la nota entera antes de proponer nada.
 
     <section class="nota-por-que">
       <h2>Estas no son mías</h2>
-      <p>Las escribió otra gente y las recomiendo porque las uso todos los días. Están en el Drive para que las tengas a mano, pero no son parte del taller.</p>
-      <p><strong>Otra forma de instalarlas:</strong> las dos están en el marketplace oficial de plugins de Anthropic. Instaladas desde ahí se actualizan solas, sin que tengas que volver a bajar nada. En la app: <strong>Plugins</strong>, en la barra de la izquierda, y las buscás por nombre. O escribís:</p>
-      <div class="pantalla"><pre>&gt; /plugin install frontend-design@claude-plugins-official
-&gt; /plugin install skill-creator@claude-plugins-official</pre></div>
-      <p>Si las instalás así, no copies sus carpetas del Drive: tendrías cada una dos veces.</p>
+      <p>Las escribió otra gente y las recomiendo porque las uso todos los días. No son parte del taller: se instalan desde el marketplace oficial de Anthropic, como se explica en el paso 3.</p>
     </section>
 
     <section class="paso-instalacion">
@@ -203,7 +202,7 @@ Leé la nota entera antes de proponer nada.
       <p>Empuja las decisiones visuales hacia algo con más criterio que el gris genérico por defecto. Pero también tiene sus gustos: si la usás antes de tener tus referencias, tu proyecto se va a parecer al de los demás.</p>
       <div class="pantalla"><pre>&gt; /frontend-design</pre></div>
       <p><strong>Qué pasa después:</strong> no te hace preguntas ni arranca una conversación. Le cambia el criterio a Claude para lo que venga después, así que lo normal es invocarla y a continuación pedirle lo que querés construir.</p>
-      <p class="verificar">Viene de Anthropic. Se instala copiando la carpeta o como plugin.</p>
+      <p class="verificar">Viene de Anthropic. Se instala como plugin, desde la app.</p>
     </section>
 
     <section class="paso-instalacion">
@@ -212,7 +211,7 @@ Leé la nota entera antes de proponer nada.
       <p>Una skill para escribir skills: te entrevista sobre qué querés que haga, arma la estructura de carpetas y archivos, y después te ayuda a probarla y corregirla. Es el paso de usar procedimientos de otros a fabricar los tuyos.</p>
       <div class="pantalla"><pre>&gt; /skill-creator</pre></div>
       <p><strong>Qué pasa después:</strong> te pregunta qué tarea querés empaquetar y para quién. Con eso te genera la carpeta con el <code>SKILL.md</code> adentro, lista para usar.</p>
-      <p class="verificar">Es la carpeta más pesada de las cuatro: trae scripts y ejemplos además del SKILL.md. Copiala entera, no solo el archivo.</p>
+      <p class="verificar">Viene de Anthropic. Se instala como plugin, desde la app.</p>
     </section>
 
     <h2 class="seccion-titulo">Para que Claude use el navegador</h2>
